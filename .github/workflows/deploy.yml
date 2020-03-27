@@ -1,0 +1,34 @@
+name: Deploy
+on: [push]
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install 
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: docs:build 
+
+      - name: Go into dist folder 
+        run: |
+            sudo sh -c "echo 'docs.sigmie.com' > docs/.vuepress/dist/CNAME"
+
+      - name: Authenticate to github 
+        run: curl -u username:token https://api.github.com/user
+
+      - name: Add to staging area
+        run: |
+           cd docs/.vuepress/dist
+           git config --global user.name 'Nico'
+           git config --global user.email 'nico@sigmie.com'
+           sudo git init
+           sudo git add .
+           sudo git commit -m 'deploy'
+           git push -f https://${{ secrets.ACCESS_TOKEN }}@github.com/sigmie/docs.sigmie.com.git master
+
+
+

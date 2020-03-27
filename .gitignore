@@ -1,4 +1,6 @@
 .devcontainer
 .vscode
 
+docs/dist
+
 node_modules
