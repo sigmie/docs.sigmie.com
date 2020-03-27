@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "version": "0.1.0",
+  "description": "Sigmie library docs",
+  "main": "index.js",
+  "repository": "https://github.com/sigmie/docs",
+  "author": "Nico Orfi",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
