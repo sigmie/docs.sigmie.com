@@ -1,0 +1,91 @@
+body
+  font-family: 'Montserrat'
+
+.site-name
+  display: none !important
+
+.sidebar
+    border-right: 0;
+    background-color: #f9fafb
+
+.navbar
+    border-bottom: 2px #FF6347 solid;
+
+.custom-block 
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 0px solid !important;
+
+  &.tip
+     border-color: #48bb78!important
+     background-color: #f0fff4!important
+
+  &.danger
+     border-color: #f56565!important
+     .custom-block-title
+         color: red
+       
+  &.warning
+     border-color: #ecc94b!important
+    
+  &.details
+      background-color: #f7fafc!important
+
+.header-anchor
+    color: #a0aec0
+
+ul
+ list-style: none
+
+a
+ color: #2d3748
+
+a:hover
+ color: #4a5568
+ text-decoration: none !important
+
+.table-of-contents a:before
+    content: "# ";
+    color: #a0aec0;
+    margin-left: -15px;
+    margin-right: 3px;
+
+
+div[class*="language-"]
+  background-color: #f7fafc
+  -webkit-font-smoothing subpixel-antialiased
+  -moz-osx-font-smoothing subpixel-antialiased
+  box-shadow 0 2px 4px 0 rgba(0, 0, 0, .05)
+
+.theme-default-content pre, .theme-default-content pre[class*="language-"]
+  line-height 1.7
+
+.theme-default-content pre code, .theme-default-content pre[class*="language-"] code
+  color #666 !important
+
+div[class~="language-php"]:before
+  content "php"
+
+div[class*="language-"]:before
+  color: rgba(0, 0, 0, 0.3)
+
+.token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin
+  color #ed8936
+
+.token.class-name
+ color #d69e2e
+
+.token.property, .token.constant, .token.symbol, .token.variable, .token.operator
+  color #3182ce
+
+.token.function
+  color: #63b3ed
+
+.token.boolean, .token.number
+  color #ed64a6
+
+.token.string, .token.char, .token.attr-value, .token.regex
+  color #48bb78
+
+.token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata
+  color #a0aec0
