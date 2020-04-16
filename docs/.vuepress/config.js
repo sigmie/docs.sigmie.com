@@ -30,28 +30,29 @@ module.exports = {
     nextLinks: true,
     prevLinks: false,
     themeConfig: {
-        sidebar: [
-            // {
-            //     title: 'Foo',   
-            //     path: '/foo/',      
-            //     collapsable: false,
-            //     sidebarDepth: 1,
-            //     children: [
-            //         '/',
-            //         'foo/one',
-            //         'foo/two',
-            //     ]
-            // },
-            // {
-            //     title: 'Bar',
-            //     children: []
-            // }
-        ],
         sidebarDepth: 0,
         logo: "/assets/img/logo.svg",
         search: false,
         nav: [
             { text: "GitHub", link: "https://github.com/sigmie/sigmie" }
         ],
+        sidebar: [
+            {
+                title: 'Promises',
+                path: '/promises/',
+                collapsable: false,
+                sidebarDepth: 1,
+                children: prefix("promises", [""])
+            },
+            // {
+            //     title: 'Bar',
+            //     path: '/promises/',
+            //     children: ["promises/one.md", "promises/two.md"]
+            // }
+        ],
     }
+}
+
+function prefix(prefix, children) {
+    return children.map(child => `${prefix}/${child}`);
 }

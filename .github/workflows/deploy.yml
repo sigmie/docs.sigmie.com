@@ -17,9 +17,6 @@ jobs:
         run: |
             sudo sh -c "echo 'docs.sigmie.com' > docs/.vuepress/dist/CNAME"
 
-      - name: Authenticate to github 
-        run: curl -u username:token https://api.github.com/user
-
       - name: Add to staging area
         run: |
            cd docs/.vuepress/dist

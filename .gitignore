@@ -1,6 +1,8 @@
 .devcontainer
 .vscode
 
+.DS_Store
+
 docs/dist
 
 node_modules
