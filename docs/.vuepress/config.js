@@ -36,20 +36,19 @@ module.exports = {
         nav: [
             { text: "GitHub", link: "https://github.com/sigmie/sigmie" }
         ],
-        sidebar: [
-            {
-                title: 'Promises',
-                path: '/promises/',
-                collapsable: false,
-                sidebarDepth: 1,
-                children: prefix("promises", [""])
-            },
+        sidebar: {
             // {
-            //     title: 'Bar',
-            //     path: '/promises/',
-            //     children: ["promises/one.md", "promises/two.md"]
-            // }
-        ],
+            //     title: 'Foo',
+            //     path: '/foo/',
+            //     collapsable: true,
+            //     sidebarDepth: 0,
+            //     children: prefix("foo", ["one.md", "two.md"])
+            // },
+            '/': [
+                '',
+                'promises',
+            ],
+        },
     }
 }
 
