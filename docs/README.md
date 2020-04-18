@@ -1,4 +1,4 @@
-# Installation
+<!-- # Installation
 
 [[toc]]
 
@@ -18,4 +18,4 @@ This is a dangerous warning
 
 ::: details Details
 This is a details block, which does not work in IE / Edge
-:::
+::: -->
