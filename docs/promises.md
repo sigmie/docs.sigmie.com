@@ -1,6 +1,6 @@
 # Promises
 
-Promises library is a library for actions which have delays and therefore they need verification that they are successfully complete.
+Promises library is created for actions which have delays and therefore they need verification that they are successfully complete.
 
 ## Installation
 
@@ -40,13 +40,12 @@ $chain->catch($rollback);
 $chain->proceed();
 ```
 
-In the example above, a new subnet will be created and after its existence will be
-checked. If the existence verification fails 3 times the `$rollback` callback will be
-called. The default delay between the verifications is **60** seconds.
+In the example above, we create a new subnet and then a new VM. If for some reason,
+the subnet doesn't exist or the VM is not running, the `$rollback` callback will be called.
 
-::: warning Warning
-The promise actions should **always** return `$resolve()` or
-`$reject()`. Otherwise a `UnknownPromiseResponse` exception will be thrown.
+::: tip Tip
+ The default delay between the verifications is **60** seconds and the default verification
+ attempts are **3**. You can change this values by extending the `AbstractPromise` class.
 :::
 
 ## Creating custom promises
@@ -113,6 +112,11 @@ After your can use it in a chain like you would with the default `Promise` insta
 ```php
 $chain = new Chain([new CreateSubnet($subnetClient), ...]);
 ```
+
+::: warning Warning
+The promise actions should **always** return `$resolve()` or
+`$reject()`. Otherwise a `UnknownPromiseResponse` exception will be thrown.
+:::
 
 ## Passing values
 
