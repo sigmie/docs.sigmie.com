@@ -1,7 +1,8 @@
 module.exports = {
     title: 'Sigmie docs',
     description: 'Sigmie library docs',
-    plugins: ['@vuepress/pwa'],
+    theme: './theme',
+    // plugins: ['@vuepress/pwa'],
     head:
         [
             [
