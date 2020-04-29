@@ -41,6 +41,12 @@ module.exports = {
                 'promises',
             ],
         },
+    },
+    postcss: {
+        plugins: [
+            require("autoprefixer"),
+            require("tailwindcss")("./tailwind.config.js")
+        ]
     }
 }
 
