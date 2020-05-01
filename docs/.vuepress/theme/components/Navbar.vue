@@ -17,13 +17,16 @@
       >{{ $siteTitle }}</span>
     </RouterLink>
 
+    <SigmieSearch></SigmieSearch>
     <div
       class="links"
       :style="linksWrapMaxWidth ? {
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
     >
-      <SigmieSearch></SigmieSearch>
+      <div>
+        <input class="rounded-full" type="text" name="sigmie" id="sigmie-search" />
+      </div>
       <NavLinks class="can-hide" />
     </div>
   </header>
