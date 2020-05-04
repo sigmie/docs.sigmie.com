@@ -15,13 +15,15 @@
           class="rounded-full text-white pl-10 pr-8 h-8 pr-2 placeholder-gray-500"
           placeholder="Search..."
           type="text"
-          v-model="value"
+          @focus="show = true"
+          @blur="show = false"
+          v-model="query"
           name="sigmie"
           id="search"
         />
         <div
-          v-if="value.length > 0"
-          @click="clear"
+          v-if="query.length > 0"
+          @click="query = ''"
           class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-auto"
         >
           <svg
@@ -41,8 +43,8 @@
     </div>
 
     <div
-      v-show="false"
-      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
+      :class="show && query.length > 0 ? 'ease-out duration-300 opacity-100' : 'ease-in duration-200 opacity-0'"
+      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-opacity inset-0 transition-opacity"
     >
       <div
         class="flex rounded-lg overflow-x-hidden bg-gray-100 mt-6 shadow-lg max-w-xl"
@@ -82,14 +84,11 @@ import "../styles/tailwind.css";
 export default {
   data: function() {
     return {
-      value: ""
+      query: "",
+      show: false
     };
   },
-  methods: {
-    clear() {
-      this.value = "";
-    }
-  }
+  methods: {}
 };
 </script>
 
