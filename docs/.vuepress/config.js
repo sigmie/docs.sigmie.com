@@ -25,6 +25,7 @@ module.exports = {
     themeConfig: {
         sidebarDepth: 0,
         logo: "/assets/img/logo.svg",
+        logoMobile: "/assets/img/logo-mobile.svg",
         search: false,
         nav: [
             { text: "GitHub", link: "https://github.com/sigmie" }

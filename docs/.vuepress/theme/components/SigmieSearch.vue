@@ -1,6 +1,6 @@
 <template>
-  <div class="ml-20">
-    <div>
+  <div>
+    <div class="ml-0 md:ml-20 w-40 md:w-56">
       <div class="relative rounded-md shadow-sm">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg class="text-gray-400" width="15px" height="15px" viewBox="0 0 20 20">
@@ -12,7 +12,7 @@
           </svg>
         </div>
         <input
-          class="rounded-full text-white pl-10 pr-8 h-8 pr-2 placeholder-gray-500"
+          class="rounded-full w-full text-white pl-10 pr-8 h-8 pr-2 placeholder-gray-500"
           placeholder="Search..."
           type="text"
           @focus="show = true"
@@ -43,33 +43,27 @@
     </div>
 
     <div
+      id="overlay"
       :class="show && query.length > 0 ? 'ease-out duration-300 opacity-100' : 'ease-in duration-200 opacity-0'"
       class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-opacity inset-0 transition-opacity"
     >
-      <div
-        class="flex rounded-lg overflow-x-hidden bg-gray-100 mt-6 shadow-lg max-w-xl"
-        style="height: 500px;"
-      >
+      <div class="flex rounded-lg overflow-x-hidden bg-gray-100 shadow-lg max-w-xl max-h-full">
         <div class="bg-gray-100 rounded-lg">
           <ul class="h-full overflow-auto">
             <li
-              v-for="(n, index) in 5"
+              v-for="(n, index) in 10"
               class="pl-6 pt-3 pb-1 last:border-b-0 border-b border-gray-200 hover:bg-gray-200 last:pb-4"
             >
-              <h3 class="font-bold text-lg">
-                <span class="text-orange-600">#</span>
-                Migration
-                <span class="text-xs font-normal text-gray-500">Database</span>
-              </h3>
-              <p class="text-gray-600 text-md">
-                Lorem ipsum dolor, sit amet consectetur.
-                Lorem ipsum dolor sit,
-                <b
-                  class="bg-blue-200 bg-opacity-50 font-normal px-1"
-                >Muchachos arriva</b>
-                amet consectetur adipisicing elit. Aperiam alias,
-                nobis quo nemo nihil consectetur dolores pariatur,
-              </p>
+              <div class="text-md leading-5 font-medium font-bold text-gray-700 truncate">
+                <span class="text-orange-400">#</span>
+                Back End Developer
+                <span
+                  class="ml-1 font-normal leading-tight text-sm text-gray-500"
+                >in Engineering</span>
+              </div>
+              <div class="my-2 max-w-xl text-sm leading-5 text-gray-500">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, totam at reprehenderit maxime aut beatae ad.</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -84,8 +78,8 @@ import "../styles/tailwind.css";
 export default {
   data: function() {
     return {
-      query: "",
-      show: false
+      query: "a",
+      show: true
     };
   },
   methods: {}
@@ -93,4 +87,7 @@ export default {
 </script>
 
 <style scoped>
+#overlay {
+  margin-top: 3.6rem;
+}
 </style>

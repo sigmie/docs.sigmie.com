@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   purge: [
     './docs/.vuepress/theme/**/*.vue'
   ],

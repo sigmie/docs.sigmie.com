@@ -5,14 +5,14 @@
     <RouterLink :to="$localePath" class="home-link">
       <img
         v-if="$site.themeConfig.logo"
-        class="logo"
+        class="logo hidden md:inline-block"
         :src="$withBase($site.themeConfig.logo)"
         :alt="$siteTitle"
       />
       <span
         v-if="$siteTitle"
         ref="siteName"
-        class="site-name"
+        class="site-name md:display-none"
         :class="{ 'can-hide': $site.themeConfig.logo }"
       >{{ $siteTitle }}</span>
     </RouterLink>
@@ -25,6 +25,12 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
       >
+        <img
+          v-if="$site.themeConfig.logoMobile"
+          class="logo md:hidden mr-0"
+          :src="$withBase($site.themeConfig.logoMobile)"
+          :alt="$siteTitle"
+        />
         <NavLinks class="can-hide" />
       </div>
     </div>
