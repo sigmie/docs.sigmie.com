@@ -45,14 +45,14 @@
     <div
       id="overlay"
       :class="show && query.length > 0 ? 'ease-out duration-300 opacity-100' : 'ease-in duration-200 opacity-0'"
-      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-opacity inset-0 transition-opacity"
+      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-1 py-4 sm:py-8 sm:px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-opacity inset-0 transition-opacity"
     >
-      <div class="flex rounded-lg overflow-x-hidden bg-gray-100 shadow-lg max-w-xl max-h-full">
-        <div class="bg-gray-100 rounded-lg">
-          <ul class="h-full overflow-auto">
+      <div class="flex rounded-lg overflow-x-hidden bg-white shadow-lg max-w-xl max-h-full mx-auto">
+        <div class="bg-white-100 rounded-lg max-h-full">
+          <ul v-if="results.legth > 0" class="h-full overflow-auto">
             <li
               v-for="(n, index) in 10"
-              class="pl-6 pt-3 pb-1 last:border-b-0 border-b border-gray-200 hover:bg-gray-200 last:pb-4"
+              class="pl-6 pt-3 pb-1 last:border-b-0 border-b border-gray-200 hover:bg-gray-100 last:pb-4"
             >
               <div class="text-md leading-5 font-medium font-bold text-gray-700 truncate">
                 <span class="text-orange-400">#</span>
@@ -66,6 +66,21 @@
               </div>
             </li>
           </ul>
+          <div v-else class="px-10 py-5">
+            <div>
+              <div class="text-center">
+                <h3
+                  class="text-lg leading-6 font-medium text-gray-900"
+                  id="modal-headline"
+                >No results to show for "{{query}}"</h3>
+                <div class="mt-2">
+                  <p
+                    class="text-sm leading-5 text-gray-500"
+                  >We couldn't find what you're looking for</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,8 +93,9 @@ import "../styles/tailwind.css";
 export default {
   data: function() {
     return {
-      query: "a",
-      show: true
+      query: "",
+      show: false,
+      results: []
     };
   },
   methods: {}
