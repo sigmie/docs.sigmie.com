@@ -1,7 +1,8 @@
 module.exports = {
     title: 'Sigmie docs',
     description: 'Sigmie library docs',
-    plugins: ['@vuepress/pwa'],
+    theme: './theme',
+    // plugins: ['@vuepress/pwa'],
     head:
         [
             [
@@ -24,6 +25,7 @@ module.exports = {
     themeConfig: {
         sidebarDepth: 0,
         logo: "/assets/img/logo.svg",
+        logoMobile: "/assets/img/logo-mobile.svg",
         search: false,
         nav: [
             { text: "GitHub", link: "https://github.com/sigmie" }
@@ -40,6 +42,12 @@ module.exports = {
                 'promises',
             ],
         },
+    },
+    postcss: {
+        plugins: [
+            require("autoprefixer"),
+            require("tailwindcss")("./tailwind.config.js")
+        ]
     }
 }
 
