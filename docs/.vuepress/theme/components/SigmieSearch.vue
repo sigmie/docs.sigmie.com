@@ -44,8 +44,8 @@
 
     <div
       id="overlay"
-      :class="show && query.length > 0 ? 'ease-out duration-300 opacity-100' : 'ease-in duration-200 opacity-0'"
-      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-1 py-4 sm:py-8 sm:px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-opacity inset-0 transition-opacity"
+      :class="show && query.length > 0 ? 'ease-out duration-300 opacity-100 visible' : 'ease-in duration-300 opacity-0 invisible'"
+      class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-1 py-4 sm:py-8 sm:px-4 pb-6 delay-75 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-all inset-0"
     >
       <div class="flex rounded-lg overflow-x-hidden bg-white shadow-lg max-w-xl max-h-full mx-auto">
         <div class="bg-white-100 rounded-lg max-h-full">
