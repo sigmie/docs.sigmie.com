@@ -40,6 +40,13 @@ module.exports = {
             // },
             '/': [
                 'promises',
+                {
+                    title: 'ELASTICSEARCH',
+                    path: '/elasticsearch',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: prefix("elasticsearch", ["clusterhealth.md"])
+                },
             ],
         },
     },
