@@ -28,6 +28,7 @@ module.exports = {
         logoMobile: "/assets/img/logo-mobile.svg",
         search: false,
         nav: [
+            { text: "Application", link: "https://app.sigmie.com" },
             { text: "GitHub", link: "https://github.com/sigmie" }
         ],
         sidebar: {
@@ -39,14 +40,28 @@ module.exports = {
             //     children: prefix("foo", ["one.md", "two.md"])
             // },
             '/': [
-                'promises',
+                // {
+                //     title: 'ELASTICSEARCH',
+                //     path: '/elasticsearch',
+                //     collapsable: true,
+                //     sidebarDepth: 0,
+                //     children: prefix("elasticsearch", ["clusterhealth.md"])
+                // },
                 {
-                    title: 'ELASTICSEARCH',
-                    path: '/elasticsearch',
+                    title: 'APPLICATION',
+                    path: '/app',
                     collapsable: true,
                     sidebarDepth: 0,
-                    children: prefix("elasticsearch", ["clusterhealth.md"])
+                    children: prefix("app", ["proxy.md"])
                 },
+                {
+                    title: 'LIBRARY',
+                    path: '/library',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: prefix("library", ["sigmie.md"])
+                },
+                'promises',
             ],
         },
     },
