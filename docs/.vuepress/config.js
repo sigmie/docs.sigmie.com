@@ -32,34 +32,20 @@ module.exports = {
             { text: "GitHub", link: "https://github.com/sigmie" }
         ],
         sidebar: {
-            // {
-            //     title: 'Foo',
-            //     path: '/foo/',
-            //     collapsable: true,
-            //     sidebarDepth: 0,
-            //     children: prefix("foo", ["one.md", "two.md"])
-            // },
             '/': [
-                // {
-                //     title: 'ELASTICSEARCH',
-                //     path: '/elasticsearch',
-                //     collapsable: true,
-                //     sidebarDepth: 0,
-                //     children: prefix("elasticsearch", ["clusterhealth.md"])
-                // },
                 {
                     title: 'APPLICATION',
                     path: '/app',
                     collapsable: true,
                     sidebarDepth: 0,
-                    children: prefix("app", ["proxy.md"])
+                    children: prefix("app", ["proxy.md", "google.md"])
                 },
                 {
-                    title: 'LIBRARY',
-                    path: '/library',
+                    title: 'SIGMIE',
+                    path: '/sigmie',
                     collapsable: true,
                     sidebarDepth: 0,
-                    children: prefix("library", ["sigmie.md"])
+                    children: prefix("sigmie", ["install.md"])
                 },
                 'promises',
             ],
