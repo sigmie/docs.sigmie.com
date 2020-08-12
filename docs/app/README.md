@@ -24,3 +24,45 @@ When using search-as-a-service provider you can comfortably send your
 user's input directly from your frontend to your search. With
 Elasticsearch you will need a controller in your application's
 backend to validate the request data.
+
+## Solution
+
+The application's goal is to take over the pain of dealing with the above problems.
+
+### Creation
+
+In less than 10 minutes you can have a secure and reliable Elasticsearch cluster. After you have
+been registered and you have created a project.
+
+You will choose the:
+* Desired amount of nodes
+* Cluster's location
+
+And we take care of:
+* Creating the Elasticsearch nodes
+* Putting a Loadbalancer in front of them
+* Configuring basic authentication
+* Hiding your Clusters public IP address
+
+## Usage
+
+When your Cluster is up and running you can make use of the following access tokens.
+ * [Admin Token](#admin-token)
+ * [Search-Only Token](#search-only-token)
+
+## Admin Token
+
+You can make any request that you would normally send to your Elasticsearch by using the **Admin Token**. You will have set the `Bearer` token in your requests `Authorization` header and use our [proxy](/app/proxy) URL address.
+
+::: warning Warning
+Keep in mind that there is monthly proxy request limit. It's preferred to use proxy requests for your search operations and not for data indexing.
+:::
+
+## Search-Only Token
+
+Same like with the [Admin Token](#admin-token) you will have a search token available. Difference is that
+with this token you will be allowed to make only search operation.
+
+::: tip Tip
+The purpose of this token is to allow you to query Elasticsearch directly from your frontend. Saving you the backend work.
+:::
