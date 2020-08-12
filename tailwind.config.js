@@ -6,8 +6,12 @@ module.exports = {
   theme: {
     extend: {},
   },
+  corePlugins: {
+  },
   variants: {
     borderWidth: ['first', 'last'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 }

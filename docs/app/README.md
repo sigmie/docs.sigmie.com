@@ -8,17 +8,17 @@ When it comes to using Elasticsearch as a search engine most of us are facing a 
 
 Despite the fact Elasticsearch is free to use, it can become challenging to configure everything correctly. And that's exactly where our app can help you.
 
-1.Security
+### Security
 
-Since Elasticsearch has no build in authentication one of the first
+1. Since Elasticsearch has no build in authentication one of the first
 things that somebody installing Elasticsearch has to take care of
 authentication. One common used method is using
 [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
 
-Also good practice is to hide your server's public ip
+2. Also good practice is to hide your server's public ip
 address to the world in order to avoid any malicious attempts.
 
-2.Searching
+### Searching
 
 When using search-as-a-service provider you can comfortably send your
 user's input directly from your frontend to your search. With
