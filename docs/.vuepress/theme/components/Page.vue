@@ -2,7 +2,7 @@
   <main class="page pb-10">
     <slot name="top" />
 
-    <Content class="prose mx-auto pt-24" />
+    <Content class="prose mx-auto pt-24 px-10" />
 
     <PageEdit />
 
@@ -83,5 +83,11 @@ div[class*='language-']:before {
 .prose code {
   background-color: rgba(247, 250, 252, 0.5);
   padding: 0.05rem 0.1rem;
+}
+</style>
+
+<style lang="postcss">
+.page-nav {
+  @apply px-16;
 }
 </style>

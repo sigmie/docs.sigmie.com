@@ -34,14 +34,14 @@ module.exports = {
         sidebar: {
             '/': [
                 {
-                    title: 'APPLICATION',
+                    title: 'Application',
                     path: '/app',
                     collapsable: true,
                     sidebarDepth: 0,
                     children: prefix("app", ["proxy.md", "google.md"])
                 },
                 {
-                    title: 'SIGMIE',
+                    title: 'Sigmie',
                     path: '/sigmie',
                     collapsable: true,
                     sidebarDepth: 0,
