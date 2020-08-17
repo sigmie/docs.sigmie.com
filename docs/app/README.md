@@ -66,3 +66,11 @@ with this token you will be allowed to make only search operation.
 ::: tip Tip
 The purpose of this token is to allow you to query Elasticsearch directly from your frontend. Saving you the backend work.
 :::
+
+## Bug Reports
+
+If you discover a bug in Sigmie application, please open an issue on the [Sigmie Application issues GitHub repository](https://github.com/sigmie/app-issues).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within the application, please send an email to security@sigmie.com. All security vulnerabilities will be promptly addressed.
