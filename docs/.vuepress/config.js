@@ -28,17 +28,25 @@ module.exports = {
         logoMobile: "/assets/img/logo-mobile.svg",
         search: false,
         nav: [
+            { text: "Application", link: "https://app.sigmie.com" },
             { text: "GitHub", link: "https://github.com/sigmie" }
         ],
         sidebar: {
-            // {
-            //     title: 'Foo',
-            //     path: '/foo/',
-            //     collapsable: true,
-            //     sidebarDepth: 0,
-            //     children: prefix("foo", ["one.md", "two.md"])
-            // },
             '/': [
+                {
+                    title: 'Application',
+                    path: '/app',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: prefix("app", ["proxy.md", "google.md"])
+                },
+                {
+                    title: 'Sigmie',
+                    path: '/sigmie',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: prefix("sigmie", ["install.md"])
+                },
                 'promises',
             ],
         },

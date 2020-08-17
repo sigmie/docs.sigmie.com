@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "0.1.0",
-  "description": "Sigmie library docs",
+  "description": "Sigmie docs",
   "main": "index.js",
   "repository": "https://github.com/sigmie/docs",
   "author": "Nico Orfi",
@@ -16,7 +16,8 @@
     "vuepress": "^1.4.0"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "autoprefixer": "^9.7.6",
-    "tailwindcss": "1.4"
+    "tailwindcss": "^1.6.2"
   }
 }
