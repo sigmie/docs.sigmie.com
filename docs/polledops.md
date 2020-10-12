@@ -1,13 +1,13 @@
-# Promises
+# Poll Ops
 
-Promises library is created for actions which have delays and therefore they need verification that they are successfully complete.
+Polled Ops library is created for actions which have delays and therefore they need verification that they are successfully complete.
 
 ## Installation
 
 You can install the Promises library via [Composer](https://getcomposer.org).
 
 ```sh
- $ composer require sigmie/promises
+ $ composer require sigmie/poll-ops
 ```
 
 ## Basic usage
@@ -15,9 +15,9 @@ Let's say you want to create a new VM instance on your Cloud platform inside of 
 something goes wrong with the creation, you want to rollback the subnet creation.
 
 ```php
-use Sigmie\Promises\Chain;
-use Sigmie\Promises\Promise;
-use Sigmie\Promises\Exceptions\PromiseRejection;
+use Sigmie\PollOps\Chain;
+use Sigmie\PollOps\Promise;
+use Sigmie\PollOps\Exceptions\PromiseRejection;
 
 $cloudClient = new CloudClient($key);
 
