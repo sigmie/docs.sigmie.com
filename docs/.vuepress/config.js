@@ -47,7 +47,7 @@ module.exports = {
                     sidebarDepth: 0,
                     children: prefix("sigmie", ["install.md"])
                 },
-                'promises',
+                'polledops',
             ],
         },
     },

@@ -26,8 +26,6 @@ Since Sigmie manages many resources across Compute Engine, it's recommended to g
 If your don't wish to give too many permissions, can always pick the corresponding roles according to the [Resources section](#resources).
 :::
 
-###
-
 ## Resources
 When you create an Elasticsearch cluster using Sigmie on Google Cloud, the following resources will be created in your Google Cloud Project:
 * VPC Network
