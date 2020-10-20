@@ -1,0 +1,35 @@
+name: Crawl
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Sleep for 15 minutes
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '15m'
+
+      - name: Authenticate docker
+        run: docker login docker.pkg.github.com --username nicoorfi --password ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Crawl docs page 
+        run: |
+            docker run -v $PWD:/mnt docker.pkg.github.com/sigmie/crawler/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
+
+      - name: Deploy
+        uses: exuanbo/actions-deploy-gist@v1.0.3
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: e1e70646515e983f9563fbcb174f52ff
+          gist_file_name: docs.sigmie.content.json
+          file_path: content.json
+

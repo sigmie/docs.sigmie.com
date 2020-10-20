@@ -1,0 +1,10 @@
+{
+    "start_url": "https://docs.sigmie.com",
+    "format": "basic",
+    "export": {
+        "format": "json",
+        "path": "/mnt/content.json"
+    },
+    "navigation_selector": ".sidebar-links",
+    "content_selector": ".content__default"
+}
