@@ -48,6 +48,7 @@ module.exports = {
                     children: prefix("sigmie", ["install.md"])
                 },
                 'polledops',
+                'crawler'
             ],
         },
     },
