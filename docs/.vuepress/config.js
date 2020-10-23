@@ -15,8 +15,7 @@ module.exports = {
             [
                 "link",
                 {
-                    rel: 'icon',
-                    href: '/icon.png'
+                    rel: 'icon', href: '/icon.png'
                 }
             ]
         ],
@@ -47,8 +46,13 @@ module.exports = {
                     sidebarDepth: 0,
                     children: prefix("sigmie", ["install.md"])
                 },
-                'polledops',
-                'crawler'
+                {
+                    title: 'Packages',
+                    path: '/packages',
+                    collapsable: true,
+                    sidebarDepth: 0,
+                    children: prefix("packages", ["crawler.md","polledops.md"])
+                }
             ],
         },
     },

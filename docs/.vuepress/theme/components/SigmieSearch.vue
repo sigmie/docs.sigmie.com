@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ml-0 md:ml-20 w-40 md:w-56">
+    <div class="ml-0 md:ml-20 w-full md:w-56">
       <div class="relative rounded-md shadow-sm">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg class="text-gray-400" width="15px" height="15px" viewBox="0 0 20 20">
