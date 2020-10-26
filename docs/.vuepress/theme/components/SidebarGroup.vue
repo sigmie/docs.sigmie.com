@@ -11,7 +11,7 @@
   >
     <RouterLink
       v-if="item.path"
-      class="mb-3 lg:mb-2 uppercase tracking-wide font-bold text-sm lg:text-sm text-gray-600"
+      class="mb-3 lg:mb-1 uppercase tracking-wide font-bold text-sm lg:text-sm text-gray-800"
       :class="{
         open,
         active: isActive($route, item.path),
@@ -21,7 +21,7 @@
     >
       <span>{{ item.title }}</span>
 
-      <span v-if="open">
+      <!-- <span v-if="open">
         <svg
           class="h-3 relative inline-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
             d="M9 5l7 7-7 7"
           />
         </svg>
-      </span>
+      </span> -->
     </RouterLink>
 
     <p

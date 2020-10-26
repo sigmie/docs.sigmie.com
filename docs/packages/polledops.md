@@ -1,163 +1,144 @@
-# Poll Ops
-
-Polled Ops library is created for actions which have delays and therefore they need verification that they are successfully complete.
+# Polled Operations
+[[toc]]
+Poll-ops is a PHP library created for actions which have delays and therefore
+ they need verification that they were successfully complete.
 
 ## Installation
 
-You can install the Promises library via [Composer](https://getcomposer.org).
+You can install the library via [Composer](https://getcomposer.org) by running.
 
 ```sh
  $ composer require sigmie/poll-ops
 ```
 
 ## Basic usage
-Let's say you want to create a new VM instance on your Cloud platform inside of your desired subnet but, if
-something goes wrong with the creation, you want to rollback the subnet creation.
+
+### Insist
+Let's say you want to delete a record over an REST API, and for some reason the operation isn't always successful
+and you want to attempt to delete the record multiple times until the operation succeeds.
 
 ```php
-use Sigmie\PollOps\Chain;
-use Sigmie\PollOps\Promise;
-use Sigmie\PollOps\Exceptions\PromiseRejection;
+use function Sigmie\PollOps\insist;
 
-$cloudClient = new CloudClient($key);
+$deleteCallback = fn() => $apiClient->deleteRecord($recordId);
 
-// Rollback action which should be called when something goes wrong in the chain
-$rollback = fn() => $cloudClient->removeSubnet('awesome-subnet');
-
-$createSubnet = new Promise(
-                    fn()=> $cloudClient->createSubnet('awesome-subnet'),
-                    fn()=> $cloudClient->subnetExists('awesome-subnet'));
-
-$createVm = new Promise(
-                    fn()=> $cloudClient->createVm('awesome-vm'),
-                    fn()=> $cloudClient->isVmRunning('awesome-vm'));
-
-$chain = new Chain([$createSubnet, $createVm]);
-
-$chain->catch($rollback);
-
-// Proceed with the chain execution
-$chain->proceed();
+insist($deleteCallback)->tries(10)->proceed();
 ```
 
-In the example above, we create a new subnet and then a new VM. If for some reason,
-the subnet doesn't exist or the VM is not running, the `$rollback` callback will be called.
+In the above example the `deleteCallback` will be called at least **10** times before throwing an `Exception`. If at any attempt it will return `true` your code will continue.
+If it returns `false`, it will sleep and retry until it reaches the maximum amount of attempts. 
 
-::: tip Tip
- The default delay between the verifications is **60** seconds and the default verification
- attempts are **3**. You can change this values by extending the `AbstractPromise` class.
+::: tip Retry after time
+By default the callback will be retried after **3 seconds**.
 :::
 
-## Creating custom promises
-You may create your custom promise classes and use them within a chain by extending
-the `AbstractPromise`.
+In some other cases you may want to delay the operation execution. You can do this be calling
+the `delay` method on the operation builder and passing the desired amount of second.
 
 ```php
-class CreateSubnet extends AbstractPromise
+insist($deleteCallback)->tries(5)->delay(15)->proceed();
+```
+
+Or you may wish to also catch **Exceptions** instead of the task return value.
+
+```php
+insist($callback)->catchExceptions()->tries(3)->proceed();
+```
+
+### Operation
+
+Operations are tasks that need verification that they were successful. For example if your delete a
+resource in a API and then you try to fetch the resource again in order to verify that the resource isn't available anymore.
+
+```php
+use function Sigmie\PollOps\operation;
+
+$resourceDeleted = fn() => $resource->exists() == false;
+
+operation(fn () => $resource->delete())
+    ->verify($resourceDeleted)
+    ->catch(function () {
+        // Handle delete failure 
+    })
+    ->then(function () {
+        // Handle delete success 
+    })
+    ->finally(function () {
+        //
+    })
+    ->proceed();
+```
+In the code above the `$resource->delete()` will be called to delete the resource. Afterwards the operation
+will try to verify that the resource doesn't exist anymore. If the `$resourceDeleted` callback returns `false` your code
+will stop executing and retry the verification attempt again until it reaches the max amount of verification tries.
+
+If all verification attempts return `false` the `catch` callback will be called. By default the verification will be attempted **3** times.
+
+You can organize big operations into classes by extending the `AbstractOperation` class.
+```php
+<?php
+
+namespace Acme;
+
+use Sigmie\PollOps\AbstractOperation;
+
+class SomeOperation extends AbstractOperation
 {
-    private $cloudClient;
-
-    public function __construct($cloudClient)
+    public function execute(array $args, \Closure $resolve, \Closure $reject)
     {
-        $this->cloudClient = $cloudClient;
-    }
-
-    /**
-     * Promise action method
-     */
-    public function execute(array $args, Closure $resolve, Closure $reject)
-    {
-        $this->cloudClient->createSubnet('awesome-subnet');
+        // Perform operation
 
         return $resolve();
     }
 
-    /**
-     * This method verifies if the executed action was
-     * successfully completed
-     *
-     * @return bool
-     */
     public function verify(): bool
     {
-        return $this->cloudClient->subnetExists('awesome-subnet');
+        // Is operation result as expected
+
+        return true;
     }
 
-    /**
-     * This method determines how many second should the
-     * promise wait before retrying to verify itself
-     *
-     * @return int
-     */
-    public function attemptsInterval(): int
-    {
-        return 60;
-    }
-
-    /**
-     * This method determines how many times this promise
-     * should attempt to verify itself before rejecting
-     *
-     * @return int
-     */
     public function maxAttempts(): int
     {
-        return 3;
+        return 5;
+    }
+
+    public function attemptsInterval(): int
+    {
+        return 15;
+    }
+
+    public function exceptionMessage(): string
+    {
+        return 'Operation wasn\'t successful.';
     }
 }
 ```
 
-After your can use it in a chain like you would with the default `Promise` instance.
+You can pass arguments to the `execute` method of your operation by passing you values to the `proceed` method of the
+operation builder.
 
-```php
-$chain = new Chain([new CreateSubnet($subnetClient), ...]);
-```
-
-::: warning Warning
-The promise actions should **always** return `$resolve()` or
-`$reject()`. Otherwise a `UnknownPromiseResponse` exception will be thrown.
+::: tip Early reject
+Inside the `execute` method of the **Operation** instances you can directly reject the operation
+without any verification if something is wrong.
 :::
 
-## Passing values
+### Chain
 
-Any arguments passed to the `$resolve` callback will we available the the next chain element within the `$args` parameter.
-
-For example resolving a promise and passing the string `foo` as the first argument tho
-the `$resolve` closure,
-
-```php
-public function execute(array $args, Closure $resolve, Closure $reject)
-{
-    // ...
-
-    return $resolve('foo');
-}
-```
-Will make the `foo` string available in the next chain element as the first value in the `$args` array.
+The `chain` function allow you to chain multiple operation together. This is useful when you have multiple steps for
+and operation and you need an assurance that the previous step was successfully executed, otherwise you need a **rollback**
+action.
 
 ```php
-public function execute(array $args, Closure $resolve, Closure $reject)
-{
-    echo $args[0]; // foo
-}
-```
+use function Sigmie\PollOps\chain;
 
-## Rejection
-In case of a rejection a `Sigmie\Promises\Exceptions\PromiseRejection` is passed to the catch closure.
+chain([
+    new CreateServer,
+    new OpenSSHPort,
+    new InstallSoftware
+])->catch(function () {
 
-If you reject a promise with a message like bellow:
-```php
-public function execute(array $args, Closure $resolve, Closure $reject)
-{
-    return $reject('Something went wrong');
-}
-```
-You will get a `PromiseRejection` exception as argument to your catch callback function.
-```php
-use Sigmie\Promises\Exceptions\PromiseRejection;
+    // Destroy server
 
-$chain->catch(function(PromiseRejection $rejection){
-
-    echo $rejection->getMessage() // 'Something went wrong'
-});
+})->proceed();
 ```

@@ -12,7 +12,7 @@
           </svg>
         </div>
         <input
-          class="rounded-full w-full text-white pl-10 pr-8 h-8 pr-2 placeholder-gray-500"
+          class="rounded-full w-full text-white pl-10 h-8 pr-2 placeholder-gray-500"
           placeholder="Search..."
           type="text"
           @focus="show = true"

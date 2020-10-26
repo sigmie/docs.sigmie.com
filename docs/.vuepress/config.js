@@ -35,21 +35,21 @@ module.exports = {
                 {
                     title: 'Application',
                     path: '/app',
-                    collapsable: true,
+                    collapsable: false,
                     sidebarDepth: 0,
                     children: prefix("app", ["proxy.md", "google.md"])
                 },
                 {
                     title: 'Sigmie',
                     path: '/sigmie',
-                    collapsable: true,
+                    collapsable: false,
                     sidebarDepth: 0,
                     children: prefix("sigmie", ["install.md"])
                 },
                 {
                     title: 'Packages',
                     path: '/packages',
-                    collapsable: true,
+                    collapsable: false,
                     sidebarDepth: 0,
                     children: prefix("packages", ["crawler.md","polledops.md"])
                 }
