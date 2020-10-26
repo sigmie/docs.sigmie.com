@@ -1,6 +1,6 @@
 # Packages
 The Sigmie idea was born form an open source Elasticsearch library that we wanted to create.
-Of course nothing would be possible without all the already existing open source libraries out there.
+Of course nothing would be possible without all the already existing open source libraries out there. Now it's our turn.
 
 You can find our open source packages available on [Github](https://github.com/sigmie).
 

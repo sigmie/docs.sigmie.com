@@ -1,5 +1,4 @@
 name: Crawl
-
 on:
   pull_request:
     types: [closed]

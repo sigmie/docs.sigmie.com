@@ -33,18 +33,18 @@ module.exports = {
         sidebar: {
             '/': [
                 {
+                    title: 'Sigmie',
+                    path: '/sigmie',
+                    collapsable: false,
+                    sidebarDepth: 0,
+                    children: prefix("sigmie", ["getting-started.md"])
+                },
+                {
                     title: 'Application',
                     path: '/app',
                     collapsable: false,
                     sidebarDepth: 0,
                     children: prefix("app", ["proxy.md", "google.md"])
-                },
-                {
-                    title: 'Sigmie',
-                    path: '/sigmie',
-                    collapsable: false,
-                    sidebarDepth: 0,
-                    children: prefix("sigmie", ["install.md"])
                 },
                 {
                     title: 'Packages',
