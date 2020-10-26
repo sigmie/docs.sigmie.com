@@ -4,6 +4,8 @@ Sigmie application is focused to help developers using Elasticsearch as search e
 
 When it comes to using Elasticsearch as a search engine most of us are facing a lot of common problems. Beginning with the infrastructure, security, and data synchronization, until the relevance of the search results.
 
+[[toc]]
+
 ## Common problems
 
 Despite the fact Elasticsearch is free to use, it can become challenging to configure everything correctly. And that's exactly where our app can help you.

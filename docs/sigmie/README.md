@@ -1,25 +1,17 @@
 # Sigmie
 
-The Sigmie idea was born form an open source Elasticsearch library that we wanted to create and nothing would be possible without all the already existing open source libraries out there.
+Sigmie started as an free open source library which would the common problems
+which people developers encounter when using Elasticsearch as a search engine
+empowering their site.
 
-That's why you can also find ours open source packages available on [Github](https://github.com/sigmie).
+After some months and some rewrites of the Sigmie library we realized that,
+there were so much more stuff that we could help with. And that's how the
+[Sigmie Application](/app/) idea was born. 
 
-<!-- [[toc]]
+Because how could you use our library without an Elasticsearch server ?!
 
-## Header
+So now Sigmie has become the core component of the [Sigmie Application](https://app.sigmie.com) and
+they are developed in parallel. Nevertheless the Sigmie library remains free and open source 
+under the MIT license.
 
-::: tip Tip
-This is a tip
-:::
-
-::: warning Warning
-This is a warning
-:::
-
-::: danger Danger
-This is a dangerous warning
-:::
-
-::: details Details
-This is a details block, which does not work in IE / Edge
-::: -->
+[Get started](/sigmie/getting-started/)
