@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar shadow-2xl md:shadow-none">
+  <aside class="sidebar shadow-2xl md:shadow-none md:w-1/3">
     <slot name="top" />
 
     <SidebarLinks :depth="0" :items="items" />
@@ -22,7 +22,7 @@ export default {
 
 <style lang="postcss">
 .sidebar {
-  @apply bg-gray-100 border-none pt-20 pb-6 flex justify-center;
+  @apply bg-gray-100 border-l border-gray-200 pt-20 pb-6 flex justify-end;
 }
 
 @screen md {

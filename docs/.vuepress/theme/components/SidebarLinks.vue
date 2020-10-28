@@ -1,5 +1,5 @@
 <template>
-  <div class="w-48">
+  <div class="w-56">
     <ul v-if="items.length" class="mx-auto">
       <li v-for="(item, i) in items" :key="i" class="my-1">
         <SidebarGroup
