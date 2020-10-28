@@ -68,7 +68,7 @@ function renderLink(h, to, text, active, level) {
     },
     class: {
       active,
-      "rounded px-4 -mx-2 py-1 text-base relative block hover:text-gray-700 text-gray-600 font-medium": true,
+      "px-4 -mx-2 py-1 text-base relative block hover:text-gray-700 text-gray-600 font-medium": true,
     },
   };
 
@@ -115,7 +115,7 @@ function renderExternal(h, to, text) {
 </script>
 <style lang="stylus" scoped>
 .active {
-  @apply: bg-gray-200 !important;
-  @apply: text-gray-600 !important;
+  @apply: bg-gray-200 text-gray-700 antialiased rounded-l-sm border-l-4 !important;
+  border-color: #ffac9e;
 }
 </style>

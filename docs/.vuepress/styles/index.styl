@@ -85,15 +85,14 @@ a:hover
 div.table-of-contents  ul > li:before
    content: none;
 
-
 .table-of-contents a:before
   color: #fe7962 
 
 .header-anchor
   color: #fe7962 !important;
 
-div.table-of-contents > ul > li > a
-  @apply text-gray-800 no-underline
+div.table-of-contents > ul:first-child > li > a
+  @apply text-black no-underline
 
 div.table-of-contents > ul > li > ul > li > a
   @apply text-gray-700 no-underline
@@ -103,3 +102,10 @@ div.table-of-contents > ul > li > ul > li > a
 
 p > code 
   color: #e98270!important;
+
+div.prose > div.custom-block > * > a
+     @apply underline text-gray-800 !important;
+
+div.prose > *:not(.table-of-contents) a
+     color: #e7725d !important;
+     @apply no-underline !important;
