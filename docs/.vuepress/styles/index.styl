@@ -86,7 +86,7 @@ div.table-of-contents  ul > li:before
    content: none;
 
 .table-of-contents a:before
-  color: #fe7962 
+  @apply text-theme-orange-light-800
 
 .header-anchor
   color: #fe7962 !important;
@@ -98,14 +98,13 @@ div.table-of-contents > ul > li > ul > li > a
   @apply text-gray-700 no-underline
 
 .prose ul > li::before
-  background-color: #ff8874 !important;
+  @apply bg-theme-orange-light-600 !important;
 
 p > code 
-  color: #e98270!important;
+  @apply text-theme-orange-light-800 !important;
 
 div.prose > div.custom-block > * > a
      @apply underline text-gray-800 !important;
 
 div.prose > *:not(.table-of-contents) a
-     color: #e7725d !important;
-     @apply no-underline !important;
+     @apply text-theme-orange-light-800 no-underline !important;

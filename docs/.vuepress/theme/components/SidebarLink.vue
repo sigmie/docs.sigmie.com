@@ -115,7 +115,6 @@ function renderExternal(h, to, text) {
 </script>
 <style lang="stylus" scoped>
 .active {
-  @apply: bg-gray-200 text-gray-700 antialiased rounded-l-sm border-l-4 !important;
-  border-color: #ffac9e;
+  @apply: bg-gray-200 text-gray-700 antialiased rounded-l-sm border-l-4 border-theme-orange-light-700 !important;
 }
 </style>
