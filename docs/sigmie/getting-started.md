@@ -14,8 +14,6 @@ Then your are ready to go, an you can use the `SigmieClient` like below to retri
 your Elasticsearch indices.
 
 ```php
-<?php
-
 require 'vendor/autoload.php';
 
 $sigmieClient = SigmieClient::createFromBasicAuth('username', 'password', 'https://example.sigmie.app');

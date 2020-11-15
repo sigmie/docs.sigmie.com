@@ -40,3 +40,7 @@ When you create an Elasticsearch cluster using Sigmie on Google Cloud, the follo
     * 22
 * Reserved external ip addresses for each requested node
 * A VM Instance for each request node
+
+## Creating a Cluster
+
+When you are creating a Cluster keep your mind in your [Quotas](https://console.cloud.google.com/quotas?project=_&_ga=2.235260417.1668688079.1605011002-1707252573.1593074600)
