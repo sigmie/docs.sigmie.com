@@ -3,14 +3,16 @@
     "short_name": "Sigmie docs",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "manifest-icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable any"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "manifest-icon-512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable any"
         }
     ],
     "theme_color": "#ffffff",
