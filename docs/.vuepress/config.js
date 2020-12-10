@@ -12,10 +12,10 @@ module.exports = {
     head:
         [
 
-            ['link', { rel: 'icon', href: '/logo.png' }],
-            ['link', { rel: 'mask-icon', href: '/logo.png', color: '#3eaf7c' }],
+            ['link', { rel: 'icon', href: '/logo-elevated.svg' }],
+            ['link', { rel: 'mask-icon', href: '/logo-elevated.svg', color: '#3eaf7c' }],
             ['link', { rel: 'manifest', href: '/manifest.json' }],
-            ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+            ['meta', { name: 'theme-color', content: '#202327' }],
 
             ['meta', { name: 'msapplication-TileImage', content: '/manifest-icon-192.png' }],
             ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
@@ -24,7 +24,7 @@ module.exports = {
 
             ['link', { rel: 'apple-touch-icon', href: '/apple-icon-180.png' }],
             ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-            ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#3eaf7c' }],
+            ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#202327' }],
 
             ['link', { rel: 'apple-touch-startup-image', href: '/apple-splash-2732-2048.jpg', media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)' }],
             ['link', { rel: 'apple-touch-startup-image', href: '/apple-splash-2388-1668.jpg', media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)' }],
