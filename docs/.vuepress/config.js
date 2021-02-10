@@ -16,6 +16,7 @@ module.exports = {
             ['link', { rel: 'mask-icon', href: '/logo-elevated.svg', color: '#3eaf7c' }],
             ['link', { rel: 'manifest', href: '/manifest.json' }],
             ['meta', { name: 'theme-color', content: '#202327' }],
+            ['meta', { name: 'viewport', content: 'initial-scale=1, viewport-fit=cover, user-scalable=no' }],
 
             ['meta', { name: 'msapplication-TileImage', content: '/manifest-icon-192.png' }],
             ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],

@@ -69,21 +69,21 @@ The `basic` format key will get an HTML input like:
 and output it like:
 ```php
 [
-    [
+    {
         'content' => 'Some text',
         'hierarchy' => [
             1 => 'Some title'
         ],
         'url' => 'https://example.com'
-    ],
-    [
+    {,
+    {
         'content' => 'Some other text',
         'hierarchy' => [
             1 => 'Some title',
             2 => 'Some other title'
         ],
         'url' => 'https://example.com'
-    ],
+    },
 ];
 ```
 
