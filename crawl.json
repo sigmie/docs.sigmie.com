@@ -5,6 +5,6 @@
         "format": "json",
         "path": "/mnt/content.json"
     },
-    "navigation_selector": ".sidebar-links",
+    "navigation_selector": ".sidebar",
     "content_selector": ".content__default"
 }
