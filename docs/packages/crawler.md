@@ -31,12 +31,12 @@ $ vendor/bin/sigmie-crawl /path/to/your/config.json
 The Crawler is packaged as a Docker image and can be used like bellow
 
 ```bash
-$ docker run -v $PWD:/mnt docker.pkg.github.com/sigmie/crawler/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
+$ docker run -v $PWD:/mnt ghcr.io/sigmie/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
 ```
 
 You can run the docker image without any arguments to see all the available commands.
 ```bash
-$ docker run -t docker.pkg.github.com/sigmie/crawler/crawler:latest
+$ docker run -t ghcr.io/sigmie/crawler:latest
 ```
 
 ## Config
@@ -109,11 +109,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Authenticate docker
-        run: docker login docker.pkg.github.com --username nicoorfi --password ${{ secrets.GITHUB_TOKEN }}
-
       - name: Crawl docs page 
-        run: docker run -v $PWD:/mnt docker.pkg.github.com/sigmie/crawler/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
+        run: docker run -v $PWD:/mnt ghcr.io/sigmie/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
 
       - name: Deploy
         uses: exuanbo/actions-deploy-gist@v1.0.3

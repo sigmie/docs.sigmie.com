@@ -24,7 +24,7 @@ jobs:
 
       - name: Crawl docs page 
         run: |
-            docker run -v $PWD:/mnt docker.pkg.github.com/sigmie/crawler/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
+            docker run -v $PWD:/mnt  ghcr.io/sigmie/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
 
       - name: Deploy
         uses: exuanbo/actions-deploy-gist@v1.0.3
