@@ -142,3 +142,13 @@ chain([
 
 })->proceed();
 ```
+
+### Catching
+You can catch the exceptions thrown in you operations like below:
+```php
+operation(new UpgradeSoftware)
+    ->catch(function (Throwable $e) {
+        // Handle failure
+    })
+    ->proceed();
+```

@@ -125,7 +125,7 @@ export default {
       const options = {
         method: "POST",
         headers: {
-          Authorization: "Bearer 5|GohDxes08aqgiBMSTvowZawljLZSoQUZuqF78xU7",
+          Authorization: "Bearer 3|xiw4ef7xIcEiRW4bPgERwQAuYI9tWsIQqNW9ISir",
           "Content-Type": "application/json",
         },
         data: {
