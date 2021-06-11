@@ -73,13 +73,14 @@ module.exports = {
                     children: prefix("sigmie", [
                         "getting-started.md",
                         "indices.md",
+                        "settings.md",
                         "document.md",
                         "cli.md",
+                        "testing.md",
                         // "http.md",
                         // "mappings.md",
                         // "search.md",
                         // "support.md",
-                        // "testing.md",
                     ])
                 },
                 {

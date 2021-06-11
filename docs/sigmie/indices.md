@@ -49,6 +49,30 @@ $blueprint->text('description')->unstructuredText($analyzer);
 ### Dynamic Mapping
 ### Index Blueprint
 ## Tokenization 
+## Update
+```php
+$index->update(function (Update $update) {
+
+    $update->replicas(2)->shards(2);
+
+    return $update;
+});
+```
+
+```php
+$updatedIndex = $index->update(function (Update $update) {
+
+    $update->mappings(function (Blueprint $blueprint) {
+        $blueprint->date('created_at');
+        $blueprint->number('count')->float();
+
+        return $blueprint;
+    });
+
+    return $update;
+});
+```
+
 ## Stemming
 ```php
 $sigmie->newIndex('foo')
