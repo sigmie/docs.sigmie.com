@@ -77,7 +77,7 @@ module.exports = {
                         "document.md",
                         "cli.md",
                         "testing.md",
-                        // "http.md",
+                        "char-filter.md",
                         // "mappings.md",
                         // "search.md",
                         // "support.md",
