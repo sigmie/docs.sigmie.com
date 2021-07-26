@@ -72,12 +72,15 @@ module.exports = {
                     sidebarDepth: 0,
                     children: prefix("sigmie", [
                         "getting-started.md",
-                        // "cli.md",
-                        // "http.md",
+                        "indices.md",
+                        "settings.md",
+                        "document.md",
+                        "cli.md",
+                        "testing.md",
+                        "char-filter.md",
                         // "mappings.md",
                         // "search.md",
                         // "support.md",
-                        // "testing.md",
                     ])
                 },
                 {
