@@ -3,21 +3,21 @@
 [[toc]]
 
 ## Intoduction 
-## Timestamps
+<!-- ## Timestamps
 ## Inserting and Updating
 ### Insert
-### Update
-```
+### Update -->
+```php
 $document = $index->get(1);
 
 $document->title = 'Awesome Blog Post';
 
 $document->save();
 ```
-### Upsert
+<!-- ### Upsert
 ## Deleting
 ## Querying
 ## Index
 ## Mapping
 ## Collection
-## Events
+## Events -->

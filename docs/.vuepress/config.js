@@ -71,25 +71,25 @@ module.exports = {
                     collapsable: false,
                     sidebarDepth: 0,
                     children: prefix("sigmie", [
-                        "getting-started.md",
+                        // "getting-started.md",
                         "indices.md",
+                        "mappings.md",
                         "settings.md",
-                        "document.md",
-                        "cli.md",
-                        "testing.md",
+                        // "document.md",
+                        // "cli.md",
+                        // "testing.md",
                         "char-filter.md",
-                        // "mappings.md",
                         // "search.md",
                         // "support.md",
                     ])
                 },
-                {
-                    title: 'Application',
-                    path: '/app',
-                    collapsable: false,
-                    sidebarDepth: 0,
-                    children: prefix("app", ["proxy.md", "google.md"])
-                },
+                // {
+                //     title: 'Application',
+                //     path: '/app',
+                //     collapsable: false,
+                //     sidebarDepth: 0,
+                //     children: prefix("app", ["proxy.md", "google.md"])
+                // },
                 {
                     title: 'Packages',
                     path: '/packages',

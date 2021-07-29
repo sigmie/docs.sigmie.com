@@ -10,7 +10,7 @@ most important factor for the results returned by your Elasticsearch.
 
 Sigmie is reducing the complexity of the index configuration with a user friendly syntax.
 
-## Indices
+## Creating an Index
 To start with Elasticsesarch you will need to create an index.
 By calling `newIndex` you will recieve an instace of the `IndexBuilder` class which will provide some convinient syntax for creating an index for your.
 
@@ -24,34 +24,27 @@ $index = $sigmie->newIndex('posts')
 
 This will create an index with the **alias** `posts`. 
 
-::: Index Name
+::: tip Index name
 Your index name will be the current timestamp prefixed with the index
-alias. For example if you create the index on **2020-01-01 23:59:59** the index
+alias. For example if you create a `posts` index on **2020-01-01 23:59:59** the index
 name will be `posts_20200101235959000000`.
 :::
 
-## Mapping
+### Defining Mappings
 
 When creating a production index it's adviced to define your field mappings. You can you so
 by calling the `mappings` method and passing a blueprint `Closure` to it.
 ```php
 use Sigmie\Base\Index\Blueprint;
 
-$sigmie->newIndex('posts')
-       ->mappings(function (Blueprint $blueprint) {
+$builder->mappings(function (Blueprint $blueprint) {
 
            $blueprint->text('title')->searchAsYouType();
-           $blueprint->text('description')->unstructuredText();
 
-           $blueprint->number('views')->integer();
-           $blueprint->number('value_per_view')->float();
-
-           $blueprint->date('publish_date');
-           $blueprint->bool('active');
+            // ...
 
            return $blueprint;
-       })
-       ->create();
+       });
 ```
 
 ::: warning
@@ -67,30 +60,55 @@ $analyzer = new DescriptionAnalyzer();
 
 $blueprint->text('description')->unstructuredText($analyzer);
 ```
-## Tokenization 
+
+### Adding filters
+When using Elasticsearch as a Search Engine you will probably want to declare stopwords, synonyms etc. The `IndexBuilder` provides also methods for those cases.
+
+#### Stemming
+You can specify custom stemming rules by calling the `stemming` method:
+```php
+$builder->stemming([
+           'am'=> ['be', 'are'],
+       ]);
+```
+In the example above the words `be` and `are` will be stemmed to the word `am`.
+
+#### Stopwords
+
+Additionaly you can specify which words should be ignored during a search execution using
+the `stopwords` method.
+
+```php
+$builder->stopwords([
+            'about', 'after', 'again'
+        ]);
+```
+Now when searching the words `about`, `after` and `again` will be ignored by Elasticsearch.
+
+### Tokenization 
 Tokenization is called the process where Elasticsearch takes a text field and splits it's terms
 into tokens.
 
 When creating an index you can instruct Elasticsearch how to split the text fields by specifing a tokenizer.
 The `IndexBuilder` class provider helpers for 3 types of tokenizers.
-### Whitespaces
+#### Whitespaces
 To tokenizer on whitespaces use:
 ```php
 $builder->tokenizeOn()->whiteSpaces();
 ```
-### Word Boundaries
+#### Word Boundaries
 To tokenizer on [word boundaries]() use:
 ```php
 $builder->tokenizeOn()->wordBoundaries();
 ```
 
-### Pattern
+#### Pattern
 To tokenizer on a regex pattern use:
 ```php
 $builder->tokenizeOn()->pattern('/[-_]/');
 ```
 
-## Update
+## Updating an aliased index
 ```php
 $index->update(function (Update $update) {
 
@@ -113,28 +131,3 @@ $updatedIndex = $index->update(function (Update $update) {
     return $update;
 });
 ```
-
-
-## Filters
-When using Elasticsearch as a Search Engine you will probably want to declare stopwords, synonyms etc. The `IndexBuilder` provides also methods for those cases.
-
-### Stemming
-You can specify custom stemming rules by calling the `stemming` method:
-```php
-$builder->stemming([
-           'am'=> ['be', 'are'],
-       ]);
-```
-In the example above the words `be` and `are` will be stemmed to the word `am`.
-
-### Stopwords
-
-Additionaly you can specify which words should be ignored during a search execution using
-the `stopwords` method.
-
-```php
-$builder->stopwords([
-            'about', 'after', 'again'
-        ]);
-```
-Now when searching the words `about`, `after` and `again` will be ignored by Elasticsearch.

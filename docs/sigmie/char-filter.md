@@ -1,4 +1,4 @@
-# Char Filters
+# Char filters
 
 [[toc]]
 
@@ -8,8 +8,6 @@
 a text and transform it.
 
 For example the [Strip HTML](./char-filter#strip-html) will take the text input
-
-## Strip HTML
 
 ```html
 <h1>
@@ -21,8 +19,6 @@ and output it like
 ```text
 This is an awesome site.
 ```
-
-## Mapping
 
 ## Pattern
 
