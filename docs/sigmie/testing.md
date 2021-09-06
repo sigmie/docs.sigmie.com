@@ -36,40 +36,69 @@ class ExampleTest extends TestCase
 
     public function test_foo())
     {
-        // ...
+        $this->sigmie->newIndex('foo')
+            ->withoutMappings()
+            ->unique(name: 'unique_filter', onlyOnSamePosition: true)
+            ->create();
 
-        $this->assertAnalyzerExists(index:'sigmie', analyzer:'default');
-
-        $this->assertCharFilterExists(index:'sigmie', charFilter:'emoji_mapping');
-
+        $this->assertIndex('foo', function (Assert $index) {
+            $index->assertFilterExists('unique_filter');
+        });
     }
 }
 ```
 
-## Traits
-```php
-<?php
+## Paratest
+If you are using [paratestphp/paratest](https://github.com/paratestphp/paratest) you can use the
+`Sigmie\Testing\ParallelRunner` to avoid collisions between your processes.
 
-namespace Tests\Feature;
+Required is that you have a multiple number of Elasticsearch servers running. **One for each process**.
+The parallel runner will append **TEST_TOKEN** environment variable at the **ES_HOST** variable for each process.
 
-use Sigmie\Testing;
-use \PHPUnit\Framework\TestCase;
+For example let's say that that you are using `docker-compose` to run your application localy. In order to run
+parallel testing with 2 processes you need to have 2 Elasticsearch containers, 1 for each process.
 
-class ExampleTest extends TestCase
-{
-    use Testing;
+Your `docker-compose.yml` would be
 
-    public function test_example()
-    {
-        // ...
-    }
-}
+```yml
+  es_test_1:
+    container_name: es_test_1
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:latest
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  es_test_2:
+    container_name: es_test_2
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:latest
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+```
+
+And your `phpunit.xml`
+
+```xml
+<php>
+    <server name="ES_HOST" value="es_test"/>
+    <server name="ES_PORT" value="9200"/>
+</php>
+```
+
+Then you can run your tests in parallel by using the following command:
+
+```sh
+$ vendor/bin/paratest --runner 'Sigmie\Testing\ParallelRunner' -p 2
 ```
 
 ## Connection
+You can define your Elasticsearch host and port in your `phpunit.xml`.
 ```xml
 <php>
-    <env name="ES_HOST" value="elasticsearch:9200"/>
+    <server name="ES_HOST" value="localhost"/>
+    <server name="ES_PORT" value="9200"/>
 </php>
 ```
 

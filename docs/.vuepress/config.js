@@ -77,7 +77,7 @@ module.exports = {
                         "settings.md",
                         // "document.md",
                         // "cli.md",
-                        // "testing.md",
+                        "testing.md",
                         "char-filter.md",
                         // "search.md",
                         // "support.md",
