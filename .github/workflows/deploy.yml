@@ -18,7 +18,7 @@ jobs:
           cmd: install 
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: docs:build 
+          cmd: build 
 
       - name: Go into dist folder 
         run: |
