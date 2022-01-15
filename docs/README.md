@@ -1,5 +1,5 @@
 ---
-home: true
+home: false
 heroImage: /logo.png
 heroText: Sigmie 
 tagline: Utilities for Elasticsearch as a Search-Engine

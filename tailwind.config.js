@@ -27,6 +27,19 @@ module.exports = {
         'theme-orange-dark-800': '#33140e',
         'theme-orange-dark-900': '#190a07',
 
+        'theme-accent': {
+            100: '#FAFAFA',
+            200: '#EAEAEA',
+            300: '#999',
+            400: '#888',
+            500: '#666',
+            600: '#444',
+            700: '#333',
+            800: '#111',
+            900: '#000',
+        },
+
+
         // purple
         'theme-secondary': '#2f2f41',
         'theme-secondary-lighter': '#403C56',

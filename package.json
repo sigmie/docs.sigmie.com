@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "start": "nodemon --ext md,vue,js --watch .vuepress --watch . --exec vuepress dev doc"
   },
   "devDependencies": {

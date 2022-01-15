@@ -3,6 +3,7 @@ body
   font-weight: 400;
   font-style: normal;
   -webkit-tap-highlight-color: transparent;
+  @apply antialiased font-normal
 
 #search
   background-color: #282a2d
@@ -12,27 +13,19 @@ body
 .site-name
   display: none !important
 
+.sidebar 
+    @apply bg-theme-accent-100 border-theme-accent-200 !important
+
 .navbar
     border-bottom: 2px #FF6347 solid;
-    background-color: #202327
-
-.navbar .links
-      background-color: #202327 !important
-      color: #A3A3A3
-
-.navbar .links:hover
-      background-color: #202327 !important
-      color: #e2e8f0
+    @apply bg-black 
 
 .nav-link
-   color: #cbd5e0 !important
-  .icon.outbound
-    color: #cbd5e0 !important
+   @apply text-white !important
 
-.nav-link:hover
-  color: #a0aec0 !important
-  .icon
-   color: #a0aec0 !important
+.nav-link .outbound
+   @apply text-white !important
+
 
 .custom-block
     border-radius: 5px;
