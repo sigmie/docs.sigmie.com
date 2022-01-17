@@ -68,7 +68,7 @@ function renderLink(h, to, text, active, level) {
     },
     class: {
       active,
-      "px-6 py-1 my-2 text-base relative rounded-none block text-black font-normal": true,
+      "block border-l border-theme-accent-200 pl-4 -ml-px text-gray-700 text-sm border-current font-light": true,
     },
   };
 
@@ -115,6 +115,6 @@ function renderExternal(h, to, text) {
 </script>
 <style lang="stylus" scoped>
 .active {
-  @apply: px-5 text-black border-l-2 font-medium border-l-2 bg-white border-theme-orange-light-800 !important;
+  @apply: border-black text-black font-normal!important;
 }
 </style>

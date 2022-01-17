@@ -123,6 +123,21 @@ Inside the `execute` method of the **Operation** instances you can directly reje
 without any verification if something is wrong.
 :::
 
+::: danger Early reject
+Inside the `execute` method of the **Operation** instances you can directly reject the operation
+without any verification if something is wrong.
+:::
+
+::: warning Early reject
+Inside the `execute` method of the **Operation** instances you can directly reject the operation
+without any verification if something is wrong.
+:::
+
+::: details Early reject
+Inside the `execute` method of the **Operation** instances you can directly reject the operation
+without any verification if something is wrong.
+:::
+
 ### Chain
 
 The `chain` function allow you to chain multiple operation together. This is useful when you have multiple steps for

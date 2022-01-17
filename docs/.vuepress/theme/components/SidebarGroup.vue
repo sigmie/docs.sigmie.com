@@ -11,7 +11,7 @@
   >
     <RouterLink
       v-if="item.path"
-      class="mb-3 lg:mb-1 uppercase tracking-wider font-bold text-sm lg:text-sm text-black"
+      class="mb-2 uppercase tracking-wider font-semibold text-xs lg:text-sm text-theme-accent-700"
       :class="{
         open,
         active: isActive($route, item.path),

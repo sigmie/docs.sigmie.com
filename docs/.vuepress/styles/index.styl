@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body
-  font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-tap-highlight-color: transparent;
-  @apply antialiased font-normal
+  @apply antialiased
+
+code
+  font-family: source-code-pro, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: 300 !important;
+  line-height: 1.9 !important;
 
 #search
   background-color: #282a2d
@@ -14,7 +22,7 @@ body
   display: none !important
 
 .sidebar 
-    @apply bg-theme-accent-100 border-theme-accent-200 !important
+    @apply bg-white border-theme-accent-200 !important
 
 .navbar
     border-bottom: 2px #FF6347 solid;
@@ -28,34 +36,42 @@ body
 
 
 .custom-block
-    border-radius: 5px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    border: 0px solid !important;
+    @apply rounded-md shadow-none border bg-white !important
+
+    & .custom-block-title
+      @apply text-black font-medium !important
+
+    & summary 
+      @apply text-black font-medium !important
+
 
   &.tip
-     border-color: #48bb78!important
-     background-color: #f0fff4!important
+    @apply border-green-500 !important
+    & .custom-block-title
+      @apply text-black !important
 
   &.danger
-     border-color: #f56565!important
-     .custom-block-title
-         color: red
+    @apply border-red-500 !important
 
   &.warning
-     border-color: #ecc94b!important
+    @apply border-yellow-500 !important
 
   &.details
-      background-color: #f7fafc!important
+    @apply border-theme-accent-300 !important
 
 .header-anchor
     color: #a0aec0
 
+.prev,.next
+ @apply text-black font-light text-sm
+ a
+  @apply text-black font-light text-sm
+
 a
- color: #2d3748
+ @apply font-normal
 
 a:hover
- color: #4a5568
- text-decoration: none !important
+ @apply no-underline text-theme-accent-500  !important
 
 .table-of-contents a:before
     content: "# ";
@@ -74,7 +90,7 @@ a:hover
 .home .feature
      @apply pb-4 !important;
    h2
-     @apply pb-2 !important;
+     @apply border-none pb-2 !important;
 
 div.table-of-contents  ul > li:before
    content: none;
@@ -83,25 +99,76 @@ div.table-of-contents  ul > li:before
   @apply text-theme-orange-light-800
 
 .header-anchor
-  color: #fe7962 !important;
+  @apply text-theme-orange-light-800 opacity-100 !important
 
 div.table-of-contents > ul:first-child > li > a
   @apply text-black no-underline
 
 div.table-of-contents > ul > li > ul > li > a
-  @apply text-gray-700 no-underline
+  @apply text-gray-800 no-underline
+
+
+.prose h1
+  @apply font-semibold!important
+
+.prose h2,h3,h4,h5,h6
+  @apply font-medium !important
+
 
 .prose ul > li::before
   @apply bg-theme-orange-light-600 !important;
 
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+    content: "" !important;
+  }
+  .prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "" !important;
+  }
+
 p > code 
-  @apply text-theme-orange-light-800 !important;
+  @apply bg-gray-100 p-1 rounded-md font-semibold text-theme-orange-light-800 !important;
 
 div.prose > div.custom-block > * > a
-     @apply underline text-gray-800 !important;
+     @apply underline text-black !important;
 
 div.prose > *:not(.table-of-contents) a
      @apply text-theme-orange-light-800 no-underline !important;
+
+pre > code > .token.function
+  @apply text-black !important;
+
+pre > code > .token.variable
+  @apply text-black !important;
+
+pre > code > .token.package
+  @apply text-black !important;
+
+pre > code > .token.punctuation
+  @apply text-black !important;
+
+pre > code > .token.property
+  @apply text-black !important;
+
+pre > code > .token.class-name
+  @apply text-black !important;
+
+pre > code > span > .token.class-name 
+  @apply text-black !important;
+
+pre > code > span > .token.function 
+  @apply text-black !important;
+
+pre > code > span > .token.punctuation
+  @apply text-black !important;
+
+pre > code > span > .token.property
+  @apply text-black !important;
+
+pre > code > span > .token.variable
+  @apply text-black !important;
+
+pre > code 
+  @apply text-black !important;
 
 pre
  font-family: source-code-pro,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace !important

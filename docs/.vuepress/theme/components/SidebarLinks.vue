@@ -1,7 +1,10 @@
 <template>
   <div class="w-56">
-    <ul v-if="items.length" class="mx-auto">
-      <li v-for="(item, i) in items" :key="i" class="my-1">
+    <ul
+      v-if="items.length"
+      class="mx-auto"
+    >
+      <li v-for="(item, i) in items" :key="i">
         <SidebarGroup
           v-if="item.type === 'group'"
           :item="item"

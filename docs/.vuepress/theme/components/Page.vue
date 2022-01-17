@@ -2,7 +2,7 @@
   <main class="page pb-10">
     <slot name="top" />
 
-    <Content class="prose mx-auto pt-24 px-10" />
+    <Content class="prose prose-slate font-light prose-md text-black mx-auto pt-24 px-10" />
 
     <PageEdit />
 

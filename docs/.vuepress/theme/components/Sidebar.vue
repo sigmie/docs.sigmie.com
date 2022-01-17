@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar shadow-2xl md:shadow-none md:w-1/3">
+  <aside class="sidebar shadow-none md:w-1/3">
     <slot name="top" />
 
     <SidebarLinks :depth="0" :items="items" />
