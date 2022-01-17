@@ -83,20 +83,30 @@ module.exports = {
                         // "support.md",
                     ])
                 },
+                {
+                    title: 'Application',
+                    // path: '/app',
+                    collapsable: true,
+                    sidebarDepth: 2,
+                    // children: prefix("app", ["settings/billing.md","account.md","team.md"])
+                    children: [
+                        {
+                            title: 'Settings',
+                            path: '/app/settings',
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: prefix("app/settings", ["account.md","billing.md","team.md"])
+                        }
+
+                    ]
+                },
                 // {
-                //     title: 'Application',
-                //     path: '/app',
+                //     title: 'Packages',
+                //     path: '/packages',
                 //     collapsable: false,
                 //     sidebarDepth: 0,
-                //     children: prefix("app", ["proxy.md", "google.md"])
-                // },
-                {
-                    title: 'Packages',
-                    path: '/packages',
-                    collapsable: false,
-                    sidebarDepth: 0,
-                    children: prefix("packages", ["crawler.md", "polledops.md"])
-                }
+                //     children: prefix("packages", ["crawler.md", "polledops.md"])
+                // }
             ],
         },
     },

@@ -11,7 +11,15 @@
   >
     <RouterLink
       v-if="item.path"
-      class="mb-2 uppercase tracking-wider font-semibold text-xs lg:text-sm text-theme-accent-700"
+      class="
+        mb-2
+        uppercase
+        tracking-wider
+        font-semibold
+        text-xs
+        lg:text-sm
+        text-theme-accent-700
+      "
       :class="{
         open,
         active: isActive($route, item.path),
@@ -21,7 +29,7 @@
     >
       <span>{{ item.title }}</span>
 
-      <!-- <span v-if="open">
+      <span v-if="open && collapsable">
         <svg
           class="h-3 relative inline-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +46,7 @@
         </svg>
       </span>
 
-      <span v-else>
+      <span v-else-if="collapsable">
         <svg
           class="h-3 relative inline-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,17 +61,58 @@
             d="M9 5l7 7-7 7"
           />
         </svg>
-      </span> -->
+      </span>
     </RouterLink>
 
     <p
       v-else
-      class="sidebar-heading"
+      class="
+        mb-2
+        cursor-pointer
+        uppercase
+        tracking-wider
+        font-semibold
+        text-xs
+        lg:text-sm
+        text-theme-accent-700
+      "
       :class="{ open }"
       @click="$emit('toggle')"
     >
       <span>{{ item.title }}</span>
-      <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-if="open && collapsable">
+        <svg
+          class="h-3 relative inline-block"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            stroke-width="3"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </span>
+
+      <span v-else-if="collapsable">
+        <svg
+          class="h-3 relative inline-block"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </span>
     </p>
 
     <DropdownTransition>
@@ -94,7 +143,8 @@ export default {
 
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate() {
-    this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
+    this.$options.components.SidebarLinks =
+      require("@theme/components/SidebarLinks.vue").default;
   },
 
   methods: { isActive },
