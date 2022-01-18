@@ -95,7 +95,7 @@ module.exports = {
                             path: '/app/settings',
                             collapsable: false,
                             sidebarDepth: 0,
-                            children: prefix("app/settings", ["account.md","billing.md","team.md"])
+                            children: prefix("app/settings", ["account.md","projects.md","billing.md","team.md"])
                         }
 
                     ]

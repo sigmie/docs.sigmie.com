@@ -68,7 +68,7 @@ function renderLink(h, to, text, active, level) {
     },
     class: {
       active,
-      "block border-l border-theme-accent-200 pl-4 -ml-px text-gray-700 text-sm border-current font-light": true,
+      "block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light": true,
     },
   };
 
