@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Polled Operations | Sigmie</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo-elevated.svg">
+    <link rel="mask-icon" href="/logo-elevated.svg" color="#3eaf7c">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-icon" href="/apple-icon-180.png">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <meta name="description" content="Sigmie Documentation">
+    <meta name="theme-color" content="#202327">
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="msapplication-TileImage" content="/manifest-icon-192.png">
+    <meta name="msapplication-TileColor" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#202327">
+    
+    <link rel="preload" href="/assets/css/0.styles.8e77433c.css" as="style"><link rel="preload" href="/assets/js/app.dce75e2d.js" as="script"><link rel="preload" href="/assets/js/2.c850045f.js" as="script"><link rel="preload" href="/assets/js/3.be28be7f.js" as="script"><link rel="preload" href="/assets/js/20.322bab29.js" as="script"><link rel="prefetch" href="/assets/js/10.8b6f59c3.js"><link rel="prefetch" href="/assets/js/11.488bae60.js"><link rel="prefetch" href="/assets/js/12.969ff11c.js"><link rel="prefetch" href="/assets/js/13.9436981a.js"><link rel="prefetch" href="/assets/js/14.f054b87f.js"><link rel="prefetch" href="/assets/js/15.643ae9db.js"><link rel="prefetch" href="/assets/js/16.03539845.js"><link rel="prefetch" href="/assets/js/17.cbe4ba86.js"><link rel="prefetch" href="/assets/js/18.7f06b235.js"><link rel="prefetch" href="/assets/js/19.fbb1bc67.js"><link rel="prefetch" href="/assets/js/21.98bb3687.js"><link rel="prefetch" href="/assets/js/22.5715ff0e.js"><link rel="prefetch" href="/assets/js/23.d790df30.js"><link rel="prefetch" href="/assets/js/24.34cd6576.js"><link rel="prefetch" href="/assets/js/25.b79c5cba.js"><link rel="prefetch" href="/assets/js/26.148f1f6c.js"><link rel="prefetch" href="/assets/js/27.67897213.js"><link rel="prefetch" href="/assets/js/28.3301f05b.js"><link rel="prefetch" href="/assets/js/29.17fe05ba.js"><link rel="prefetch" href="/assets/js/30.2ea0a2ec.js"><link rel="prefetch" href="/assets/js/31.f29f8c35.js"><link rel="prefetch" href="/assets/js/32.32209415.js"><link rel="prefetch" href="/assets/js/33.d654d334.js"><link rel="prefetch" href="/assets/js/34.3fcea545.js"><link rel="prefetch" href="/assets/js/35.00e73ff4.js"><link rel="prefetch" href="/assets/js/36.58e4ba8e.js"><link rel="prefetch" href="/assets/js/4.b588f8c0.js"><link rel="prefetch" href="/assets/js/5.ea811525.js"><link rel="prefetch" href="/assets/js/6.76bbe094.js"><link rel="prefetch" href="/assets/js/7.11df746f.js"><link rel="prefetch" href="/assets/js/8.5f4880f2.js"><link rel="prefetch" href="/assets/js/9.d21a1125.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8e77433c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.svg" alt="Sigmie" class="logo hidden md:inline-block"> <span class="site-name md:display-none can-hide">Sigmie</span></a> <div class="inline-block"><div data-v-1374fd0a><div class="ml-0 md:ml-20 w-full md:w-56" data-v-1374fd0a><div class="relative rounded-md shadow-sm" data-v-1374fd0a><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" data-v-1374fd0a><svg width="15px" height="15px" viewBox="0 0 20 20" class="text-gray-400" data-v-1374fd0a><g fill="currentColor" fill-rule="nonzero" data-v-1374fd0a><path d="M14.32,12.9 L19.71,18.3 C20.0471653,18.6991459 20.0202154,19.290578 19.6481468,19.6574061 C19.2760783,20.0242342 18.6843235,20.0427927 18.29,19.7 L12.91,14.32 C9.57396751,16.9114945 4.79796777,16.4625999 2.00324212,13.2948775 C-0.791483525,10.1271551 -0.641657117,5.3324464 2.34539464,2.34539464 C5.3324464,-0.641657117 10.1271551,-0.791483525 13.2948775,2.00324212 C16.4625999,4.79796777 16.9114945,9.57396751 14.32,12.91 L14.32,12.9 Z M8,14 C11.3137085,14 14,11.3137085 14,8 C14,4.6862915 11.3137085,2 8,2 C4.6862915,2 2,4.6862915 2,8 C2,11.3137085 4.6862915,14 8,14 Z" data-v-1374fd0a></path></g></svg></div> <input placeholder="Search..." type="text" name="sigmie" id="search" value="" class="rounded-full w-full text-white pl-10 h-8 pr-2 placeholder-gray-500" data-v-1374fd0a> <!----></div></div> <div id="overlay" class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-1 py-4 sm:py-8 sm:px-4 pb-6 delay-75 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-all inset-0 ease-in duration-300 opacity-0 invisible" data-v-1374fd0a><div class="flex rounded-lg overflow-x-hidden bg-white shadow-lg max-w-xl max-h-full mx-auto" data-v-1374fd0a><div class="bg-white-100 rounded-lg max-h-full" data-v-1374fd0a><div class="px-10 py-5" data-v-1374fd0a><div data-v-1374fd0a><div class="text-center" data-v-1374fd0a><h3 id="modal-headline" class="text-lg leading-6 font-medium text-gray-900" data-v-1374fd0a>
+                No results to show for &quot;&quot;
+              </h3> <div class="mt-2" data-v-1374fd0a><p class="text-sm leading-5 text-gray-500" data-v-1374fd0a>
+                  We couldn't find what you're looking for
+                </p></div></div></div></div></div></div></div></div> <div class="links"><img src="/assets/img/logo-mobile.svg" alt="Sigmie" class="logo md:hidden mr-0"> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://app.sigmie.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Application
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/sigmie" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar shadow-none md:w-1/3"> <div class="w-56"><ul class="mx-auto"><li><section class="sidebar-group depth-0"><a href="/sigmie" class="
+      mb-2
+      uppercase
+      tracking-wider
+      font-semibold
+      text-xs
+      lg:text-sm
+      text-theme-accent-700
+     open"><span>Sigmie</span> <!----></a> <div class="w-56 mt-4"><ul class="mx-auto"><li><a href="/sigmie/indices.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Index</a></li><li><a href="/sigmie/mappings.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Mapping</a></li><li><a href="/sigmie/settings.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Settings</a></li><li><a href="/sigmie/testing.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Testing</a></li><li><a href="/sigmie/char-filter.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Char filters</a></li></ul></div></section></li><li><section class="sidebar-group collapsable depth-0"><p class="
+      mb-2
+      cursor-pointer
+      uppercase
+      tracking-wider
+      font-semibold
+      text-xs
+      lg:text-sm
+      text-theme-accent-700
+    "><span>Application</span> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-3 relative inline-block"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span></p> <!----></section></li></ul></div> </aside> <main class="page pb-10"> <div class="prose prose-slate font-light prose-md text-black mx-auto pt-24 px-10 content__default"><h1 id="polled-operations"><a href="#polled-operations" class="header-anchor">#</a> Polled Operations</h1> <p></p><div class="table-of-contents"><ul><li><a href="#installation">Installation</a></li><li><a href="#basic-usage">Basic usage</a><ul><li><a href="#insist">Insist</a></li><li><a href="#operation">Operation</a></li><li><a href="#chain">Chain</a></li><li><a href="#catching">Catching</a></li></ul></li></ul></div>
+Poll-ops is a PHP library created for actions which have delays and therefore
+they need verification that they were successfully complete.<p></p> <h2 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h2> <p>You can install the library via <a href="https://getcomposer.org" target="_blank" rel="noopener noreferrer">Composer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> by running.</p> <div class="language-sh extra-class"><pre class="language-sh"><code> $ <span class="token function">composer</span> require sigmie/poll-ops
+</code></pre></div><h2 id="basic-usage"><a href="#basic-usage" class="header-anchor">#</a> Basic usage</h2> <h3 id="insist"><a href="#insist" class="header-anchor">#</a> Insist</h3> <p>Let's say you want to delete a record over an REST API, and for some reason the operation isn't always successful
+and you want to attempt to delete the record multiple times until the operation succeeds.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token keyword">function</span> <span class="token package">Sigmie<span class="token punctuation">\</span>PollOps<span class="token punctuation">\</span>insist</span><span class="token punctuation">;</span>
+
+<span class="token variable">$deleteCallback</span> <span class="token operator">=</span> <span class="token keyword">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token variable">$apiClient</span><span class="token operator">-&gt;</span><span class="token function">deleteRecord</span><span class="token punctuation">(</span><span class="token variable">$recordId</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">insist</span><span class="token punctuation">(</span><span class="token variable">$deleteCallback</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">tries</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>In the above example the <code>deleteCallback</code> will be called at least <strong>10</strong> times before throwing an <code>Exception</code>. If at any attempt it will return <code>true</code> your code will continue.
+If it returns <code>false</code>, it will sleep and retry until it reaches the maximum amount of attempts.</p> <div class="custom-block tip"><p class="custom-block-title">Retry after time</p> <p>By default the callback will be retried after <strong>3 seconds</strong>.</p></div> <p>In some other cases you may want to delay the operation execution. You can do this be calling
+the <code>delay</code> method on the operation builder and passing the desired amount of second.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token function">insist</span><span class="token punctuation">(</span><span class="token variable">$deleteCallback</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">tries</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Or you may wish to also catch <strong>Exceptions</strong> instead of the task return value.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token function">insist</span><span class="token punctuation">(</span><span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">catchExceptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">tries</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="operation"><a href="#operation" class="header-anchor">#</a> Operation</h3> <p>Operations are tasks that need verification that they were successful. For example if your delete a
+resource in a API and then you try to fetch the resource again in order to verify that the resource isn't available anymore.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token keyword">function</span> <span class="token package">Sigmie<span class="token punctuation">\</span>PollOps<span class="token punctuation">\</span>operation</span><span class="token punctuation">;</span>
+
+<span class="token variable">$resourceDeleted</span> <span class="token operator">=</span> <span class="token keyword">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token variable">$resource</span><span class="token operator">-&gt;</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token function">operation</span><span class="token punctuation">(</span><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token variable">$resource</span><span class="token operator">-&gt;</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">verify</span><span class="token punctuation">(</span><span class="token variable">$resourceDeleted</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle delete failure </span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle delete success </span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">finally</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>In the code above the <code>$resource-&gt;delete()</code> will be called to delete the resource. Afterwards the operation
+will try to verify that the resource doesn't exist anymore. If the <code>$resourceDeleted</code> callback returns <code>false</code> your code
+will stop executing and retry the verification attempt again until it reaches the max amount of verification tries.</p> <p>If all verification attempts return <code>false</code> the <code>catch</code> callback will be called. By default the verification will be attempted <strong>3</strong> times.</p> <p>You can organize big operations into classes by extending the <code>AbstractOperation</code> class.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">Acme</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Sigmie<span class="token punctuation">\</span>PollOps<span class="token punctuation">\</span>AbstractOperation</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">SomeOperation</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractOperation</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">execute</span><span class="token punctuation">(</span><span class="token keyword type-hint">array</span> <span class="token variable">$args</span><span class="token punctuation">,</span> <span class="token class-name class-name-fully-qualified type-declaration"><span class="token punctuation">\</span>Closure</span> <span class="token variable">$resolve</span><span class="token punctuation">,</span> <span class="token class-name class-name-fully-qualified type-declaration"><span class="token punctuation">\</span>Closure</span> <span class="token variable">$reject</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Perform operation</span>
+
+        <span class="token keyword">return</span> <span class="token variable">$resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">verify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">bool</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Is operation result as expected</span>
+
+        <span class="token keyword">return</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">maxAttempts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">int</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">attemptsInterval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">int</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">15</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">exceptionMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">string</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string single-quoted-string">'Operation wasn\'t successful.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre></div><p>You can pass arguments to the <code>execute</code> method of your operation by passing you values to the <code>proceed</code> method of the
+operation builder.</p> <div class="custom-block tip"><p class="custom-block-title">Early reject</p> <p>Inside the <code>execute</code> method of the <strong>Operation</strong> instances you can directly reject the operation
+without any verification if something is wrong.</p></div> <div class="custom-block danger"><p class="custom-block-title">Early reject</p> <p>Inside the <code>execute</code> method of the <strong>Operation</strong> instances you can directly reject the operation
+without any verification if something is wrong.</p></div> <div class="custom-block warning"><p class="custom-block-title">Early reject</p> <p>Inside the <code>execute</code> method of the <strong>Operation</strong> instances you can directly reject the operation
+without any verification if something is wrong.</p></div> <details class="custom-block details"><summary>Early reject</summary> <p>Inside the <code>execute</code> method of the <strong>Operation</strong> instances you can directly reject the operation
+without any verification if something is wrong.</p></details> <h3 id="chain"><a href="#chain" class="header-anchor">#</a> Chain</h3> <p>The <code>chain</code> function allow you to chain multiple operation together. This is useful when you have multiple steps for
+and operation and you need an assurance that the previous step was successfully executed, otherwise you need a <strong>rollback</strong>
+action.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token keyword">function</span> <span class="token package">Sigmie<span class="token punctuation">\</span>PollOps<span class="token punctuation">\</span>chain</span><span class="token punctuation">;</span>
+
+<span class="token function">chain</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">CreateServer</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">OpenSSHPort</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">InstallSoftware</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// Destroy server</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="catching"><a href="#catching" class="header-anchor">#</a> Catching</h3> <p>You can catch the exceptions thrown in you operations like below:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token function">operation</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UpgradeSoftware</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Throwable</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle failure</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">-&gt;</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.dce75e2d.js" defer></script><script src="/assets/js/2.c850045f.js" defer></script><script src="/assets/js/3.be28be7f.js" defer></script><script src="/assets/js/20.322bab29.js" defer></script>
+  </body>
+</html>

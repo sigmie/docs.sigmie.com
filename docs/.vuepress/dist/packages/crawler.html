@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Crawler | Sigmie</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo-elevated.svg">
+    <link rel="mask-icon" href="/logo-elevated.svg" color="#3eaf7c">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-icon" href="/apple-icon-180.png">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <meta name="description" content="Sigmie Documentation">
+    <meta name="theme-color" content="#202327">
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="msapplication-TileImage" content="/manifest-icon-192.png">
+    <meta name="msapplication-TileColor" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#202327">
+    
+    <link rel="preload" href="/assets/css/0.styles.8e77433c.css" as="style"><link rel="preload" href="/assets/js/app.dce75e2d.js" as="script"><link rel="preload" href="/assets/js/2.c850045f.js" as="script"><link rel="preload" href="/assets/js/3.be28be7f.js" as="script"><link rel="preload" href="/assets/js/19.fbb1bc67.js" as="script"><link rel="prefetch" href="/assets/js/10.8b6f59c3.js"><link rel="prefetch" href="/assets/js/11.488bae60.js"><link rel="prefetch" href="/assets/js/12.969ff11c.js"><link rel="prefetch" href="/assets/js/13.9436981a.js"><link rel="prefetch" href="/assets/js/14.f054b87f.js"><link rel="prefetch" href="/assets/js/15.643ae9db.js"><link rel="prefetch" href="/assets/js/16.03539845.js"><link rel="prefetch" href="/assets/js/17.cbe4ba86.js"><link rel="prefetch" href="/assets/js/18.7f06b235.js"><link rel="prefetch" href="/assets/js/20.322bab29.js"><link rel="prefetch" href="/assets/js/21.98bb3687.js"><link rel="prefetch" href="/assets/js/22.5715ff0e.js"><link rel="prefetch" href="/assets/js/23.d790df30.js"><link rel="prefetch" href="/assets/js/24.34cd6576.js"><link rel="prefetch" href="/assets/js/25.b79c5cba.js"><link rel="prefetch" href="/assets/js/26.148f1f6c.js"><link rel="prefetch" href="/assets/js/27.67897213.js"><link rel="prefetch" href="/assets/js/28.3301f05b.js"><link rel="prefetch" href="/assets/js/29.17fe05ba.js"><link rel="prefetch" href="/assets/js/30.2ea0a2ec.js"><link rel="prefetch" href="/assets/js/31.f29f8c35.js"><link rel="prefetch" href="/assets/js/32.32209415.js"><link rel="prefetch" href="/assets/js/33.d654d334.js"><link rel="prefetch" href="/assets/js/34.3fcea545.js"><link rel="prefetch" href="/assets/js/35.00e73ff4.js"><link rel="prefetch" href="/assets/js/36.58e4ba8e.js"><link rel="prefetch" href="/assets/js/4.b588f8c0.js"><link rel="prefetch" href="/assets/js/5.ea811525.js"><link rel="prefetch" href="/assets/js/6.76bbe094.js"><link rel="prefetch" href="/assets/js/7.11df746f.js"><link rel="prefetch" href="/assets/js/8.5f4880f2.js"><link rel="prefetch" href="/assets/js/9.d21a1125.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8e77433c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.svg" alt="Sigmie" class="logo hidden md:inline-block"> <span class="site-name md:display-none can-hide">Sigmie</span></a> <div class="inline-block"><div data-v-1374fd0a><div class="ml-0 md:ml-20 w-full md:w-56" data-v-1374fd0a><div class="relative rounded-md shadow-sm" data-v-1374fd0a><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" data-v-1374fd0a><svg width="15px" height="15px" viewBox="0 0 20 20" class="text-gray-400" data-v-1374fd0a><g fill="currentColor" fill-rule="nonzero" data-v-1374fd0a><path d="M14.32,12.9 L19.71,18.3 C20.0471653,18.6991459 20.0202154,19.290578 19.6481468,19.6574061 C19.2760783,20.0242342 18.6843235,20.0427927 18.29,19.7 L12.91,14.32 C9.57396751,16.9114945 4.79796777,16.4625999 2.00324212,13.2948775 C-0.791483525,10.1271551 -0.641657117,5.3324464 2.34539464,2.34539464 C5.3324464,-0.641657117 10.1271551,-0.791483525 13.2948775,2.00324212 C16.4625999,4.79796777 16.9114945,9.57396751 14.32,12.91 L14.32,12.9 Z M8,14 C11.3137085,14 14,11.3137085 14,8 C14,4.6862915 11.3137085,2 8,2 C4.6862915,2 2,4.6862915 2,8 C2,11.3137085 4.6862915,14 8,14 Z" data-v-1374fd0a></path></g></svg></div> <input placeholder="Search..." type="text" name="sigmie" id="search" value="" class="rounded-full w-full text-white pl-10 h-8 pr-2 placeholder-gray-500" data-v-1374fd0a> <!----></div></div> <div id="overlay" class="fixed bg-black bg-opacity-25 bottom-0 inset-x-0 px-1 py-4 sm:py-8 sm:px-4 pb-6 delay-75 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center transition-all inset-0 ease-in duration-300 opacity-0 invisible" data-v-1374fd0a><div class="flex rounded-lg overflow-x-hidden bg-white shadow-lg max-w-xl max-h-full mx-auto" data-v-1374fd0a><div class="bg-white-100 rounded-lg max-h-full" data-v-1374fd0a><div class="px-10 py-5" data-v-1374fd0a><div data-v-1374fd0a><div class="text-center" data-v-1374fd0a><h3 id="modal-headline" class="text-lg leading-6 font-medium text-gray-900" data-v-1374fd0a>
+                No results to show for &quot;&quot;
+              </h3> <div class="mt-2" data-v-1374fd0a><p class="text-sm leading-5 text-gray-500" data-v-1374fd0a>
+                  We couldn't find what you're looking for
+                </p></div></div></div></div></div></div></div></div> <div class="links"><img src="/assets/img/logo-mobile.svg" alt="Sigmie" class="logo md:hidden mr-0"> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://app.sigmie.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Application
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/sigmie" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar shadow-none md:w-1/3"> <div class="w-56"><ul class="mx-auto"><li><section class="sidebar-group depth-0"><a href="/sigmie" class="
+      mb-2
+      uppercase
+      tracking-wider
+      font-semibold
+      text-xs
+      lg:text-sm
+      text-theme-accent-700
+     open"><span>Sigmie</span> <!----></a> <div class="w-56 mt-4"><ul class="mx-auto"><li><a href="/sigmie/indices.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Index</a></li><li><a href="/sigmie/mappings.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Mapping</a></li><li><a href="/sigmie/settings.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Settings</a></li><li><a href="/sigmie/testing.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Testing</a></li><li><a href="/sigmie/char-filter.html" class="block border-l border-theme-accent-200 pl-4 -ml-px tracking-wide text-gray-700 text-sm border-current font-light">Char filters</a></li></ul></div></section></li><li><section class="sidebar-group collapsable depth-0"><p class="
+      mb-2
+      cursor-pointer
+      uppercase
+      tracking-wider
+      font-semibold
+      text-xs
+      lg:text-sm
+      text-theme-accent-700
+    "><span>Application</span> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-3 relative inline-block"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span></p> <!----></section></li></ul></div> </aside> <main class="page pb-10"> <div class="prose prose-slate font-light prose-md text-black mx-auto pt-24 px-10 content__default"><h1 id="crawler"><a href="#crawler" class="header-anchor">#</a> Crawler</h1> <p></p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#usage">Usage</a><ul><li><a href="#install">Install</a></li><li><a href="#running-the-crawler">Running the crawler</a></li><li><a href="#using-docker">Using Docker</a></li></ul></li><li><a href="#config">Config</a><ul><li><a href="#format">Format</a></li></ul></li><li><a href="#github-action">Github Action</a></li></ul></div><p></p> <h2 id="introduction"><a href="#introduction" class="header-anchor">#</a> Introduction</h2> <p>Sigmie crawler is a library for crawling webpages and extracting their content into a file.</p> <p>The code base of the <strong>Crawler</strong> is open source, and packaged as a Docker image to make it easier to use.</p> <h2 id="usage"><a href="#usage" class="header-anchor">#</a> Usage</h2> <p>The Crawler can be used either within your code base or by using
+packaged docker image.</p> <h3 id="install"><a href="#install" class="header-anchor">#</a> Install</h3> <p>To use the Crawler in your code base install it  via Composer.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">composer</span> require sigmie/crawler
+</code></pre></div><h3 id="running-the-crawler"><a href="#running-the-crawler" class="header-anchor">#</a> Running the crawler</h3> <p>After you have installed the <code>sigmie/crawler</code> as a dependency you can use
+the <code>sigmie-crawl</code> command like:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ vendor/bin/sigmie-crawl /path/to/your/config.json
+</code></pre></div><h3 id="using-docker"><a href="#using-docker" class="header-anchor">#</a> Using Docker</h3> <p>The Crawler is packaged as a Docker image and can be used like bellow</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">docker</span> run -v <span class="token environment constant">$PWD</span>:/mnt ghcr.io/sigmie/crawler:latest sigmie:crawler:crawl /mnt/crawl.json
+</code></pre></div><p>You can run the docker image without any arguments to see all the available commands.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">docker</span> run -t ghcr.io/sigmie/crawler:latest
+</code></pre></div><h2 id="config"><a href="#config" class="header-anchor">#</a> Config</h2> <p>A sample configuration file looks like this:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;start_url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://docs.sigmie.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;basic&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;export&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;json&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/mnt/foo.json&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;navigation_selector&quot;</span><span class="token operator">:</span> <span class="token string">&quot;.navigation-class&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;content_selector&quot;</span><span class="token operator">:</span> <span class="token string">&quot;.content-class&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="format"><a href="#format" class="header-anchor">#</a> Format</h3> <p>The format option in the config tells the Crawler into which structure should scrape the data.</p> <h4 id="basic"><a href="#basic" class="header-anchor">#</a> Basic</h4> <p>The <code>basic</code> format key will get an HTML input like:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Some title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Some text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Some other title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Some other text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>and output it like:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token string single-quoted-string">'content'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'Some text'</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'hierarchy'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+            <span class="token number">1</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'Some title'</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'url'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'https://example.com'</span>
+    <span class="token punctuation">{</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token string single-quoted-string">'content'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'Some other text'</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'hierarchy'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+            <span class="token number">1</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'Some title'</span><span class="token punctuation">,</span>
+            <span class="token number">2</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'Some other title'</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'url'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'https://example.com'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="github-action"><a href="#github-action" class="header-anchor">#</a> Github Action</h2> <p>A example of an <strong>Github Action</strong> which crawls a page and pushes the exported <code>json</code> file to a
+<strong>Github</strong> gist every time a PR is merged.</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> Crawl
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">pull_request</span><span class="token punctuation">:</span>
+    <span class="token key atrule">types</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>closed<span class="token punctuation">]</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> master
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">if</span><span class="token punctuation">:</span> github.event.pull_request.merged
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v1
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Crawl docs page 
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> docker run <span class="token punctuation">-</span>v $PWD<span class="token punctuation">:</span>/mnt ghcr.io/sigmie/crawler<span class="token punctuation">:</span>latest sigmie<span class="token punctuation">:</span>crawler<span class="token punctuation">:</span>crawl /mnt/crawl.json
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> exuanbo/actions<span class="token punctuation">-</span>deploy<span class="token punctuation">-</span>gist@v1.0.3
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">token</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GIST_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">gist_id</span><span class="token punctuation">:</span> e1e70646515e983f9563fbcb174f52ff
+          <span class="token key atrule">gist_file_name</span><span class="token punctuation">:</span> docs.sigmie.content.json
+          <span class="token key atrule">file_path</span><span class="token punctuation">:</span> content.json
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.dce75e2d.js" defer></script><script src="/assets/js/2.c850045f.js" defer></script><script src="/assets/js/3.be28be7f.js" defer></script><script src="/assets/js/19.fbb1bc67.js" defer></script>
+  </body>
+</html>
