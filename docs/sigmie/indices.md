@@ -2,12 +2,6 @@
 
 [[toc]]
 
-# Index
-
-:::tip Examples
-The `curl` examples in this page assume that you have a running Elasticsearch on your local machine at `localhost:9200`. You can check how to set up Elasticsearch to run on your machine easily on [local testing](#) page.
-:::
-
 ## Create an index
 Typically, you will create a lot of indices when working with Elasticsearch and since Elasticsearch indices are immutable, you will have to create a lot of them again and again until they match your needs.
 
@@ -31,7 +25,7 @@ By default, your index will have **1** primary and **2** replica shards, but you
 ## Stopwords
 If you create an search index it’s common that you want to specify a list of stopword, which will be ignored when you are searching. You can use the `stopwords` method to specify an array of words which Elasticsearch will ignore.
 ```php
-$index = $sigmie->newIndex($alias)
+$index = $sigmie->newIndex('books')
               ->stopwords(['about', 'after', 'again'])
               ->create();
 ```

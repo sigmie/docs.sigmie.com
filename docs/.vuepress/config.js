@@ -73,6 +73,7 @@ module.exports = {
                     children: prefix("sigmie", [
                         // "getting-started.md",
                         "indices.md",
+                        "languages.md",
                         "mappings.md",
                         "settings.md",
                         // "document.md",
@@ -86,7 +87,7 @@ module.exports = {
                 {
                     title: 'Application',
                     // path: '/app',
-                    collapsable: true,
+                    collapsable: false,
                     sidebarDepth: 2,
                     // children: prefix("app", ["settings/billing.md","account.md","team.md"])
                     children: [
