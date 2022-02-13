@@ -45,12 +45,7 @@ Things that you can easily do using the library, which would be painful to do ot
 
 It’s fine if you aren’t familiar with the above terms, our documentation will make you familiar with them without making you feel overwhelmed. If you are a more experienced user of Elasticsearch you can find useful ways which can make you more productive.
 
+## Componentized
+There are quite some use cases for using the library. For example, you may only use the sigmie CLI to interact with Elasticsearch or your search may be in a different language than English.
 
-
-
-
-
-
-
-
-
+For that reason, we split the library into separate components so that we keep your `vendor` folder as clean as possible allowing you to require each one of them depending on your application needs.

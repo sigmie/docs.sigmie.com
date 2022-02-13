@@ -68,7 +68,6 @@
       class="
         mb-2
         cursor-pointer
-        uppercase
         tracking-wider
         font-semibold
         text-xs
