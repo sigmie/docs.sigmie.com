@@ -13,7 +13,6 @@
       v-if="item.path"
       class="
         mb-2
-        uppercase
         tracking-wider
         font-semibold
         text-xs
