@@ -32,8 +32,18 @@ The above example shows the three core features of the library:
 
 We dived deep into Elasticsearch in an attempt to make building searches as enjoyable as possible, by creating the abstractions on top of it. Elasticsearch knowledge is optional if you want to use this library. In the documentation, we cover all the required details you need to know. Read along and you will get a high understanding of how to build an awesome search experience for your users.
 
+## A different opinionated approach
+Elasticsearch is a very powerful search engine providing build-in solutions for all common search optimizations, but it has a deep learning curve for somebody who just wants a simple solution for his website without having to invest a lot of time in it. We used a different approach to transform making Elasticsearch something easy to deal with.
 
+Things that you can easily do using the library, which would be painful to do otherwise.
 
+* **Updating** an existing index with new settings.
+* Creating **custom** analyzers for your index.
+* Building **complex** and  **nested** boolean queries.
+* Defining your index field mappings.
+* Building **nested** aggregations.
+
+It’s fine if you aren’t familiar with the above terms, our documentation will make you familiar with them without making you feel overwhelmed. If you are a more experienced user of Elasticsearch you can find useful ways which can make you more productive.
 
 
 
