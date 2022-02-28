@@ -5,7 +5,7 @@
 
 To get the most accurate search results, you will need some language specific configurations. By default Elasticsearch provides various `analyzers` and `filters` for different languages. Let’s see the languages supported by ***Sigmie*** at the moment. 
 
-:::warning
+::: warning
 You have to call the `language` directly after the `newIndex` method.
 :::
 
@@ -63,7 +63,7 @@ $germanBuilder->germanMinimalStemmer();
 The best way to find the most suitable stemmer is to create the same index using each one of them and compare your search results. There is **not** a golden rule for choosing a stemming algorithm.
 :::
 
-## German token filters
+### German token filters
    * `germanNormalize`
 
    The **German Normalisation** will make the following replacements
