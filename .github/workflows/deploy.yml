@@ -24,6 +24,11 @@ jobs:
         run: |
             sudo sh -c "echo 'docs.sigmie.com' > docs/.vuepress/dist/CNAME"
 
+      - name: wget changelog.md
+        uses: wei/wget@v1
+        with:
+          args: -O docs/sigmie/changelog.md https://raw.githubusercontent.com/sigmie/sigmie/master/CHANGELOG.md
+
       - name: Add to staging area
         run: |
            cd docs/.vuepress/dist

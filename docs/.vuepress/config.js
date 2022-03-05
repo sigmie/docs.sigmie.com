@@ -279,10 +279,10 @@ module.exports = {
     sidebar: {
       "/": [
         {
-          title: "Getting Started",
+          title: "Sigmie",
           collapsable: false,
           sidebarDepth: 0,
-          children: prefix("sigmie", ["introduction.md", "getting-started.md"]),
+          children: prefix("sigmie", ["introduction.md", "getting-started.md", "changelog.md"]),
         },
         {
           title: "Essentials",

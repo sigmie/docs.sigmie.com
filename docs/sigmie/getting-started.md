@@ -21,4 +21,4 @@ Notice that we passed the `host` argument to the factory method of the `Sigmie` 
 
 We assumed that an instance of Elasticsearch is running at `localhost` and listening to the default `9200` port.
 
-Visit the [Running Elasticsearch](/running-elasticsearch) to find out how you can run Elasticsearch on your local machine.``
+Visit the [Running Elasticsearch](/running-elasticsearch) to find out how you can run Elasticsearch on your local machine.
