@@ -26,7 +26,7 @@
           @blur="show = false"
           v-model="query"
           name="sigmie"
-          id="search"
+          id="search-box"
         />
         <div
           v-if="query.length > 0"
