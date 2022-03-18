@@ -290,6 +290,7 @@ module.exports = {
           sidebarDepth: 0,
           children: prefix("sigmie", [
             "indices.md",
+            "search.md",
             "languages.md",
             "mappings.md",
             "settings.md",
