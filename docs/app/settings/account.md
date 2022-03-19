@@ -3,13 +3,13 @@
 In the account settings, you can update basic information about your account.
 
 ## Update your email
-For security reasons, email updates aren’t allowed at the moment for your settings. If you wish to update your email address, get in touch with us and we will of course make this change for you.
+For security reasons, email updates aren’t allowed at the moment. If you wish to update your email address, get in touch with us and we will make this change for you.
 
 ## Update your password
-You can update your password in the account’s settings. 
+You can update your password in your account’s settings. 
 
 ## Deleting your account
-To delete your account, go to your account settings. At the bottom of the page, you will find the “Delete Account” option. By deleting your account, you won’t have access to Sigmie Application anymore and all of the data will be deleted.
+To delete your account, go to your account settings. At the bottom of the page, you will find the “Delete Account” option. By deleting your account, you won’t have access to Sigmie Application anymore and all your data will be deleted.
 
 Danger
 Deleting your account will cancel all your projects subscriptions, and delete all your data within our application. This action is irreversible. 
