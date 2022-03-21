@@ -33,7 +33,7 @@ You can update a member’s role from the 3 dots menu in the members’ table, b
 To remove a team member click on the 3 dots menu in the team members table, and select “Remove Team Member”.
 
 :::warning Warning
-The team owner can’t be removed from the Team, since it’s all the projects belong to him. 
+The team owner can’t be removed from the Team, since all the projects belong to him. 
 :::
 
 
