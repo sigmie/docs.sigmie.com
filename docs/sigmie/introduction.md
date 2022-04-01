@@ -22,7 +22,7 @@ $sigmie->newIndex('products')
 $sigmie->collect('products')->add(new Document(['title' => 'iPhone 13 Pro']));
 
 // Find documents within the index whose title matches the 'i-phone' query
-$products = $sigmie->search('products')->match(fields: 'title', query: 'i-phone')->get();
+$products = $sigmie->newnewSearch('products')->match(fields: 'title', query: 'i-phone')->get();
 ```
 
 The above example shows the three core features of the library:

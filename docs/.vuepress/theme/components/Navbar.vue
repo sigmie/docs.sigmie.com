@@ -68,7 +68,7 @@ export default {
       );
     },
 
-    isAlgoliaSearch() {
+    isAlgolianewSearch() {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName;
     }
   },

@@ -103,7 +103,7 @@ This way the **title** field value will be stored twice, one which will be **ana
 
 When you want to sort on a text field you will need to use the `.raw` suffix.
 ```php
-$sortedBooks = $sigmie->search('books')->matchAll()->sort('title.raw', 'asc')->get();
+$sortedBooks = $sigmie->newSearch('books')->matchAll()->sort('title.raw', 'asc')->get();
 ``` 
 
 ### Custom Analyzer

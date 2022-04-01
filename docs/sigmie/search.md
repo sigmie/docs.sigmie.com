@@ -12,7 +12,7 @@ Using Sigmie you can create a search that accepts a `name` parameter.
 ```php
 use function Sigmie\Helpers\mustache_var;
 
-$sigmie->search(index:'users')
+$sigmie->newSearch(index:'users')
 		 ->multiMatch(mustache_var('name'), ['first_name','last_name'] ) })
 		 ->save('find-users');
 ```
@@ -25,7 +25,7 @@ You can pass a default value to the `mustache_var` method as the second argument
 
 Now you can call the `template` method on the `SearchBuilder` class to use your **saved** template passing the template name.
 ```php
-$docs = $sigmie->search(index: 'users')
+$docs = $sigmie->newSearch(index: 'users')
                ->template(name: 'find-users')
                ->run(['name' => 'Nico']);
 ```

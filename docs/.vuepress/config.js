@@ -291,6 +291,7 @@ module.exports = {
           children: prefix("sigmie", [
             "indices.md",
             "search.md",
+            "query.md",
             "languages.md",
             "mappings.md",
             "settings.md",
