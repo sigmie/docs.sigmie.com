@@ -311,6 +311,15 @@ module.exports = {
           // children: prefix("app", ["settings/billing.md","account.md","team.md"])
           children: [
             {
+              title: "Search",
+              path: "/app/search",
+              collapsable: false,
+              sidebarDepth: 0,
+              children: prefix("app/search", [
+                "relevancy.md",
+              ]),
+            },
+            {
               title: "Settings",
               path: "/app/settings",
               collapsable: false,
