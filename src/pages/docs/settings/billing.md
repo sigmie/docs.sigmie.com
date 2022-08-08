@@ -9,6 +9,10 @@ To manage your project’s billing settings, go to your settings page, and selec
 ---
 
 
+## Plans
+### Tolerance
+
+## Refunds
 
 ## Receipts
 In the Billing section, you can find the receipts for all the transactions from our application. Click on “View Receipt” to open the Receipt page from [Paddle](https://paddle.com/). There you can download your receipt and edit your invoice address. 

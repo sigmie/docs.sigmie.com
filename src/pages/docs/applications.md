@@ -1,5 +1,5 @@
 ---
-title: Mapping
+title: Applications
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
@@ -7,16 +7,18 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ---
 
-## Text
-### Search as your type
-### Unstructured text
-### Completion 
+## General
+### Name
+### Description
+### Unique ID
+`djkaljkdls`
+### Domain
+* jfdklss.sigmie.app 
+* jfdklss-a.sigmie.app 
+* jfdklss-b.sigmie.app 
+* jfdklss-c.sigmie.app 
+## Billing
+## Regions
+## Plan
 
-## Number
-### Float
-### Integer
-## Date
-### Format
-## Boolean
 
-## Nested attributes

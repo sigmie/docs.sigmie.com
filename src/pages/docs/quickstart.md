@@ -1,5 +1,5 @@
 ---
-title: Mapping
+title: Quick Start
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
@@ -7,16 +7,10 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ---
 
-## Text
-### Search as your type
-### Unstructured text
-### Completion 
+## Step 1 - Sign-up
+## Step 2 - Create an Index 
+## Step 3 - Add documents 
+## Step 4 - Start searching 
+## Step 5 - Curl 
 
-## Number
-### Float
-### Integer
-## Date
-### Format
-## Boolean
-
-## Nested attributes
+## What’s next?

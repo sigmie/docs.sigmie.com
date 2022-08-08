@@ -15,9 +15,10 @@ const navigation = [
   {
     title: 'Application',
     links: [
-      { title: 'Getting started', href: '/docs/getting-started' },
       { title: 'Introduction', href: '/docs/introduction' },
+      { title: 'Quick Start', href: '/docs/quickstart' },
       { title: 'Overview', href: '/docs/overview' },
+      { title: 'Applications', href: '/docs/applications' },
       { title: 'Documents', href: '/docs/documents' },
       { title: 'Analytics', href: '/docs/analytics' },
       { title: 'Query Box', href: '/docs/box' },
@@ -36,6 +37,7 @@ const navigation = [
         title: 'Searchable attributes',
         href: '/docs/search/searchable-attributes',
       },
+      { title: 'Typo Tolerace', href: '/docs/search/typo-tolerance' },
       { title: 'Tuning', href: '/docs/search/tuning' },
       { title: 'Sorting', href: '/docs/search/sorting' },
     ],
@@ -50,6 +52,7 @@ const navigation = [
       { title: 'Endpoints', href: '/docs/api/endpoints' },
       { title: 'Tokens', href: '/docs/api/tokens' },
       { title: 'Logs', href: '/docs/api/logs' },
+      { title: 'Errors', href: '/docs/api/errors' },
     ],
   },
   {
@@ -57,18 +60,16 @@ const navigation = [
     links: [
       { title: 'Languages', href: '/docs/indices/languages' },
       { title: 'Filters', href: '/docs/indices/filters' },
-      { title: 'Char mapping', href: '/docs/indices/char-mapping' },
-      { title: 'Stopwords', href: '/docs/indices/stopwords' },
       { title: 'Stemming', href: '/docs/indices/stemming' },
-      { title: 'Mapping', href: '/docs/indices/mapping' },
       { title: 'Synonyms', href: '/docs/indices/synonyms' },
+      { title: 'Mapping', href: '/docs/indices/mapping' },
     ],
   },
   {
     title: 'Settings',
     links: [
       { title: 'Account', href: '/docs/settings/account' },
-      { title: 'Projects', href: '/docs/settings/applications' },
+      { title: 'Activities', href: '/docs/settings/activities' },
       { title: 'Billing', href: '/docs/settings/billing' },
       { title: 'Team', href: '/docs/settings/team' },
     ],
