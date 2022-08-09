@@ -1,25 +1,10 @@
-# Syntax
+<p align="center"><a href="https://app.sigmie.com" target="_blank"><img width="800" src="https://res.cloudinary.com/markos-nikolaos-orfanos/image/upload/c_scale,w_3050/v1593940839/Sigmie/banner_avlw7m.png"></a></p>
 
-Syntax is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+<p align="center">
+</p>
 
-## Getting started
+# Sigmie Documentation
 
-To get started with this template, first install the npm dependencies:
+Documentaion: https://docs.sigmie.com
 
-```bash
-npm install
-cp .env.example .env.local
-```
-
-Next, run the development server:
-
-```bash
-npm run dev
-```
-
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
-
-## Customizing
-
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
-
+Application: https://app.sigmie.com
