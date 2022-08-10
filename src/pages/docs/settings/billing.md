@@ -12,6 +12,9 @@ To manage your project’s billing settings, go to your settings page, and selec
 ## Plans
 ### Tolerance
 
+### Upgrade
+### Downgrade
+
 ## Refunds
 
 ## Receipts

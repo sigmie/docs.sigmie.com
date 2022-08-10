@@ -7,6 +7,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ---
 
+## Score calculation
+
 ## Attributes
 
 ## Linear Impact

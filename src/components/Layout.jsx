@@ -17,9 +17,10 @@ const navigation = [
     links: [
       { title: 'Introduction', href: '/docs/introduction' },
       { title: 'Quick Start', href: '/docs/quickstart' },
-      { title: 'Overview', href: '/docs/overview' },
       { title: 'Applications', href: '/docs/applications' },
+      { title: 'Indices', href: '/docs/indices' },
       { title: 'Documents', href: '/docs/documents' },
+      { title: 'Searches', href: '/docs/searches' },
       { title: 'Analytics', href: '/docs/analytics' },
       { title: 'Query Box', href: '/docs/box' },
     ],

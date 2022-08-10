@@ -8,3 +8,17 @@
 Documentaion: https://docs.sigmie.com
 
 Application: https://app.sigmie.com
+
+## Callout
+
+```
+{% callout type="danger" title="Example" %}
+This is an example callout
+{% /callout %}
+```
+
+### Types
+The available callout types are:
+* `info`
+* `warning`
+* `danger`

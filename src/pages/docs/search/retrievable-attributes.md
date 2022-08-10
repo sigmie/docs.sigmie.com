@@ -8,3 +8,5 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 ---
 
 ## Retrievable attributes
+
+In some cases you only want to retrieve the id when querying from backend.

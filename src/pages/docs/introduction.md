@@ -34,6 +34,15 @@ we need to be sure we don't save money on hardware and service costs.
 So if you trust us with your search your are trusting our servers with a very curcial
 part of your buisness and we want to provide your the best that we can.
 
+### Trial
+
+Running servers is an expensive thing, therefore we are offering only 5 days trial for
+the **2K** accounts. In our opinion this is enought for you to decide if Sigmie is fitting 
+your organisation.
+
+Once your trial has expired, if you still haven't decided, you can contact us an we will
+extend your trial for you.
+
 ## Getting help ?
 
 If you have any questions or problems while using our application, you can use the **Feedback** button
