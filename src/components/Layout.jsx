@@ -19,7 +19,7 @@ const navigation = [
       { title: 'Quick Start', href: '/docs/quickstart' },
       { title: 'Applications', href: '/docs/applications' },
       { title: 'Indices', href: '/docs/indices' },
-      { title: 'Documents', href: '/docs/documents' },
+      { title: 'Documents', href: '/docs/docs' },
       { title: 'Searches', href: '/docs/searches' },
       { title: 'Analytics', href: '/docs/analytics' },
       { title: 'Query Box', href: '/docs/box' },

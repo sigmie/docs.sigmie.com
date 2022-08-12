@@ -1,10 +1,21 @@
 ---
-title: Analytics 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Analytics
+description: Data driven changes
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Making data driven descisions to achieve better search results.
 
 ---
 
-## Filtering 
+Analytics and data play a curcial part in almost everything, you can use the
+analytics section in the Sigmie application to see metrics about your Searches
+and your users.
+
+Analytics can show you:
+
+- What are your users mostly Searching
+- What are your Search respose times
+- Which Documents are the most populars
+- How is your Search used
+
+You can answear the above question in the analytics view.
