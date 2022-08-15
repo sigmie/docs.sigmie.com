@@ -87,11 +87,37 @@ Choosing the 2K plan you have 5 days of free trial.
 Be aware local taxes may apply when signing up.
 {% /callout %}
 
-### Yealy discount 
+### Yealy discount
 
 By choosing to pay **yearly** we are giving you 2 months of
 free usage.
 
 ### Tolerace
 
+There is a 10% percent tolerance if you exceed your documents limit, and
+a 20% percent for your API requests.
+
 ## Regions
+
+Even though we use **premium** request routing services to ensure that your end users that are located in another part of the word, will reach your search as fast as possible. 
+
+And because of different privacy regulations in different countries.
+
+You can choose the desired location where your data will be stored.
+
+The currently supported regions are
+
+- US Central
+- US West
+- US East
+- Canada
+- Brazil
+- Belgium
+- London
+- Frankfurt
+- Australia
+- India
+- Hong Kong
+- Singapore
+- Japan
+- Taiwan

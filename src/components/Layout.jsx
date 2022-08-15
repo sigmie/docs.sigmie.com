@@ -26,6 +26,17 @@ const navigation = [
     ],
   },
   {
+    title: 'Indices',
+    links: [
+      { title: 'Languages', href: '/docs/indices/languages' },
+      { title: 'Filters', href: '/docs/indices/filters' },
+      { title: 'Stemming', href: '/docs/indices/stemming' },
+      { title: 'Stopwords', href: '/docs/indices/stopwords' },
+      { title: 'Synonyms', href: '/docs/indices/synonyms' },
+      { title: 'Mapping', href: '/docs/indices/mapping' },
+    ],
+  },
+  {
     title: 'Search',
     links: [
       { title: 'Highlighting', href: '/docs/search/highlighting' },
@@ -54,16 +65,6 @@ const navigation = [
       { title: 'Tokens', href: '/docs/api/tokens' },
       { title: 'Logs', href: '/docs/api/logs' },
       { title: 'Errors', href: '/docs/api/errors' },
-    ],
-  },
-  {
-    title: 'Indices',
-    links: [
-      { title: 'Languages', href: '/docs/indices/languages' },
-      { title: 'Filters', href: '/docs/indices/filters' },
-      { title: 'Stemming', href: '/docs/indices/stemming' },
-      { title: 'Synonyms', href: '/docs/indices/synonyms' },
-      { title: 'Mapping', href: '/docs/indices/mapping' },
     ],
   },
   {

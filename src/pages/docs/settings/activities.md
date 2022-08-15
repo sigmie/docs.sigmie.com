@@ -1,13 +1,14 @@
 ---
-title: Activities 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Activities
+description: Important actions for your index.
 ---
-
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
 
 ---
 
 ## Info
+
 ## Pending
-## Error 
-## Success 
+
+## Error
+
+## Success
