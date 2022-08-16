@@ -28,12 +28,12 @@ const navigation = [
   {
     title: 'Indices',
     links: [
-      { title: 'Languages', href: '/docs/indices/languages' },
-      { title: 'Filters', href: '/docs/indices/filters' },
+      { title: 'Analysis', href: '/docs/indices/analysis' },
+      { title: 'Mapping', href: '/docs/indices/mapping' },
       { title: 'Stemming', href: '/docs/indices/stemming' },
       { title: 'Stopwords', href: '/docs/indices/stopwords' },
       { title: 'Synonyms', href: '/docs/indices/synonyms' },
-      { title: 'Mapping', href: '/docs/indices/mapping' },
+      { title: 'Languages', href: '/docs/indices/languages' },
     ],
   },
   {

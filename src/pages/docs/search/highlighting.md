@@ -24,7 +24,7 @@ The JSON response will look like this
   // ...
   "hits": {
     "AHs3l4IBrbFU6hq5SDCR": {
-      "_id": "AHs3l4IBrbFU6hq5SDCR",
+      // ...
       "_highlight": {
         "color": ["<span class=\"font-bold\">red</span>"]
       }

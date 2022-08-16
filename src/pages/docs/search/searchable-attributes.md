@@ -1,10 +1,30 @@
 ---
-title: Searchable attributes 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Searchable attributes
+description: Attributes that contain match value
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Omit attributes that the user wont search for.
 
 ---
 
-## Searchable attributes 
+Not all attributes provide usefull data when trying to find the perfect match.
+For example a user never writes the product **stock** in a search box.
+
+For this reason the **Searchable** and the **Retrievable** attributes are 2
+completly different things.
+
+Let's say you have the following Document
+
+```json
+{
+  "name": "The Lion King",
+  "category": ["Musical", "Family"],
+  "release_year": "1994",
+  "duration_minutes": 87
+}
+```
+
+it's unlikely that a user will type `87` and expect to find Disney movies which
+duration is **87 minutes**.
+
+In this case it make sense to omit the `duration_minutes` when defining the **Searchable** attributes on a Search-level.

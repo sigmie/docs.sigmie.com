@@ -1,16 +1,37 @@
 ---
-title: Authentication 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Authentication
+description: API Keys for HTTP Requests
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Authenticate for your Search API using your API Keys.
 
 ---
 
 ## API Keys
 
-## HTTP Headers
+You can use the Sigmie UI to generate API Keys for HTTP usage.
 
-## Basic Authentication
+## Methods
+
+Sigmie API supports **Basic** and **via HTTP headers** authentication.
+
+### HTTP Headers
+
+Authentication via HTTP headers in done with the following headers
+
+| Header                 | Value                  |
+| ---------------------- | ---------------------- |
+| `X-Sigmie-API-Key`     | `{{ api-key }}`        |
+| `X-Sigmie-Application` | `{{ application-id }}` |
+
+### Basic
+
+You can use the following credentials to authenticate using **Basic Auth**.
+
+| User                   | Password        |
+| ---------------------- | --------------- |
+| `{{ application-id }}` | `{{ api-key }}` |
 
 ## CORS
+
+Sigmie supports Cross-Origin Resource Sharing (CORS), so that you can use the Authentication headers with XMLHttpRequest.

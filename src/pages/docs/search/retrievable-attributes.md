@@ -1,12 +1,39 @@
 ---
-title: Retrievable attributes 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Retrievable attributes
+description: Hit fields that will be used after retrieving.
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Retrive only Hit fields that you are going to use.
 
 ---
 
-## Retrievable attributes
+The reduce unnecessary big payload it's wise to only retrieve attributes
+that will be used after a Document matched a query.
 
-In some cases you only want to retrieve the id when querying from backend.
+It's common practise sending a query to Sigmie and to retrieve **only** the Document `id` attribute.
+
+Then once you have the matches ids returned from your Sigmie Search, you query
+your SQL Database for the returned ids.
+
+For example your send the following json payload to the Search endpoint, and you have set
+**only** the field `sql_id` as retrievable attribute.
+
+then the retrieved Document attributes will look like this
+
+```json
+{
+  "hits": {
+    "dns3l4IBrbFU6hq5SC6R": {
+      "_id": "dns3l4IBrbFU6hq5SC6R",
+      "sql_id": 39
+    }
+    //...
+  }
+}
+```
+
+then your can use he `sql_id` attribute to retrieve the **whole** Documents from your SQL database.
+
+```sql
+SELECT * FROM movies WHERE id IN (39)
+```

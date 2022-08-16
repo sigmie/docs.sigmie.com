@@ -1,12 +1,58 @@
 ---
-title: Pagination 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Pagination
+description: Paginate over the Search result hits.
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Split the Search hits into pages.
 
 ---
 
 ## Limit
-## API
-### API Pagination
+
+By default Sigmie will return the first 20 matched Search results for a query. You can customize this begavior in the Sigmie UI or using the API.
+
+The pagination settings are configured on Search level.
+
+### Change the default limit
+
+In the **Pagination** section in your Search settings you can change the
+default pagination limit.
+
+### Paginate over the API
+
+When searching the API returns a response like this
+
+```json
+{
+  // ...
+  "hits": [
+    // ...
+  ],
+  "total": 30,
+  "page": 1,
+  "per_page": 20,
+  "query": "disney"
+}
+```
+
+You can use the `page` and `per_page` values to paginate over the found
+search results.
+
+In this example we retrieved the **default** 20 Document hits. Now if you
+want the fetch the second page with the **remaining** 10 Documents. You can send the following JSON:
+
+```json
+{
+  "query": "disney",
+  "page": 2
+}
+```
+
+Of course you can also change the `per_page` value.
+
+```json
+{
+  // ...
+  "per_page": 30
+}
+```

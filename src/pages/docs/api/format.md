@@ -1,16 +1,26 @@
 ---
-title: Format 
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Format
+description: JSON Request
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+The request format for all Requests and Responses is JSON.
 
 ---
 
-## Format 
+## Format
+
+### Request
+
+The `Content-Type` header with `application/json` value is **required** for all HTTP Requests.
+
+| Header         | Value              |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
+
+### Response
+
+The response format for all requests is JSON.
 
 ## Encoding
 
-## Parameters
-### GET
-### POST
+The API uses a **UTF-8** encoded **JSON**.
