@@ -19,3 +19,8 @@ Analytics can show you:
 - How is your Search used
 
 You can answear the above question in the analytics view.
+
+## Scoreboards
+### Most popular queries
+### Most popular documents
+### Top queries without results

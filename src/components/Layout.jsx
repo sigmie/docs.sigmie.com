@@ -62,8 +62,8 @@ const navigation = [
       { title: 'Limits', href: '/docs/api/limits' },
       { title: 'Search', href: '/docs/api/search' },
       { title: 'Endpoints', href: '/docs/api/endpoints' },
-      { title: 'Tokens', href: '/docs/api/tokens' },
-      { title: 'Logs', href: '/docs/api/logs' },
+      { title: 'API Keys', href: '/docs/api/api-keys' },
+      { title: 'API Logs', href: '/docs/api/logs' },
       { title: 'Errors', href: '/docs/api/errors' },
     ],
   },
@@ -71,7 +71,6 @@ const navigation = [
     title: 'Settings',
     links: [
       { title: 'Account', href: '/docs/settings/account' },
-      { title: 'Activities', href: '/docs/settings/activities' },
       { title: 'Billing', href: '/docs/settings/billing' },
       { title: 'Team', href: '/docs/settings/team' },
     ],

@@ -1,13 +1,17 @@
 ---
 title: Errors
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Unexpected responses
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Use the `error` key to identify and handle failed HTTP requests.
 
 ---
 
-## Document not found
+Here is list with all possible API **Error** responses.
+
+## Document - Not Found 404
+
+Returned if your attemp to manupulate a non existing Document.
 
 ```json
 {
@@ -16,7 +20,9 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 }
 ```
 
-## Quota
+## Quota - 403 Forbidden
+
+Returned if your attemp to create a Document, but your quota is exceeded.
 
 ```json
 {
@@ -24,6 +30,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
   "message": "Application document quota 200000 exceeded"
 }
 ```
+
+Returned if make an API request, but your quota is exceeded.
 
 ```json
 {
@@ -34,6 +42,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ## Unauthorized
 
+**Unauthorized** response indicates that the `API-Key` or the `Application-Id` wasn't provided.
+
 ```json
 {
   "error": "request/unauthorized",
@@ -42,6 +52,9 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 ```
 
 ## Unknown Batch
+
+If the **Batch** actions isn't recognized by the API it returns the following
+JSON response.
 
 ```json
 {
@@ -52,6 +65,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ## Bad Request
 
+The requested format is bad.
+
 ```json
 {
   "error": "request/bad",
@@ -60,6 +75,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 ```
 
 ## Forbidden
+
+The requested **user** has no permissions to perform this action.
 
 ```json
 {
@@ -70,6 +87,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ## Index not found
 
+The requested **Index** wasn't found.
+
 ```json
 {
   "error": "index/not_found",
@@ -79,6 +98,17 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 
 ## Too big
 
+The **Throttle** limit was reached.
+
+```json
+{
+  "error": "rate_limit/reached",
+  "message": "Rate limit reached"
+}
+```
+
+The **POST** was more than the limit.
+
 ```json
 {
   "error": "post/too_large",
@@ -87,6 +117,8 @@ Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo ex
 ```
 
 ## Query too large
+
+The **Query** string exceeded to set limit.
 
 ```json
 {

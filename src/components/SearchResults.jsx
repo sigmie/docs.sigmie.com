@@ -6,6 +6,7 @@ import {
   FolderIcon,
   SupportIcon,
 } from '@heroicons/react/outline'
+import Image from 'next/image'
 
 const projects = [
   {
@@ -154,7 +155,7 @@ export default function SearchResults({ onClose, isOpen }) {
                                 )
                               }
                             >
-                              <img
+                              <Image
                                 src={user.imageUrl}
                                 alt=""
                                 className="h-6 w-6 flex-none rounded-full"
@@ -226,9 +227,9 @@ export default function SearchResults({ onClose, isOpen }) {
                       <g
                         fill="none"
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.2"
                       >
                         <path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path>
                       </g>
@@ -247,7 +248,7 @@ export default function SearchResults({ onClose, isOpen }) {
                     )}
                   >
                     <span>
-<svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg>
+<svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg>
                     </span>
                   </kbd>{' '}
                   <kbd
@@ -260,7 +261,7 @@ export default function SearchResults({ onClose, isOpen }) {
                   >
 
                     <span>
-<svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg>
+<svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg>
                     </span>
 
                   </kbd>

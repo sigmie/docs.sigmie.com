@@ -16,6 +16,10 @@ To manage your project’s billing settings, go to your settings page, and selec
 ### Downgrade
 
 ## Refunds
+* If you were just charged for your next month of service but you meant to cancel, we’re happy to refund that extra charge.
+
+* If you forgot to cancel your subscription a couple months ago and you haven’t used it since then, we’ll give you a full refund for a few back months. No problem.
+
 
 ## Receipts
 In the Billing section, you can find the receipts for all the transactions from our application. Click on “View Receipt” to open the Receipt page from [Paddle](https://paddle.com/). There you can download your receipt and edit your invoice address. 
