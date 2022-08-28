@@ -23,8 +23,8 @@ const users = [
     id: 1,
     name: 'Leslie Alexander',
     url: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    imageUrl: '',
+    // 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   // More users...
 ]
@@ -83,7 +83,7 @@ export default function SearchResults({ onClose, isOpen }) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+            <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all dark:divide-gray-600">
               <Combobox onChange={(item) => (window.location = item.url)}>
                 <div className="relative">
                   <SearchIcon
@@ -91,7 +91,7 @@ export default function SearchResults({ onClose, isOpen }) {
                     aria-hidden="true"
                   />
                   <Combobox.Input
-                    className="h-12 w-full rounded-t-xl border-0 bg-transparent pl-11 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 sm:text-sm"
+                    className="h-12 w-full rounded-t-xl border-0  bg-transparent pl-11 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 dark:border-gray-500 dark:bg-black dark:text-gray-200 sm:text-sm"
                     placeholder="Search..."
                     onChange={(event) => setRawQuery(event.target.value)}
                   />
@@ -100,14 +100,14 @@ export default function SearchResults({ onClose, isOpen }) {
                 {(filteredProjects.length > 0 || filteredUsers.length > 0) && (
                   <Combobox.Options
                     static
-                    className="max-h-80 scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2"
+                    className="max-h-80 scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2 dark:bg-black"
                   >
                     {filteredProjects.length > 0 && (
                       <li>
-                        <h2 className="text-xs font-semibold text-gray-900">
+                        <h2 className="text-xs font-semibold text-gray-900 dark:text-gray-200 ">
                           Projects
                         </h2>
-                        <ul className="-mx-4 mt-2 text-sm text-gray-700">
+                        <ul className="-mx-4 mt-2 text-sm text-gray-700 dark:text-gray-300">
                           {filteredProjects.map((project) => (
                             <Combobox.Option
                               key={project.id}
@@ -115,7 +115,7 @@ export default function SearchResults({ onClose, isOpen }) {
                               className={({ active }) =>
                                 classNames(
                                   'flex cursor-default select-none items-center px-4 py-2',
-                                  active && 'bg-indigo-600 text-white'
+                                  active && 'bg-black text-white'
                                 )
                               }
                             >
@@ -151,15 +151,10 @@ export default function SearchResults({ onClose, isOpen }) {
                               className={({ active }) =>
                                 classNames(
                                   'flex cursor-default select-none items-center px-4 py-2',
-                                  active && 'bg-indigo-600 text-white'
+                                  active && 'bg-black text-white'
                                 )
                               }
                             >
-                              <Image
-                                src={user.imageUrl}
-                                alt=""
-                                className="h-6 w-6 flex-none rounded-full"
-                              />
                               <span className="ml-3 flex-auto truncate">
                                 {user.name}
                               </span>
@@ -193,12 +188,12 @@ export default function SearchResults({ onClose, isOpen }) {
                   rawQuery !== '?' &&
                   filteredProjects.length === 0 &&
                   filteredUsers.length === 0 && (
-                    <div className="py-14 px-6 text-center text-sm sm:px-14">
+                    <div className="py-14 px-6 text-center text-sm dark:bg-black dark:text-gray-200 sm:px-14">
                       <ExclamationIcon
                         className="mx-auto h-6 w-6 text-gray-400"
                         aria-hidden="true"
                       />
-                      <p className="mt-4 font-semibold text-gray-900">
+                      <p className="mt-4 font-semibold text-gray-900 dark:text-gray-300">
                         No results found
                       </p>
                       <p className="mt-2 text-gray-500">
@@ -208,11 +203,11 @@ export default function SearchResults({ onClose, isOpen }) {
                     </div>
                   )}
 
-                <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700">
+                <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700 dark:bg-black dark:text-gray-300">
                   Type{' '}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
+                      'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
                       rawQuery.startsWith('#')
                         ? 'border-indigo-600 text-indigo-600'
                         : 'border-gray-400 text-gray-900'
@@ -237,43 +232,68 @@ export default function SearchResults({ onClose, isOpen }) {
                   </kbd>{' '}
                   to select
                   <span className=""></span>
-                  <div className='flex flex-row space-x-0.5 mx-1'>
-
-                  <kbd
-                    className={classNames(
-                      'flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
-                      rawQuery.startsWith('>')
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-gray-400 text-gray-900'
-                    )}
-                  >
-                    <span>
-<svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg>
-                    </span>
-                  </kbd>{' '}
-                  <kbd
-                    className={classNames(
-                      'flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold',
-                      rawQuery.startsWith('>')
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-gray-400 text-gray-900'
-                    )}
-                  >
-
-                    <span>
-<svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg>
-                    </span>
-
-                  </kbd>
-                  </div>
-                  {' '}
-
+                  <div className="mx-1 flex flex-row space-x-0.5">
+                    <kbd
+                      className={classNames(
+                        'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
+                        rawQuery.startsWith('>')
+                          ? 'border-indigo-600 text-indigo-600'
+                          : 'border-gray-400 text-gray-900'
+                      )}
+                    >
+                      <span>
+                        <svg
+                          width="15"
+                          height="15"
+                          aria-label="Arrow down"
+                          role="img"
+                        >
+                          <g
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="1.2"
+                          >
+                            <path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </kbd>{' '}
+                    <kbd
+                      className={classNames(
+                        'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
+                        rawQuery.startsWith('>')
+                          ? 'border-indigo-600 text-indigo-600'
+                          : 'border-gray-400 text-gray-900'
+                      )}
+                    >
+                      <span>
+                        <svg
+                          width="15"
+                          height="15"
+                          aria-label="Arrow up"
+                          role="img"
+                        >
+                          <g
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="1.2"
+                          >
+                            <path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </kbd>
+                  </div>{' '}
                   to navigate{' '}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
+                      'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
                       rawQuery === '?'
-                        ? 'border-indigo-600 text-indigo-600'
+                        ? 'border-gray-600 text-gray-600'
                         : 'border-gray-400 text-gray-900'
                     )}
                   >
