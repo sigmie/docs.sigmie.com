@@ -102,7 +102,7 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-40 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 shadow-black transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-40 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-black/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-black'
           : 'dark:bg-transparent'
