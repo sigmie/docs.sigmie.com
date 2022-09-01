@@ -22,7 +22,7 @@ const navigation = [
       { title: 'Documents', href: '/docs/docs' },
       { title: 'Searches', href: '/docs/searches' },
       { title: 'Analytics', href: '/docs/analytics' },
-      { title: 'Query Box', href: '/docs/box' },
+      { title: 'Query Box', href: '/docs/query-box' },
     ],
   },
   {
@@ -63,8 +63,7 @@ const navigation = [
       { title: 'Search', href: '/docs/api/search' },
       { title: 'Endpoints', href: '/docs/api/endpoints' },
       { title: 'API Keys', href: '/docs/api/api-keys' },
-      { title: 'API Logs', href: '/docs/api/logs' },
-      { title: 'Errors', href: '/docs/api/errors' },
+      { title: 'API Logs', href: '/docs/api/logs' }
     ],
   },
   {

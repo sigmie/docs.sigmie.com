@@ -3,12 +3,7 @@ title: Applications
 description: A workspace for your indices and documents.
 ---
 
-An Application is a workspace where your indices and your documents live. Each Sigmie Application
-is totaly independent and has it's own infrastructure and billing cycle.
-
----
-
-This of an Application like a workspace where your Indices and your Documents live.
+Think of an Application like a workspace where your Indices and your Documents live.
 
 Each Sigmie Application is independent and has its own infrastructure and billing cycle.
 
@@ -16,9 +11,9 @@ Each Sigmie Application is independent and has its own infrastructure and billin
 
 ## General
 
-Each Sigmie Application has a **unique** identifier that is registered as a DNS entry; Making your search available under `{application-id}.sigmie.app`.
+Each Sigmie Application has a **unique** identifier that is registered as a DNS entry; Making it available under the domain `{application-id}.sigmie.app`.
 
-The`{application-id}`, is replaced with the actual **identifier** that you will in the application's dashboard.
+The`{application-id}`, is a placeholder. The actual **identifier** that you will in the application's dashboard.
 
 Each application has 3 dedicated servers that guarantee **High Availability**. 
 
@@ -34,15 +29,16 @@ We recommend implementing a retry strategy and shuffling the above hosts when ma
 
 ### Name and Description
 
-Because distinguishing your Sigmie applications using the application identifier can be a trivial task. You can set a human-readable name to
-each of your applications, and an optional description that will provide more context.
+You can set a human-readable name, and an optional description that will provide more context for your Sigmie application.
 
-You do this in your application settings by clicking on **Settings** in the sidebar navigation.
+Navigate to the Application settings by clicking on **Settings** in the sidebar.
+
+[IMG]
 
 ## Billing
 
 Because of the dedicated infrastructure for each Sigmie application
-each application has its own subscription.
+each application has its own subscription plan.
 
 ### Plans
 
@@ -98,7 +94,7 @@ free usage.
 ### Tolerace
 
 There is a **10%** percent tolerance if you exceed your documents limit, and
-a **20%** percent for your API requests.
+a **20%** percent for the API requests.
 
 ## Regions
 
