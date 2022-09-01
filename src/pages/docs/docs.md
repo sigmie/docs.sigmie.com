@@ -9,19 +9,18 @@ Documents are simply JSON object structures living inside of an Index.
 
 ## Format
 
-This is a simple JSON document of an imaginary shop that we are running.
+This is a simple JSON document of an imaginary Disney Movies Index.
 
 ```json
 {
-  "brand": "Adidas",
-  "color": "red",
-  "name": "HOODIE UNISEX - Sweatshirt",
+  "name": "101 Dalmatians",
+  "release_year": "1961",
   "active": true,
-  "price": 89.0,
-  "sizes": ["L", "M"],
+  "duration_min": 879,
+  "category": ["Adventure", "Family"],
   "rating": {
-    "users_rated": 22,
-    "avg_rating": 3.8
+    "imdb": 7.3,
+    "rotten_tomatoes": 98
   }
 }
 ```
@@ -29,115 +28,114 @@ This is a simple JSON document of an imaginary shop that we are running.
 ### Attibute types
 
 The names on the left side before the colon `:` are the attribute names, and
-on the right side we have the attribute values.
+on the right side, we have the attribute values.
 
 The allowed document valid attributes types `array`,`string`,`float`,`integers`,`boolean` and `object`.
 
 ### String / Float / Integer / Boolean
 
-There isn't something worth notings about most of the attribute types, except of the two `array` and `object`.
+There isn't something worth noting about most of the attribute types, except for the two `array` and `object`.
 
 ### Arrays
 
-The `array` attribute `sizes` above is internaly handled as one single attribute `size` having two values.
+The `array` attribute `sizes` above is internally handled as one single attribute `size` has two values.
 
-Imagine this if this was possible
+Imagine this if this was possible.
 
 ```json
 {
-  "sizes": "L",
-  "sizes": "M"
+  "category": "Adventure",
+  "category": "Family"
 }
 ```
 
-now of course this isn't a valid JSON but it's just for demonstration for you to take an idea how it looks like
-internaly.
+now, of course, this isn't a valid JSON, but it's just for demonstration for you to take an idea of how it looks like
+internally.
 
 ### Nested objects
 
-Nested `object` types are flattened, in our example the `rating` object will internally flattened and
+Nested `object` types are flattened; In our example the `rating` object will be internally flattened and
 treated like bellow.
 
 ```json
 {
-  "rating.users_rated": 22,
-  "rating.avg_rating": 3.8
+  "rating.imdb": 7.3,
+  "rating.rotten_tomatoes": 98
 }
 ```
 
 ## Documents table
 
-In the **Documents** section in the Sigmie application you can find an table containing your index documents.
-There you can view, edit, update, delete and filter your documents.
+In the **Documents** section in the Sigmie Application, you can find a table containing your index documents.
 
-This is fine for toying around and for small changes but always consider using the [API](/docs/api/endpoints) endpoints
+You can view, edit, update, delete and filter your documents there.
+
+This is fine for toying around and for minor changes but always consider using the [API](/docs/api/endpoints) endpoints
 for dynamic integration between your application and Sigmie.
 
 ## Filter language
 
-Of course you can use just write the value that your are looking for in the documents
+Of course, you can use just write the value that you are looking for in the documents
 table, but there is a **Query** language available to search for documents in the documents table search box to allow easiers and more flexible filtering.
 
 ### is
 
-For the boolean attributes you can use the `is:` filter.
+For the boolean attributes, you can use the `is:` filter.
 
-For example let's say that you have a `boolean` attribute `active`, and you want only see
-the active documents.
+For example, let's say that you have a `boolean` attribute `active`, and you want only to see the active documents.
 
-In this case you can write `is:active` in the search box.
+In this case, you can write `is:active` in the search box.
 
 ### Range
 
-Numeric values can be filtered with **range** filters. If you have `stock` field and
-you want to see only products that their stock is bigger that 20, you can write `stock:>20`.
+Numeric values can be filtered with **range** filters. If you have `stock` field and you want to see only products whose stock is bigger than 20, you can write `stock:>20`.
 
 ### \_id
 
-In a lot of cases you may need to search a specific document by it's `_id`.
+In many cases, you may need to search a specific document by its `_id`.
 
 Here's an example `_id:1HtVh4IBrbFU6hq5Niqr`.
 
 ### Wildcard
 
-Wildcard searching is also available for the cases what you aren't sure that
-excaclty a field contains.
+Wildcard searching is also available for the cases where you aren't sure that
+exactly a field contains.
 
-For example `name:"HOODIE*"`
+For example `name:"The Lion King*"`
 
 ## Create
 
-To add a **new** document to your index you can click on the **Add** button
+To add a **new** document to your Index, you can click on the **Add** button
 above the documents table.
 
 You will then see an input modal. There you can either add a **single** document by simply
-writing puting the values that you want.
+writing putting the values that you want.
 
 ```json
 {
-  "brand": "Nike",
-  "color": "red"
+  "name": "Pinocchio",
+  "release_year": "1940"
 }
 ```
 
-or even create **multiple** documents by creating an **array** of JSON objects.
+Or even create **multiple** documents by creating an **array** of JSON objects.
 
 ```json
 [
   {
-    "brand": "Adidas",
-    "color": "blue"
+    "name": "Pinocchio",
+    "release_year": "1940"
   },
   {
-    "brand": "Nike",
-    "color": "red"
+    "name": "Hercules",
+    "release_year": "1997"
   }
 ]
 ```
 
 ### API - Upsert
 
-Adding a siglie Documents is of course also possible using the API endpoint.
+Adding a single Document is of course, also possible using the API endpoint.
 
 | Method | Path                                |
 | ------ | ----------------------------------- |
@@ -147,15 +145,15 @@ Adding a siglie Documents is of course also possible using the API endpoint.
 
 ```json
 {
-  "brand": "Nike",
-  "color": "red"
+  "name": "Hercules",
+  "release_year": "1997"
 }
 ```
 
 Adding an `_id` attribute will **create or replace** a document with the given `_id`.
 
 Keep in mind that this is an `upsert` action, and it will replace **all** existing document
-attributes. If you want to only partialy update a document use the [patch](/docs/docs#api-patch-update) endpoint.
+attributes. If you want to only partially update a document use the [patch](/docs/docs#api-patch-update) endpoint.
 
 ### API Batch
 
@@ -172,15 +170,15 @@ You can also use the `batch` endpoints to addmultiple documents at once.
   {
     "action": "create",
     "body": {
-      "brand": "Adidas",
-      "color": "blue"
+      "name": "Pinocchio",
+      "release_year": "1940"
     }
   },
   {
     "action": "create",
     "body": {
-      "brand": "Nike",
-      "color": "red"
+      "name": "Hercules",
+      "release_year": "1997"
     }
   }
 ]
@@ -188,11 +186,11 @@ You can also use the `batch` endpoints to addmultiple documents at once.
 
 ## Update
 
-To update a document click on the edit icon on the document row on the table.
+To update a document, click on the edit icon on the document row on the table.
 
 ### API - Patch update
 
-The patch endpoint can be used to only **partialy** update a Document over the API.
+The patch endpoint can be used to only **partially** update a Document over the API.
 
 | Method | Path                                                          |
 | ------ | ------------------------------------------------------------- |
@@ -202,18 +200,19 @@ The patch endpoint can be used to only **partialy** update a Document over the A
 
 ```json
 {
-  "brand": "Nike",
-  "color": "orange"
+  "name": "Hercules",
+  "duration_min": 99
 }
 ```
 
 ### API - Batch
 
-To update multiple Document over the API use the `batch` endpoint.
+To update multiple Documents over the API, use the `batch` endpoint.
 
 | Method | Path                             |
 | ------ | -------------------------------- |
 | PUT    | `/v1/index/{ index-name }/batch` |
+
 #### Body
 
 ```json
@@ -222,16 +221,16 @@ To update multiple Document over the API use the `batch` endpoint.
     "action": "update",
     "_id": "36VtPoIB1B_0_E8pmVb4",
     "body": {
-      "brand": "Nike",
-      "color": "orange"
+      "name": "Pinocchio",
+      "duration_min": 88
     }
   },
   {
     "action": "update",
     "_id": "36VtPoIB1B_0_E8pmVb4",
     "body": {
-      "brand": "Adidas",
-      "color": "pink"
+      "name": "Hercules",
+      "duration_min": 99
     }
   }
 ]
@@ -239,18 +238,18 @@ To update multiple Document over the API use the `batch` endpoint.
 
 ## Delete
 
-To delete a Document you can click on the **transh** icon in the documents table, or again
+To delete a Document, you can click on the **trash** icon in the documents table or again
 use the API endpoint.
 
 ### API - Delete
 
-| Method | Path                             |
-| ------ | -------------------------------- |
+| Method | Path                                        |
+| ------ | ------------------------------------------- |
 | DELETE | `/v1/index/{ index-name }/document/{ _id }` |
 
 ### API - Batch delete
 
-To delete multiple Documents over the API use the `batch` endpoint.
+To delete multiple Documents over the API, use the `batch` endpoint.
 
 | Method | Path                             |
 | ------ | -------------------------------- |
@@ -262,15 +261,15 @@ To delete multiple Documents over the API use the `batch` endpoint.
 [
   {
     "action": "delete",
-    "_id": "36VtPoIB1B_0_E8pmVb4",
+    "_id": "36VtPoIB1B_0_E8pmVb4"
   },
   {
     "action": "delete",
-    "_id": "36VtPo2VB1B_0_E8pmVb4",
-  },
+    "_id": "36VtPo2VB1B_0_E8pmVb4"
+  }
 ]
 ```
 
 ## Size limit
 
-The allowed documents size for a document is **100KB**.
+The allowed Document size for a document is **100KB**.

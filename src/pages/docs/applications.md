@@ -8,45 +8,48 @@ is totaly independent and has it's own infrastructure and billing cycle.
 
 ---
 
+This of an Application like a workspace where your Indices and your Documents live.
+
+Each Sigmie Application is independent and has its own infrastructure and billing cycle.
+
+---
+
 ## General
 
-When you sing up for Sigmie we create a user and an Sigmie application for you. In other words we are
-creating infrastructure that is only for you.
+Each Sigmie Application has a **unique** identifier that is registered as a DNS entry; Making your search available under `{application-id}.sigmie.app`.
 
-Each Sigmie application has a unique identifier that is registered as a DNS entry
-making your search available under `{application-id}.sigmie.app`:
+The`{application-id}`, is replaced with the actual **identifier** that you will in the application's dashboard.
 
-Where you see `{application-id}` it has to be replaced with the actual id that you can find in your application's
-dashboard.
+Each application has 3 dedicated servers that guarantee **High Availability**. 
 
-Each application has 3 servers in order to guarantee **High Availability** is anything goes wrong. Each one of the servers has it's own domain name like bellow.
+Each one of the servers is also available under its own domain name.
 
 - `{application-id}-a.sigmie.app`
 - `{application-id}-b.sigmie.app`
 - `{application-id}-c.sigmie.app`
 
 {% callout type="info" title="Shuffling" %}
-We recommend to implement a retry strategy and shuffling to the above hosts when making API calls. This way load balancing and high availability will be guaranteed.
+We recommend implementing a retry strategy and shuffling the above hosts when making HTTP calls. This way, load balancing and high availability will be guaranteed.
 {% /callout %}
 
 ### Name and Description
 
-Distiguishing your Sigmie applications using the application id can be a trivial task. For this reason you can of course set a human readable name to
-each of your applications and an optional description that will give you some more details later when you going to need them.
+Because distinguishing your Sigmie applications using the application identifier can be a trivial task. You can set a human-readable name to
+each of your applications, and an optional description that will provide more context.
 
-You can change both in your application settings, by clicking on **Settings** in the side bar navigation.
+You do this in your application settings by clicking on **Settings** in the sidebar navigation.
 
 ## Billing
 
 Because of the dedicated infrastructure for each Sigmie application
-each application has it's own subscription.
+each application has its own subscription.
 
 ### Plans
 
-The main factor in our pricing model is the usage. We have multiple plans
-that should cover the majority of cases.
+The main factor in our pricing model is usage. We have multiple plans
+that cover the majority of cases.
 
-We are offering the following plans:
+The following plans are available:
 
 #### 2K - 159 $
 
@@ -56,7 +59,7 @@ We are offering the following plans:
 - Up to 200,000 monthly requests
 
 {% callout type="info" title="Trial" %}
-Choosing the 2K plan you have 5 days of free trial.
+Choosing the 2K plan, you have 5 days free trial.
 {% /callout %}
 
 #### 4K - 279 $
@@ -94,16 +97,14 @@ free usage.
 
 ### Tolerace
 
-There is a 10% percent tolerance if you exceed your documents limit, and
-a 20% percent for your API requests.
+There is a **10%** percent tolerance if you exceed your documents limit, and
+a **20%** percent for your API requests.
 
 ## Regions
 
-Even though we use **premium** request routing services to ensure that your end users that are located in another part of the word, will reach your search as fast as possible. 
+We use **premium** request routing services to ensure that your end users that are located in another part of the world will reach your search as fast as possible. 
 
-And because of different privacy regulations in different countries.
-
-You can choose the desired location where your data will be stored.
+But in order to comply with different privacy regulations in different countries, you can choose the desired location where your data will be stored.
 
 The currently supported regions are
 

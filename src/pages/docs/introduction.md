@@ -5,58 +5,59 @@ description: Sigmie offers a smart On-Site Search for you application.
 
 ## What is Sigmie ?
 
-Sigmie application is hosted Search solution for any application. Having a smart search is much
-more than matching one word in thousands of documents. To find the perfect match for a search
-query you have to take various factors into considaration, such as language and typos. Sigmie
-takes all this pain away and provides you with a user interface to make the management of
-your search as easy and flexible as possible.
+Sigmie application is hosted Search solution for any application. Having an intelligent search is much
+more than matching one word in thousands of documents. 
+
+To find the perfect match for a
+Query you have to take into consideration things like:
+The Query language
+Possible typos
+and more
+Sigmie takes this pain away and provides a user interface to make managing your search easy.
 
 ### Introduction Video
 
-We have an introduction where we show you how to setup a search in less than 4 minutes
-for your application. You can watch it [here](https://youtube.com/sigmie/introduction).
+We have an introduction where we show you how to set up a search in less than 4 minutes.
 
-## How Sigmie works ?
+You can watch it [here](https://youtube.com/sigmie/introduction).
 
-A smart, fast and reliable search engine is resourcefull process. For every sigmie **application**
-that you create, we setup 3 servers in the [Region](/docs/applications#regions) that you choose.
+## How Sigmie works?
 
-This way we are creating a powerfull and highly available setup where you can send your
-user's queries directly to.
+For every **Sigmie application** that you create, we set up 3 **dedicated** servers in the [Region](/docs/applications#regions) that you chosed.
 
-Using this approach we can guarantee fast responses for your users.
+This way, you get a powerful and **highly available** Search Engine to send your queries to.
 
-## Why is the price so high ?
+This way, fast and reliable service for your users is guaranteed.
 
-Our software quality is the main focus in our daily buisness and to accomplish that
-we need to be sure we don't save money on hardware and service costs.
+## Why is the price so high?
 
-So if you trust us with your search your are trusting our servers with a very curcial
-part of your buisness and we want to provide your the best that we can.
+Quality is the main focus of our business. For this reason, we use premium hardware for our service, guaranteeing the best performance.
+
+Because us means trusting our servers with a very crucial
+part of your business, and we want to provide you the best we can.
 
 ### Trial
 
-Running servers is an expensive thing, therefore we are offering only 5 days trial for
-the **2K** accounts. In our opinion this is enought for you to decide if Sigmie is fitting 
-your organisation.
+Running servers is an expensive thing; We are offering 5 days trial **only** for
+the **2K** subscription plans. In most cases, this is enough for you to decide if Sigmie is a good fit for your organization.
 
-Once your trial has expired, if you still haven't decided, you can contact us an we will
-extend your trial for you.
+If your trial has expired, if you still haven't decided, you can contact us, and we will extend it for you.
 
-## Getting help ?
+## Getting help?
 
 If you have any questions or problems while using our application, you can use the **Feedback** button
-in the right-down corner of your navigation side bar.
+in the right-down corner of your navigation sidebar.
 
-A modal form will appear for you to submit any question or bug regarding our application, and we will get
+Submit the form with any question or bug regarding our application, and we will get
 back to you within 24 hours.
 
-## Sumit an Issue ?
+## Sumit an Issue?
 
-If you found a bug, you can submit an **Issue** in our public github repository [ here ](https://github.com/sigmie/app-issues).
+If you found a bug, you can submit an **Issue** in our public Github repository [ here ](https://github.com/sigmie/app-issues).
 
-## Found something wrong ?
+## Found something wrong?
 
 This documentation page is open source and available on [Github](https://github.com/sigmie/docs).
-If you have found something in the documentation that is confusing or incorrect ?
+If you have found something in the documentation that is confusing or incorrect?
+
 Please consider submitting a pull request on GitHub.
