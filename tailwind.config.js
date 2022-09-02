@@ -21,6 +21,19 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      colors: {
+        orange: {
+          100: '#fad3d1',
+          200: '#ec5b55',
+          300: '#ee6963',
+          400: '#e9453e',
+          500: '#ec5b55',
+          600: '#d31f18',
+          700: '#c11c16',
+          800: '#c11c16',
+          900: '#9c1711',
+        },
+      },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
         display: ['Lexend', ...defaultTheme.fontFamily.sans],
