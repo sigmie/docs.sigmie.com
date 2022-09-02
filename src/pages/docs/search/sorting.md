@@ -3,22 +3,22 @@ title: Sorting
 description: Hits sort settings
 ---
 
-Sorting criteria for the Search results
+Sorting criteria for the Search hits.
 
 ---
 
-On Search the Hits are gettings a `_score` value, that indicates how **good** the document matches the given query.
+On Search, the Hits are gettings a `_score` value that indicates how **good** the Document matches the given query.
 
-The Document with the **highest** score commes first and so on.
+The Document with the **highest** score comes first, and so on.
 
-You can change this behaviour on Search-level in the Sigmie UI.
+You can change this behavior on Search-level in the Sigmie UI.
 
 ## Attributes
 
-You can speficy the attributes that are taken into consideration when sorting
+You can specify the attributes that are taken into consideration when sorting
 the Search hits in the Sigmie UI.
 
-Let's say you have and index that contains documents in the following structure
+Let's say you have an index that contains documents in the following structure.
 
 ```json
 {
@@ -29,13 +29,13 @@ Let's say you have and index that contains documents in the following structure
 }
 ```
 
-It's possible that you want to first show the newest Documents. In this case you can choose the `release_year` as sorting attribute with direction `Desc`.
+You may want to first show the newest Documents. In this case, you can choose the `release_year` as a sorting attribute with the direction `Desc`.
 
-By doing so, your Search **Hits** will be sorted by `release_year` **Ascending**. So the newest releases will be shown on top ignoring the `_score` attribute.
+Your Search **Hits** will be sorted by `release_year` **Ascending**. So the newest releases will be shown on top, ignoring the `_score` attribute.
 
 ### \_score
 
-The `_score` attribute is a `float` assigned to Documents indicating how good each Document matches the query and it's a part of the Hits `object`.
+The `_score` attribute is a `float` assigned to Documents indicating how good each Document matches the query, and it's a part of the Hits `object`.
 
 ```json
 {
@@ -51,7 +51,7 @@ The `_score` attribute is a `float` assigned to Documents indicating how good ea
 
 #### How is \_score calculated
 
-There are several factors that define the score rating
+There are several factors that define the score rating.
 
 1. **Term frequency**
 
@@ -68,7 +68,7 @@ There are several factors that define the score rating
 1. **Field length**
 
    A term found in a short field like `name` is more important than a term
-   in a longer field like `description` field.
+   in a longer field like the `description` field.
 
 1. **Field boost**
 
@@ -76,11 +76,11 @@ There are several factors that define the score rating
 
 ## Direction
 
-Like everywhere you can choose the sorting direction for your Hits.
+Like everywhere, you can choose the sorting direction for your Hits.
 
 ### Asc
 
-The `Asc` direction shorts the Hits in **Ascending** order. So if the sorting attribute is a number, then the Documents with the **lowest** will come as first.
+The `Asc` direction shorts the Hits in **Ascending** order. So if the sorting attribute is a number, then the Documents with the **lowest** will come first.
 
 ### Desc
 

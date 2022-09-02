@@ -3,22 +3,24 @@ title: Retrievable attributes
 description: Hit fields that will be used after retrieving.
 ---
 
-Retrive only Hit fields that you are going to use.
+Retrieve only the Hit fields that you are going to be used.
 
 ---
 
-The reduce unnecessary big payload it's wise to only retrieve attributes
-that will be used after a Document matched a query.
+The reduce big unnecessary payload, it's wise to only retrieve attributes
+that will be used after a Document matches a query.
 
-It's common practise sending a query to Sigmie and to retrieve **only** the Document `id` attribute.
+Retrievable Attributes are defined in the Search settings.
 
-Then once you have the matches ids returned from your Sigmie Search, you query
-your SQL Database for the returned ids.
+[IMG]
 
-For example your send the following json payload to the Search endpoint, and you have set
-**only** the field `sql_id` as retrievable attribute.
+It's common practice to send a query to Sigmie and retrieve **only** the Document `id` attribute.
 
-then the retrieved Document attributes will look like this
+Then once you have the matches ids returned from your Sigmie Search, you query your SQL Database for the returned ids.
+
+For example, you send the following JSON payload to the Search endpoint, and you have set **only** the field `sql_id` as a retrievable attribute.
+
+Then the retrieved Document attributes will look like this.
 
 ```json
 {
@@ -32,7 +34,7 @@ then the retrieved Document attributes will look like this
 }
 ```
 
-then your can use he `sql_id` attribute to retrieve the **whole** Documents from your SQL database.
+Then you can use the `sql_id` attribute to retrieve the **whole** Documents from your SQL database.
 
 ```sql
 SELECT * FROM movies WHERE id IN (39)
