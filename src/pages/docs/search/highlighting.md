@@ -12,6 +12,8 @@ Highlighting is part of a Search and works as follows:
 You choose which attributes should be highlighted when Sigmie returns
 the **Hits** for the passed Query and define a **prefix** and a **suffix**.
 
+[IMG]
+
 Commonly the search results are displayed in HTML pages, so the prefix and the suffix will be **HTML Tags**.
 
 So we sent the query "family movies," and the "family" token was matched in a Document. We also have set up the `<span class="font-bold">` tag as a prefix and the `</span>` as a suffix.

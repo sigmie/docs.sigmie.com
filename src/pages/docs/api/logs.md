@@ -7,14 +7,20 @@ Debug your Sigmie Application using the API Logs.
 
 ---
 
-Visiting the **API Logs** the in your Sigmie dashboard you, will find all
+Debug your Sigmie Application using the API Logs.
+
+---
+
+Visiting the **API Logs** in your Sigmie dashboard, you will find all
 the latest HTTP Requests made to your Sigmie Application.
 
-Clickin on one of the Log entries you will see details about the HTTP Request made, as what that the request body sent and what was the returned response.
+[IMG]
+
+Clicking on one of the Log entries, you will see details about the HTTP Request made, what the request body sent and what was the returned response.
 
 ## Request
 
-The available information are the **Request**
+The available informations are the **Request**
 
 - Method
 - Time
@@ -24,9 +30,9 @@ The available information are the **Request**
 
 ## Response
 
-The available **Response** information are the
+The available **response** information is the
 
-- Proccessing time
+- Processing time
 - Response code
 
 {% callout type="warning" title="Long Body" %}

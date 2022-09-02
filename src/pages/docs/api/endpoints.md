@@ -3,37 +3,37 @@ title: Endpoints
 description: REST API Reference
 ---
 
-The REST API is the core of your Sigmie Application
+REST API Endpoints of your Sigmie Application
 
 ---
 
-Bellow is a list with all API **Endpoints**
+Below is a list with all API **Endpoints**
 
 | Method | Path                                                | Action                                   |
 | ------ | --------------------------------------------------- | ---------------------------------------- |
 | GET    | `/health`                                           | [ Health Check ](/docs/api/endpoints)    |
-| GET  | `/v1/index/{ index-name }/document/{ document-id }` | [ Get Document ](/docs/api/endpoints)    |
-| POST | `/v1/index/{ index-name }/document/{ document-id }` | [ Upsert Document ](/docs/api/endpoints) |
+| GET    | `/v1/index/{ index-name }/document/{ document-id }` | [ Get Document ](/docs/api/endpoints)    |
+| POST   | `/v1/index/{ index-name }/document/{ document-id }` | [ Upsert Document ](/docs/api/endpoints) |
 | DELETE | `/v1/index/{ index-name }/document/{ document-id }` | [ Delete Document](/docs/api/endpoints)  |
 | PATCH  | `/v1/index/{ index-name }/document/{ document-id }` | [ Patch Document](/docs/api/endpoints)   |
 | POST   | `/v1//index/{ index-name }/batch`                   | [ Batch Write ](/docs/api/endpoints)     |
 | PUT    | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
 | POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
-| POST | `/v1/search/{ search-name }`                        | [Search](/docs/api/endpoints)            |
+| POST   | `/v1/search/{ search-name }`                        | [Search](/docs/api/endpoints)            |
 
 ## Host
 
-Use the **Host** below to access your Sigmie Application API.
+Use the **host** below to access your Sigmie Application API.
 
 - `{application-id}.sigmie.app`
 
-Even though this host will work just fine in the mejority of situations, it's advices to use a Round-n-Robin retry strategy for the following hosts.
+Even though this host will work just fine in the majority of situations, it's advised to use a Round-n-Robin retry strategy for the following hosts.
 
 - `{application-id}-a.sigmie.app`
 - `{application-id}-b.sigmie.app`
 - `{application-id}-c.sigmie.app`
 
-To ensure high availability we are creating **3** servers for each Sigmie Application, and each one of them has one of the above DNS entries.
+To ensure high availability, we are creating **3** servers for each Sigmie Application. Each one has one of the above DNS entries.
 
 ## Search
 
@@ -57,7 +57,7 @@ To ensure high availability we are creating **3** servers for each Sigmie Applic
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"query":"peter pan","per_page":3,"page":1}' \
@@ -136,7 +136,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"name":"Mulan","category":["Musica","Family"],"release_year":"1998","duration_min":88}' \
@@ -167,7 +167,7 @@ curl -X POST \
 
 ```bash
 curl -X GET \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/document/fXE6OoIBtixTeHPNKXnG"
@@ -205,7 +205,7 @@ curl -X GET \
 
 ```bash
 curl -X PUT \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"duration_min":93}' \
@@ -236,7 +236,7 @@ curl -X PUT \
 
 ```bash
 curl -X DELETE \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/document/fXE6OoIBtixTeHPNKXnG"
@@ -278,7 +278,7 @@ curl -X DELETE \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '[{"_id":"dHt8qIIBrbFU6hq5wjQx"},{"_id":"h3t8qIIBrbFU6hq5wjQx"},{"_id":"Mnt8qIIBrbFU6hq5wjQx"}]' \
@@ -373,7 +373,7 @@ curl -X POST \
 
 ```json
 {
-  "action": "update",
+  "action": "Update",
   "_id": "36VtPoIB1B0E8pmVb4",
   "body": {
     "name": "The Jungle Book",
@@ -426,9 +426,9 @@ curl -X POST \
 
 ```bash
 curl -X PUT \
-     -H "Content-Type: application/json" \
+     -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
-     -d '[{"action":"delete","_id":"PkOoIBJq3of4094YiE"},{"action":"update","_id":"36VtPoIB1B0E8pmVb4","body":{"name":"The Jungle Book","release_year":"1967"}},{"action":"create","body":{"name":"101 Dalmatians","category":["Comedy","Family"],"release_year":"1961","duration_min":79}}]' \
+     -d '[{"action":"delete","_id":"PkOoIBJq3of4094YiE"},{"action":"update","_id":"36VtPoIB1B0E8pmVb4","body":{"name":"The Jungle Book","release_year":"1967"}},{"action":"Create","body":{"name":"101 Dalmatians","category":["Comedy","Family"],"release_year":"1961","duration_min":79}}]' \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/batch"
 ```

@@ -13,6 +13,8 @@ The Document with the **highest** score comes first, and so on.
 
 You can change this behavior on Search-level in the Sigmie UI.
 
+[IMG]
+
 ## Attributes
 
 You can specify the attributes that are taken into consideration when sorting

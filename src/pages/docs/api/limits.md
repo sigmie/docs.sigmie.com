@@ -3,7 +3,7 @@ title: Limits
 description: Service upper limits
 ---
 
-There are some limits that apply to the use of our service.
+Some limits apply to the use of our service.
 
 ---
 

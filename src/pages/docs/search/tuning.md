@@ -9,6 +9,8 @@ Tune important Document attributes.
 
 In the "Tuning" section, you can add a **linear** boost to your fields. Boosting a field plays an important role when calculating a Document's relevancy.
 
+[IMG]
+
 Imagine we have those 3 Documents.
 
 ```json

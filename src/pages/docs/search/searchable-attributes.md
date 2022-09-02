@@ -7,6 +7,8 @@ Omit attributes that the user won't search for.
 
 ---
 
+[IMG]
+
 Not all attributes are valuable when trying to find the perfect match.
 
 For example, a user never writes the product **stock** in a search box.

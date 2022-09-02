@@ -3,20 +3,19 @@ title: Searching
 description: Find Document matches in an Index
 ---
 
-Searching is the proccess of finding **Hits** for a give query
+Searching is the process of finding **Hits** for a given Query.
 
 ---
 
-Once you have setup your **Index** and a **Search** for your index you can start sending
-HTTP requests containing user **Queries**, and receive matched **Hits**.
+Once you have set up your **Index** and a **Search** for your Index, you can start sending HTTP requests containing user **Queries**, and receive matched **Hits**.
 
-This is the Search Endpoing for your Sigmie Application.
+This is the Search Endpoint for your Sigmie Application.
 
 | Method | Path                    |
 | ------ | ----------------------- |
 | POST   | `/search/{search-name}` |
 
-and this is how your JSON body has to look like
+And this is how your JSON body has to look like
 
 ```json
 {
@@ -83,11 +82,11 @@ That's how a Search response looks like
 The API supports CORS requests making it possible to send **Search** HTTP
 requests directly from your application frontend.
 
-Here an Axios example
+Here an Axios example.
 
 ```js
 async function getHits() {
-  const response = await axios.get('/search/disney-movies')
+  const response = await Axios.get('/search/Disney-movies')
 
   return response.data.hits
 }

@@ -17,7 +17,7 @@ Sigmie API supports **Basic** and **via HTTP headers** authentication.
 
 ### HTTP Headers
 
-Authentication via HTTP headers in done with the following headers
+Authentication via HTTP headers is done with the following headers.
 
 | Header                 | Value                  |
 | ---------------------- | ---------------------- |
@@ -34,4 +34,4 @@ You can use the following credentials to authenticate using **Basic Auth**.
 
 ## CORS
 
-Sigmie supports Cross-Origin Resource Sharing (CORS), so that you can use the Authentication headers with XMLHttpRequest.
+Sigmie supports Cross-Origin Resource Sharing (CORS), so you can use the Authentication headers with XMLHttpRequest.

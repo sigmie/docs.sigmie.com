@@ -24,7 +24,7 @@ default pagination limit.
 
 When searching the API returns a response like this.
 
-```JSON
+```json
 {
   // ...
   "hits": [
@@ -42,7 +42,7 @@ search results.
 
 In this example, we retrieved the **default** 20 Document hits. Now, if you want the fetch the second page with the **remaining** 10 Documents. You can send the following JSON:
 
-```JSON
+```json
 {
   "query": "disney",
   "page": 2
@@ -51,7 +51,7 @@ In this example, we retrieved the **default** 20 Document hits. Now, if you want
 
 Of course, you can also change the `per_page` value.
 
-```JSON
+```json
 {
   // ...
   "per_page": 30

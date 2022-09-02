@@ -7,6 +7,8 @@ A smart search can forgive spelling mistakes and still serve the correct result.
 
 ---
 
+[IMG]
+
 Our users are humans, and like everyone, they may make spelling mistakes. We can forgive one or two mistakes by setting "Typo Tolerance" on the Search level.
 
 ## Attributes
@@ -14,7 +16,7 @@ Our users are humans, and like everyone, they may make spelling mistakes. We can
 Not all attributes should be a good fit for Search "Typo Tolerance". Take
 the following Document, for example:
 
-```JSON
+```json
 {
   "name": "Finding Nemo",
   "category": ["Adventure", "Family"],
