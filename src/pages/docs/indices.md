@@ -1,9 +1,9 @@
 ---
 title: Indices
-description: A space where your documents live.
+description: A space where your Documents live.
 ---
 
-An Index is a space with various settings where your documents are living.
+A space where your Documents are living.
 
 ---
 

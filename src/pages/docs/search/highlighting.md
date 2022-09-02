@@ -3,7 +3,7 @@ title: Highlighting
 description: Hightligh the matched words in the results.
 ---
 
-Use Highlighting to make your users notice why a result matched their Query.
+Hightligh the matched words in the results.
 
 ---
 
@@ -12,7 +12,7 @@ Highlighting is part of a Search and works as follows:
 You choose which attributes should be highlighted when Sigmie returns
 the **Hits** for the passed Query and define a **prefix** and a **suffix**.
 
-[IMG]
+ 
 
 Commonly the search results are displayed in HTML pages, so the prefix and the suffix will be **HTML Tags**.
 
@@ -38,7 +38,7 @@ The JSON response will look like this.
 
 You can choose which attributes to consider for Highlighting in your Search settings.
 
-[IMG]
+ 
 
 {% callout type="info" title="Resource" %}
 It's advised to only highlight attributes that you will show to the user for faster response times.

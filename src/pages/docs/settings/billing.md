@@ -14,7 +14,7 @@ We offer per-application billing. Each of your applications needs a valid subscr
 
 To manage your applications' billing settings, go to your settings page, and select the project under the **Projects** tab.
 
-[IMG]
+ 
 
 ## Refunds
 

@@ -14,7 +14,7 @@ For cases like this, there are predefined algorithms for the Sigmie supported [l
 
 You can also define your own stemming rules in the Sigmie UI in the **Language** tab.
 
-[IMG]
+ 
 
 ## Custom stemming rules
 

@@ -3,7 +3,7 @@ title: Endpoints
 description: REST API Reference
 ---
 
-REST API Endpoints of your Sigmie Application
+REST API Endpoints of your Sigmie Application.
 
 ---
 

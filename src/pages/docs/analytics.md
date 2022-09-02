@@ -3,7 +3,7 @@ title: Analytics
 description: Data driven changes
 ---
 
-Making data driven descisions to achieve better search results.
+Get to know your Search.
 
 ---
 
@@ -20,19 +20,13 @@ To clarify, if your time range is "**Last Month**", this trend compares the retr
 
 The "Total Searches" metric shows how many Search requests were made during the specified time range.
 
-[IMG]
-
 ### No Results Rate
 
 The "No Results Rate" displays what percent of the Searches didn't return any matches.
 
-[IMG]
-
 ### Unique Searches
 
 The "Unique Searches" displays how many incoming Queries are unique.
-
-[IMG]
 
 ### Response time
 
@@ -40,16 +34,12 @@ You Index and Search settings can affect your search engine's response time.
 
 This metric shows the average time your engine needs to process the incoming Query.
 
-[IMG]
-
 ### Total Hits Served
 
 "Total Hits Served" is the total amount of the returned hits.
-[IMG]
+
 Search Requests
 The "Search Requests" graph displays the Search requests spread over the time range.
-
-[IMG]
 
 ## Scoreboards
 

@@ -7,7 +7,7 @@ Omit attributes that the user won't search for.
 
 ---
 
-[IMG]
+ 
 
 Not all attributes are valuable when trying to find the perfect match.
 

@@ -3,11 +3,11 @@ title: Applications
 description: A workspace for your indices and documents.
 ---
 
-Think of an Application like a workspace where your Indices and your Documents live.
-
-Each Sigmie Application is independent and has its own infrastructure and billing cycle.
+A workspace where your Indices and your Documents live.
 
 ---
+
+Each Sigmie Application is independent and has its own infrastructure and billing cycle.
 
 ## General
 
@@ -33,7 +33,7 @@ You can set a human-readable name, and an optional description that will provide
 
 Navigate to the Application settings by clicking on **Settings** in the sidebar.
 
-[IMG]
+ 
 
 ## Billing
 

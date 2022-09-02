@@ -3,7 +3,7 @@ title: Documents
 description: Searchable JSONs that live inside of an Index.
 ---
 
-Documents are simply JSON object structures living inside of an Index.
+JSON object structures living inside of an Index.
 
 ---
 
@@ -70,7 +70,7 @@ In the **Documents** section in the Sigmie Application, you can find a table con
 
 You can view, edit, update, delete and filter your Documents there.
 
-[IMG]
+ 
 
 This is fine for toying around and for minor changes but always consider using the [API](/docs/api/endpoints) endpoints
 for dynamic integration between your application and Sigmie.

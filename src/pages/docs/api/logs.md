@@ -14,7 +14,7 @@ Debug your Sigmie Application using the API Logs.
 Visiting the **API Logs** in your Sigmie dashboard, you will find all
 the latest HTTP Requests made to your Sigmie Application.
 
-[IMG]
+ 
 
 Clicking on one of the Log entries, you will see details about the HTTP Request made, what the request body sent and what was the returned response.
 

@@ -3,7 +3,7 @@ title: Retrievable attributes
 description: Hit fields that will be used after retrieving.
 ---
 
-Retrieve only the Hit fields that you are going to be used.
+Retrieve only the attributes that you are going to be used.
 
 ---
 
@@ -11,8 +11,7 @@ The reduce big unnecessary payload, it's wise to only retrieve attributes
 that will be used after a Document matches a query.
 
 Retrievable Attributes are defined in the Search settings.
-
-[IMG]
+ 
 
 It's common practice to send a query to Sigmie and retrieve **only** the Document `id` attribute.
 

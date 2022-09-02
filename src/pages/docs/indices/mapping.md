@@ -9,7 +9,7 @@ Document fields data types.
 
 Index mappings are defined in your Index settings in the "Mappings" tab.
 
-[IMG]
+ 
 
 ## Text
 

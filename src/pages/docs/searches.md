@@ -3,7 +3,7 @@ title: Search
 description: Query configurations.
 ---
 
-Searches are set sets of configurations for handling a query gainst an Index.
+Query handling configurations.
 
 ---
 
@@ -42,7 +42,7 @@ Every Search consists of various elements. Let's take a look at some of them.
 
 Every Search needs a **Name** and an **Index**.
 
-[IMG]
+ 
 
 {% callout type="info" title="Name" %}
 The Search name is the identifier according to which, Sigmie knows how

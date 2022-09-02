@@ -3,11 +3,9 @@ title: Typo Tolerace
 description: Fuzzy matching for chosed attributes
 ---
 
-A smart search can forgive spelling mistakes and still serve the correct result.
+Forgive spelling mistakes.
 
 ---
-
-[IMG]
 
 Our users are humans, and like everyone, they may make spelling mistakes. We can forgive one or two mistakes by setting "Typo Tolerance" on the Search level.
 
@@ -74,7 +72,7 @@ Also, here ane are more examples that **won't** match.
 - Z**es**u -> ~~Zazu~~
 - S**kk**ar -> ~~Scar~~
 
-### 3 Typos or more 
+### 3 Typos or more
 
 Allowing **more** than **2** typos in a word can use too many resources, plus it mostly leads to false positives.
 

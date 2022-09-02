@@ -3,7 +3,7 @@ title: Query Box
 description: Test you search configuration.
 ---
 
-Test your Search settings using the query input field.
+Test your Search settings.
 
 ---
 
@@ -35,7 +35,7 @@ Going one step further, if we have checked the language lowercase filter, the "W
 
 You can see how your search tokenizes the given tokens under the **Tokens** label.
 
-[IMG]
+ 
 
 ## Hits
 
@@ -45,7 +45,7 @@ While you are typing in the Query Box we are querying your search; The returned 
 
 Under the **Hits** label, you can see the documents that matched your Query sorted by score.
 
-[IMG]
+ 
 
 {% callout type="info" title="Sorting" %}
 You can change the sorting criteria the in your Search settings.

@@ -11,7 +11,7 @@ Split the Search hits into pages.
 
 By default, Sigmie will return the first 20 matched Search results for a Query. You can customize this behavior in the Sigmie UI or using the API.
 
-[IMG]
+ 
 
 The pagination settings are configured on **Search** level.
 

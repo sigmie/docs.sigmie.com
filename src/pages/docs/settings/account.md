@@ -7,7 +7,7 @@ In the account settings, you can update basic information about your account.
 
 ---
 
-[IMG]
+ 
 
 ## Update your email
 

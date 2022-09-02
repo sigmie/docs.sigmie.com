@@ -9,7 +9,7 @@ Predefined Language filters.
 
 You can pick your Index Language in the Index settings in the "Language" tab.
 
-[IMG]
+ 
 
 ## English
 

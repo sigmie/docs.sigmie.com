@@ -24,7 +24,7 @@ This API Token is intended to be used on the Server-Side of your application.
 To generate such Key choose **Admin** in the `Type` dropdown selection when
 creating an API Key.
 
-[IMG]
+ 
 
 {% callout type="danger" title="Secret" %}
 Never expose the Admin Keys to the user.

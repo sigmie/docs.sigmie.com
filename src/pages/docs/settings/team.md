@@ -7,7 +7,7 @@ Invite team members to your applications.
 
 ---
 
-[IMG]
+ 
 
 Each account has a **Team**. You can invite members of your Team to collaborate with you. Team members will have **read** access to **all your projects**. This allows organizations to have more than 1 user managing their projects.
 

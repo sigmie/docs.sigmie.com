@@ -3,14 +3,11 @@ title: Synonyms
 description: Multiple words meaning the same thing.
 ---
 
-In a Search context, the words "jewel" and "gold" both actually mean the
-same thing.
+Handle the words "jewel" and "gold" the same.
 
 ---
 
 In the Index **Synonyms** tab in the Sigmie UI, you can define synonyms at the index level.
-
-[IMG]
 
 The synonyms are separated into **One-Way** and **Two-Way**.
 
