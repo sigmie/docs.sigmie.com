@@ -16,7 +16,6 @@ const navigation = [
     title: 'Application',
     links: [
       { title: 'Introduction', href: '/docs/introduction' },
-      { title: 'Quick Start', href: '/docs/quickstart' },
       { title: 'Applications', href: '/docs/applications' },
       { title: 'Indices', href: '/docs/indices' },
       { title: 'Documents', href: '/docs/docs' },
