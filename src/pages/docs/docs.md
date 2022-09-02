@@ -9,7 +9,7 @@ Documents are simply JSON object structures living inside of an Index.
 
 ## Format
 
-This is a simple JSON document of an imaginary Disney Movies Index.
+This is a simple Document.
 
 ```json
 {
@@ -38,7 +38,7 @@ There isn't something worth noting about most of the attribute types, except for
 
 ### Arrays
 
-The `array` attribute `sizes` above is internally handled as one single attribute `size` has two values.
+The `array` attribute `sizes` above is internally handled as one single attribute `size` that has two values.
 
 Imagine this if this was possible.
 
@@ -49,13 +49,13 @@ Imagine this if this was possible.
 }
 ```
 
-now, of course, this isn't a valid JSON, but it's just for demonstration for you to take an idea of how it looks like
+now, of course, this isn't a valid JSON, but it's just for demonstration for you to take an idea of how it's handled
 internally.
 
 ### Nested objects
 
 Nested `object` types are flattened; In our example the `rating` object will be internally flattened and
-treated like bellow.
+treated like this.
 
 ```json
 {
@@ -66,9 +66,11 @@ treated like bellow.
 
 ## Documents table
 
-In the **Documents** section in the Sigmie Application, you can find a table containing your index documents.
+In the **Documents** section in the Sigmie Application, you can find a table containing your Index Documents.
 
-You can view, edit, update, delete and filter your documents there.
+You can view, edit, update, delete and filter your Documents there.
+
+[IMG]
 
 This is fine for toying around and for minor changes but always consider using the [API](/docs/api/endpoints) endpoints
 for dynamic integration between your application and Sigmie.

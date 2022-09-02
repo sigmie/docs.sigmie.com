@@ -3,31 +3,82 @@ title: Search
 description: Query configurations.
 ---
 
-Searches are set sets of configurations for a query.
+Searches are set sets of configurations for handling a query gainst an Index.
 
 ---
 
-Once you have an configured your index and you have added Documents, you can now
-start sending queries to it, but you may want to try different query configuration
-until you reach the desired result.
+Once you have configured your Index and added Documents, you can start sending queries to it, but you may want to try different query configurations until you reach the desired result.
 
-This is where **Searches** come to play. You can think of them as configurations sets
-where you define which attributes are more important than other.
+You start creating "Searches". You can think of them as configuration sets where you define which attributes are more important than others.
 
-Mostly you will need different Searches when you want to query an index from different places.
+You will need different Searches when you want to query an Index from different places.
 
-For example let's say that you have an online shop and you want to query it's products on 2 different point. One for the main shop search that your customers will use to search for
-the product that they want to buy, and secondly from your shops backend where your employees will need to find products, based on some unique product code.
+For example, let's say you have a service like Disney Plus, and you want to query the movies on two different points. One for the main user Search that your customers will use to search for movies they want to see, and secondly, from your backend, where your employees will need to find movies based on their release year.
 
-Now in the first scenario you want to forgive your shop customers any typo errors disallow
-them to search for let's say "red" products.
+This of this Documents schema:
 
-You would then exlude the `color` attribute from the **Searchable attributes** list, and enable **Typo tolerance**.
+```json
+[
+  {
+    "name": "Cinderella",
+    "release_year": "1950"
+  },
+  {
+    "name": "Pocahontas",
+    "release_year": "1995"
+  }
+]
+```
 
-And in the second Search for your employees you make the `supplier_code` attribute searchable.
+In the first scenario, you want to forgive your users some typos they may have made, and it's also unlikely that customers will type the movie's release year in a search box.
 
-Now of course you may also allow your employees to make some typos, but this is just an example of 2 usefull searches for the same index.
+You would then exclude the `release_year` attribute from the **Searchable attributes** list and add **Typo tolerance**.
 
-Another usecase could be that you want to run some A/B tests.
+In the second case, because your employees will likely search for the `release_year` of a movie, we make the `release_year` attribute searchable.
 
+Every Search consists of various elements. Let's take a look at some of them.
 
+## Name & Index
+
+Every Search needs a **Name** and an **Index**.
+
+[IMG]
+
+{% callout type="info" title="Name" %}
+The Search name is the identifier according to which, Sigmie knows how
+to handle the incoming query.
+{% /callout %}
+
+{% callout type="danger" title="Index" %}
+The Index is permanent because every Index may contain different Documents with different attributes.
+{% /callout %}
+
+## Searchable Attributes
+
+The "Searchable Attributes" are the Document attributes that will be searched for matches.
+
+For example, if you save a `created_at` timestamp which you don't need when the **hits** are returned. You can leave this attribute out to have a smaller payload.
+
+## Sorting
+
+In your Search's "Sorting" settings, you can define the **order** in which the Documents are retrieved.
+
+## Retrievable Atrributes
+
+The "Searchable Attributes" are the Document attributes that will be returned if a document matches a Query.
+
+## Pagination
+
+Using the "Pagination" settings, you can edit the default number of hits per page.
+
+## Typo Tolerance
+
+The "Typo Tolerances" section defines how many typos are accepted and from which attributes.
+
+## Tuning
+
+By using the "Tuning" section, you can boost field importance.
+
+## Highlighting
+
+By specifying "Highlighting" you can highlight the matched text in the selected attributes.
