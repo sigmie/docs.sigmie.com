@@ -3,9 +3,13 @@ title: Languages
 description: Predefined Language specific settings.
 ---
 
-Improve your analysis using predefined Language filters.
+Predefined Language filters.
 
 ---
+
+You can pick your Index Language in the Index settings in the "Language" tab.
+
+[IMG]
 
 ## English
 
@@ -26,7 +30,7 @@ You can find more information about the porter stemming
 
 ### Possessive "'s"
 
-Possessive "'s" in English language shows a relationship of belonging between one thing and another by adding an apostrophe + s to the noun.
+Possessive "'s" in the English language shows a relationship of belonging between one thing and another by adding an apostrophe + s to the noun.
 
 This filter will remove the `apostrophe` and the `s` from the nouns.
 
@@ -38,7 +42,7 @@ The **Greek Lowercase** filter will lowercase all letters tokens.
 
 ### Stopwords
 
-Here is a list with all the predefined Stopwords for the German language.
+Here is a list of all the predefined Stopwords for the German language.
 
 aber, alle, allem, allen, aller, alles, als, also, am, an, ander,
 andere, anderem, anderen, anderer, anderes, anderm, andern, anderr,
@@ -66,12 +70,12 @@ wirst, wo, wollen, wollte, würde, würden, zu, zum, zur, zwar, zwischen
 
 ### Light stemming
 
-More information about the ligh German stemming algorithm can be found
+More information about the light German stemming algorithm can be found
 [here](https://www.researchgate.net/publication/40646150_Light_stemming_approach_for_the_French_Portuguese_German_and_Hungarian_languages).
 
 ### Normalize
 
-The **German Normalisation** will make the following replacements
+The **German Normalisation** will make the following replacements.
 
 - **ß** -> **ss**
 - **ä** -> **a**
@@ -88,13 +92,13 @@ The **German Lowercase** filter will lowercase all german letters.
 
 ### Stopwords
 
-Bellow is a list with the greek stopwords
+Below is a list of the greek stopwords.
 
 ο, η, το, οι, τα, του, τησ, των, τον, την, και , κι, κ, ειμαι, εισαι, ειναι, ειμαστε, ειστε, στο, στον, στη, στην, μα, αλλα, απο, για, προσ, με, σε, ωσ, παρα, αντι, κατα, μετα, θα, να, δε, δεν, μη, μην, επι, ενω, εαν, αν, τοτε, που, πωσ, ποιοσ, ποια, ποιο, ποιοι, ποιεσ, ποιων, ποιουσ, αυτοσ, αυτη, αυτο, αυτοι, αυτων, αυτουσ, αυτεσ, αυτα, εκεινοσ, εκεινη, εκεινο, εκεινοι, εκεινεσ, εκεινα, εκεινων, εκεινουσ, οπωσ, ομωσ, ισωσ, οσο, οτι
 
 ### Greeklish
 
-The Greeklish filter will generate tokens with latin characters from greek tokens.
+The Greeklish filter will generate tokens with Latin characters from greek tokens.
 
 ### Stemming
 

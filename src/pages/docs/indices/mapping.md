@@ -1,21 +1,25 @@
 ---
 title: Mapping
-description: Document field data type definition.
+description: Document fields data types.
 ---
 
-Defining your Document field data types.
+Document fields data types.
 
 ---
+
+Index mappings are defined in your Index settings in the "Mappings" tab.
+
+[IMG]
 
 ## Text
 
-In most cases Searches are performed against **Text** fields, containing
-human written unstructured text like a description, or a title of something.
+In most cases, Searches are performed against **Text** fields containing
+human written unstructured text like a description or a title of something.
 
 ### Search as your type
 
 This field type is optimized for "Search as you type" functionality. Where for example
-you privide your application user an input field to type, and you are displaying bellow the potential match candidates in a dropdown box.
+you provide your application using an input field to type, and you are displaying below the potential match candidates in a dropdown box.
 
 Choose this type if the field contains something like
 
@@ -24,18 +28,18 @@ Choose this type if the field contains something like
 
 ### Unstructured text
 
-Unstructured text is almost any humman-written text, like book or product descriptions, comments or a documentation page like this.
+Unstructured text is almost any human-written text, like a book or product descriptions, comments, or a documentation page like this.
 
 Choose this type if the field contains something like
 
-- A Book or Product description
+- A Book or Product Description
 - A Movie review
 - A User comment
 
 ## Number
 
 The only thing to consider when
-mapping a `number` field is it's type.
+mapping a `number` field is its type.
 
 The available types are
 
@@ -44,8 +48,8 @@ The available types are
 
 ## Date
 
-Like Numbers the only thing to consider when
-mapping a `date` field is it format.
+Like Numbers, the only thing to consider when
+mapping a `date` field in its format.
 
 ### Format
 
