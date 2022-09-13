@@ -16,10 +16,13 @@ Below is a list with all API **Endpoints**
 | POST   | `/v1/index/{ index-name }/document/{ document-id }` | [ Upsert Document ](/docs/api/endpoints) |
 | DELETE | `/v1/index/{ index-name }/document/{ document-id }` | [ Delete Document](/docs/api/endpoints)  |
 | PATCH  | `/v1/index/{ index-name }/document/{ document-id }` | [ Patch Document](/docs/api/endpoints)   |
-| POST   | `/v1//index/{ index-name }/batch`                   | [ Batch Write ](/docs/api/endpoints)     |
+| POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
 | PUT    | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
 | POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
-| POST   | `/v1/search/{ search-name }`                        | [Search](/docs/api/endpoints)            |
+| POST   | `/v1/search/{ search-name }`                        | [ Search ](/docs/api/endpoints)          |
+| POST   | `/v1//index/{ index-name }`                         | [ Create Index ](/docs/api/endpoints)    |
+| DELETE | `/v1/index/{ index-name }`                          | [ Delete Index ](/docs/api/endpoints)    |
+| POST   | `/v1/index/{ index-name }/clear`                    | [ Clear Index ](/docs/api/endpoints)     |
 
 ## Host
 
@@ -49,7 +52,10 @@ To ensure high availability, we are creating **3** servers for each Sigmie Appli
 {
   "query": "peter pan",
   "per_page": 3,
-  "page": 1
+  "page": 1,
+  "filter": {
+    "active": true
+  }
 }
 ```
 
@@ -106,8 +112,90 @@ curl -X POST \
   "per_page": 3,
   "query": "adventure 2002",
   "search": "disney-movies",
+  "filter": {
+    "active": true
+  },
   "params": "",
   "index": "disney"
+}
+```
+## Index
+
+### Index Create
+
+**Path**: `/v1/index/{ index-name }`
+
+**HTTP Verb**: POST
+
+**API Key Type**: [ [Admin](docs/api/api-keys#admin) ]
+
+#### Example
+
+```bash
+curl -X POST \
+     -H "Content-Type: application/JSON" \
+     -H "X-Sigmie-API-Key: ${API_KEY}" \
+     -H "X-Sigmie-Application: ${APPLICATION_ID}" \
+     "https://${APPLICATION_ID}.sigmie.app/v1/index/disney"
+```
+
+#### Reponse - 202 Accepted
+
+```json
+{
+  "name": "disney"
+}
+```
+
+### Index Delete
+
+**Path**: `/v1/index/{ index-name }`
+
+**HTTP Verb**: DELETE
+
+**API Key Type**: [ [Admin](docs/api/api-keys#admin) ]
+
+#### Example
+
+```bash
+curl -X DELETE \
+     -H "Content-Type: application/JSON" \
+     -H "X-Sigmie-API-Key: ${API_KEY}" \
+     -H "X-Sigmie-Application: ${APPLICATION_ID}" \
+     "https://${APPLICATION_ID}.sigmie.app/v1/index/disney"
+```
+
+#### Reponse - 202 Accepted
+
+```json
+{
+  "name": "disney"
+}
+```
+
+### Index Delete
+
+**Path**: `/v1/index/{ index-name }/clear`
+
+**HTTP Verb**: POST
+
+**API Key Type**: [ [Admin](docs/api/api-keys#admin) ]
+
+#### Example
+
+```bash
+curl -X DELETE \
+     -H "Content-Type: application/JSON" \
+     -H "X-Sigmie-API-Key: ${API_KEY}" \
+     -H "X-Sigmie-Application: ${APPLICATION_ID}" \
+     "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/clear"
+```
+
+#### Reponse - 202 Accepted
+
+```json
+{
+  "name": "disney"
 }
 ```
 
