@@ -20,7 +20,7 @@ Below is a list with all API **Endpoints**
 | PUT    | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
 | POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
 | POST   | `/v1/search/{ search-name }`                        | [ Search ](/docs/api/endpoints)          |
-| POST   | `/v1//index/{ index-name }`                         | [ Create Index ](/docs/api/endpoints)    |
+| POST   | `/v1/index/{ index-name }`                          | [ Create Index ](/docs/api/endpoints)    |
 | DELETE | `/v1/index/{ index-name }`                          | [ Delete Index ](/docs/api/endpoints)    |
 | POST   | `/v1/index/{ index-name }/clear`                    | [ Clear Index ](/docs/api/endpoints)     |
 
@@ -119,6 +119,7 @@ curl -X POST \
   "index": "disney"
 }
 ```
+
 ## Index
 
 ### Index Create
