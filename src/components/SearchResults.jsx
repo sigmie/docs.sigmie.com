@@ -1,33 +1,9 @@
 import { Fragment, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
-import {
-  ExclamationIcon,
-  FolderIcon,
-  SupportIcon,
-} from '@heroicons/react/outline'
-import Image from 'next/image'
-
-const projects = [
-  {
-    id: 1,
-    name: 'Workflow Inc. / Website Redesign',
-    category: 'Projects',
-    url: '#',
-  },
-  // More projects...
-]
-
-const users = [
-  {
-    id: 1,
-    name: 'Leslie Alexander',
-    url: '#',
-    imageUrl: '',
-    // 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  // More users...
-]
+import { ExclamationIcon } from '@heroicons/react/outline'
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -36,22 +12,35 @@ function classNames(...classes) {
 export default function SearchResults({ onClose, isOpen }) {
   const [open, setOpen] = useState(true)
   const [rawQuery, setRawQuery] = useState('')
+  const [results, setResults] = useState([])
+  const router = useRouter()
 
-  const query = rawQuery.toLowerCase().replace(/^[#>]/, '')
+  function onSearchResult(path) {
+    router.push('/' + path)
+    onClose()
+  }
 
-  const filteredProjects =
-    rawQuery === '#'
-      ? projects
-      : query === '' || rawQuery.startsWith('>')
-      ? []
-      : projects.filter((project) => project.name.toLowerCase().includes(query))
+  async function onSearch(e) {
+    e.preventDefault()
+    let value = e.target.value
 
-  const filteredUsers =
-    rawQuery === '>'
-      ? users
-      : query === '' || rawQuery.startsWith('#')
-      ? []
-      : users.filter((user) => user.name.toLowerCase().includes(query))
+    const instance = axios.create({
+      baseURL: 'http://local.phonix:8000',
+      timeout: 1000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Sigmie-API-Key': '5vwmLOtWGmNTU5vKTaSOd0I3bGLqFBLLrKNN1VQA',
+        'X-Sigmie-Application': 'ivx63qiqf5jij47k5p',
+      },
+    })
+
+    let res = await instance.post('/v1/search/docs', {
+      query: value,
+      per_page: 10,
+    })
+
+    setResults(Object.values(res.data.hits))
+  }
 
   return (
     <Transition.Root
@@ -84,124 +73,88 @@ export default function SearchResults({ onClose, isOpen }) {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all dark:divide-gray-600">
-              <Combobox onChange={(item) => (window.location = item.url)}>
+              <Combobox onChange={(path) => onSearchResult(path)}>
                 <div className="relative">
                   <SearchIcon
                     className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
                     aria-hidden="true"
                   />
                   <Combobox.Input
-                    className="h-12 w-full rounded-t-xl border-0  bg-transparent pl-11 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 dark:border-gray-500 dark:bg-black dark:text-gray-200 sm:text-sm"
+                    className="h-12 w-full rounded-t-xl border-0 bg-transparent  pl-11 pr-4 text-gray-800 placeholder-gray-400 outline-0 focus:ring-0 dark:border-gray-500 dark:bg-black dark:text-gray-200 sm:text-sm"
                     placeholder="Search..."
-                    onChange={(event) => setRawQuery(event.target.value)}
+                    onChange={(event) => onSearch(event)}
                   />
                 </div>
 
-                {(filteredProjects.length > 0 || filteredUsers.length > 0) && (
+                {results.length > 0 && (
                   <Combobox.Options
                     static
-                    className="max-h-80 scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2 dark:bg-black"
+                    className="max-h-[800px] scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2 dark:bg-black "
                   >
-                    {filteredProjects.length > 0 && (
+                    {
                       <li>
                         <h2 className="text-xs font-semibold text-gray-900 dark:text-gray-200 ">
-                          Projects
+                          Hits
                         </h2>
                         <ul className="-mx-4 mt-2 text-sm text-gray-700 dark:text-gray-300">
-                          {filteredProjects.map((project) => (
+                          {results.map((hit) => (
                             <Combobox.Option
-                              key={project.id}
-                              value={project}
+                              key={hit._id}
+                              value={hit.path}
                               className={({ active }) =>
                                 classNames(
                                   'flex cursor-default select-none items-center px-4 py-2',
-                                  active && 'bg-black text-white'
+                                  active && 'bg-gray-900 text-white'
                                 )
                               }
                             >
                               {({ active }) => (
                                 <>
-                                  <FolderIcon
-                                    className={classNames(
-                                      'h-6 w-6 flex-none',
-                                      active ? 'text-white' : 'text-gray-400'
-                                    )}
-                                    aria-hidden="true"
-                                  />
-                                  <span className="ml-3 flex-auto truncate">
-                                    {project.name}
-                                  </span>
+                                  <div className="flex flex-col space-y-2">
+                                    <div className="flex flex-row font-bold">
+                                      {hit.title}
+                                    </div>
+                                    <div className="flex flex-row">
+                                      <div>
+                                        {Object.entries(hit._highlight).map(
+                                          ([attribute, value], i) => (
+                                            <div>
+                                              <span>...</span>{' '}
+                                              <span
+                                                dangerouslySetInnerHTML={{
+                                                  __html: value,
+                                                }}
+                                              ></span>
+                                            </div>
+                                          )
+                                        )}
+                                      </div>
+                                    </div>
+                                  </div>
                                 </>
                               )}
                             </Combobox.Option>
                           ))}
                         </ul>
                       </li>
-                    )}
-                    {filteredUsers.length > 0 && (
-                      <li>
-                        <h2 className="text-xs font-semibold text-gray-900">
-                          Users
-                        </h2>
-                        <ul className="-mx-4 mt-2 text-sm text-gray-700">
-                          {filteredUsers.map((user) => (
-                            <Combobox.Option
-                              key={user.id}
-                              value={user}
-                              className={({ active }) =>
-                                classNames(
-                                  'flex cursor-default select-none items-center px-4 py-2',
-                                  active && 'bg-black text-white'
-                                )
-                              }
-                            >
-                              <span className="ml-3 flex-auto truncate">
-                                {user.name}
-                              </span>
-                            </Combobox.Option>
-                          ))}
-                        </ul>
-                      </li>
-                    )}
+                    }
                   </Combobox.Options>
                 )}
 
-                {rawQuery === '?' && (
-                  <div className="py-14 px-6 text-center text-sm sm:px-14">
-                    <SupportIcon
+                {results.length === 0 && (
+                  <div className="py-14 px-6 text-center text-sm dark:bg-black dark:text-gray-200 sm:px-14">
+                    <ExclamationIcon
                       className="mx-auto h-6 w-6 text-gray-400"
                       aria-hidden="true"
                     />
-                    <p className="mt-4 font-semibold text-gray-900">
-                      Help with searching
+                    <p className="mt-4 font-semibold text-gray-900 dark:text-gray-300">
+                      No Results
                     </p>
                     <p className="mt-2 text-gray-500">
-                      Use this tool to quickly search for users and projects
-                      across our entire platform. You can also use the search
-                      modifiers found in the footer below to limit the results
-                      to just users or projects.
+                      Enter a search term to find results in the documentation.
                     </p>
                   </div>
                 )}
-
-                {query !== '' &&
-                  rawQuery !== '?' &&
-                  filteredProjects.length === 0 &&
-                  filteredUsers.length === 0 && (
-                    <div className="py-14 px-6 text-center text-sm dark:bg-black dark:text-gray-200 sm:px-14">
-                      <ExclamationIcon
-                        className="mx-auto h-6 w-6 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      <p className="mt-4 font-semibold text-gray-900 dark:text-gray-300">
-                        No results found
-                      </p>
-                      <p className="mt-2 text-gray-500">
-                        We couldn’t find anything with that term. Please try
-                        again.
-                      </p>
-                    </div>
-                  )}
 
                 <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700 dark:bg-black dark:text-gray-300">
                   Type{' '}
