@@ -8,7 +8,6 @@ require_once 'vendor/autoload.php';
 $url = $argv[1];
 $application = $argv[2];
 $token = $argv[3];
-
 $index = 'docs';
 $client = new Client([
     // Base URI is used with relative requests
@@ -73,7 +72,7 @@ foreach ($files as $file) {
 
 $res = $client->put("v1/index/{$index}/batch", ['json' => $json,]);
 
-dd($res->getStatusCode(), json_decode($res->getBody()->getContents(), true));
+// dd($res->getStatusCode(), json_decode($res->getBody()->getContents(), true));
 
 // $json = json_decode($res->getBody()->getContents(), true);
 

@@ -118,7 +118,7 @@ export default function SearchResults({ onClose, isOpen }) {
                                       <div>
                                         {Object.entries(hit._highlight).map(
                                           ([attribute, value], i) => (
-                                            <div>
+                                            <div key={attribute}>
                                               <span>...</span>{' '}
                                               <span
                                                 dangerouslySetInnerHTML={{
