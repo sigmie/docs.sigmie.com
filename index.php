@@ -5,9 +5,9 @@ use League\CommonMark\CommonMarkConverter;
 
 require_once 'vendor/autoload.php';
 
-$token = '';
-$url = '';
-$application = '';
+$url = $argv[1];
+$application = $argv[2];
+$token = $argv[3];
 
 $index = 'docs';
 $client = new Client([
