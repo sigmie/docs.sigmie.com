@@ -25,6 +25,9 @@ $client = new Client([
 // $res = $client->post("/v1/index/{$index}");
 $res = $client->post("/v1/index/{$index}/clear");
 
+
+//dd($res->getStatusCode(), json_decode($res->getBody()->getContents(), true));
+
 $parsedown = new CommonMarkConverter();
 
 $files = glob('src/pages/docs/**/*.{md}', GLOB_BRACE);

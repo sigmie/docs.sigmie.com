@@ -174,7 +174,7 @@ curl -X DELETE \
 }
 ```
 
-### Index Delete
+### Index Clear
 
 **Path**: `/v1/index/{ index-name }/clear`
 
@@ -185,7 +185,7 @@ curl -X DELETE \
 #### Example
 
 ```bash
-curl -X DELETE \
+curl -X POST \
      -H "Content-Type: application/JSON" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
