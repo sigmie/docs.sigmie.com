@@ -47,7 +47,7 @@ that cover the majority of cases.
 
 The following plans are available:
 
-#### 2K - 159 $
+#### 200K - 159 $
 
 - 5 days free trial
 - 5 Indices
@@ -58,19 +58,19 @@ The following plans are available:
 Choosing the 2K plan, you have 5 days free trial.
 {% /callout %}
 
-#### 4K - 279 $
+#### 400K - 279 $
 
 - 10 Indices
 - 400,000 Documents
 - Up to 400,000 monthly requests
 
-#### 6K - 379 $
+#### 600K - 379 $
 
 - 12 Indices
 - 600,000 Documents
 - Up to 600,000 monthly requests
 
-#### 8K - 459 $
+#### 800K - 459 $
 
 - 12 Indices
 - 800,000 Documents
