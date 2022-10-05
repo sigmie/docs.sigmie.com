@@ -9,6 +9,11 @@ Searching is the process of finding **Hits** for a given Query.
 
 Once you have set up your **Index** and a **Search** for your Index, you can start sending HTTP requests containing user **Queries**, and receive matched **Hits**.
 
+{% callout type="info" title="Index Searches" %}
+Every time an new Index is created there is also a new Search with the same name making
+the Index directly Searchable.
+{% /callout %}
+
 This is the Search Endpoint for your Sigmie Application.
 
 | Method | Path                    |

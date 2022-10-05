@@ -9,8 +9,6 @@ Document fields data types.
 
 Index mappings are defined in your Index settings in the "Mappings" tab.
 
- 
-
 ## Text
 
 In most cases, Searches are performed against **Text** fields containing
@@ -35,6 +33,11 @@ Choose this type if the field contains something like
 - A Book or Product Description
 - A Movie review
 - A User comment
+
+{% callout type="info" title="Filterable" %}
+In order to use filters on a Text field, you need to mark
+it a filterable.
+{% /callout %}
 
 ## Number
 

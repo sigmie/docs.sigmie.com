@@ -276,3 +276,8 @@ Stemming is the process of reducing a word to its root form. In the stemming sec
 For example, the words "went" and "going" are both could both be stemmed to the word "go".
 
 So if all variants of a word are reduced to the same root form, they will match when searching.
+
+## Search
+
+Every time an new Index is created there is also a new Search with the same name making
+the Index directly Searchable.

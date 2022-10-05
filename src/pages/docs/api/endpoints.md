@@ -9,20 +9,19 @@ REST API Endpoints of your Sigmie Application.
 
 Below is a list with all API **Endpoints**
 
-| Method | Path                                                | Action                                   |
-| ------ | --------------------------------------------------- | ---------------------------------------- |
-| GET    | `/health`                                           | [ Health Check ](/docs/api/endpoints)    |
-| GET    | `/v1/index/{ index-name }/document/{ document-id }` | [ Get Document ](/docs/api/endpoints)    |
-| POST   | `/v1/index/{ index-name }/document/{ document-id }` | [ Upsert Document ](/docs/api/endpoints) |
-| DELETE | `/v1/index/{ index-name }/document/{ document-id }` | [ Delete Document](/docs/api/endpoints)  |
-| PATCH  | `/v1/index/{ index-name }/document/{ document-id }` | [ Patch Document](/docs/api/endpoints)   |
-| POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
-| PUT    | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
-| POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints)     |
-| POST   | `/v1/search/{ search-name }`                        | [ Search ](/docs/api/endpoints)          |
-| POST   | `/v1/index/{ index-name }`                          | [ Create Index ](/docs/api/endpoints)    |
-| DELETE | `/v1/index/{ index-name }`                          | [ Delete Index ](/docs/api/endpoints)    |
-| POST   | `/v1/index/{ index-name }/clear`                    | [ Clear Index ](/docs/api/endpoints)     |
+| Method | Path                                                | Action                                             |
+| ------ | --------------------------------------------------- | -------------------------------------------------- |
+| GET    | `/health`                                           | [ Health Check ](/docs/api/endpoints)              |
+| GET    | `/v1/index/{ index-name }/document/{ document-id }` | [ Get Document ](/docs/api/endpoints#get)          |
+| POST   | `/v1/index/{ index-name }/document/{ document-id }` | [ Upsert Document ](/docs/api/endpoints#upsert)    |
+| DELETE | `/v1/index/{ index-name }/document/{ document-id }` | [ Delete Document](/docs/api/endpoints#delete)     |
+| PATCH  | `/v1/index/{ index-name }/document/{ document-id }` | [ Patch Document](/docs/api/endpoints#patch)       |
+| POST   | `/v1/index/{ index-name }/batch`                    | [ Batch Read ](/docs/api/endpoints#batch-read)     |
+| PUT    | `/v1/index/{ index-name }/batch`                    | [ Batch Write ](/docs/api/endpoints#batch-write)   |
+| POST   | `/v1/search/{ search-name }`                        | [ Search ](/docs/api/endpoints#search)             |
+| POST   | `/v1/index/{ index-name }`                          | [ Create Index ](/docs/api/endpoints#index-create) |
+| DELETE | `/v1/index/{ index-name }`                          | [ Delete Index ](/docs/api/endpoints#index-delete) |
+| POST   | `/v1/index/{ index-name }/clear`                    | [ Clear Index ](/docs/api/endpoints#index-clear)   |
 
 ## Host
 
