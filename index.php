@@ -30,7 +30,11 @@ $res = $client->post("/v1/index/{$index}/clear");
 
 $parsedown = new CommonMarkConverter();
 
-$files = glob('src/pages/docs/**/*.{md}', GLOB_BRACE);
+$filesSubdir = glob('src/pages/docs/**/*.{md}', GLOB_BRACE);
+
+$filesDir = glob('src/pages/docs/*.{md}', GLOB_BRACE);
+
+$files = [...$filesSubdir, ...$filesDir];
 
 $json = [];
 foreach ($files as $file) {
