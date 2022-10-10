@@ -62,7 +62,8 @@ const navigation = [
       { title: 'Search', href: '/docs/api/search' },
       { title: 'Endpoints', href: '/docs/api/endpoints' },
       { title: 'API Keys', href: '/docs/api/api-keys' },
-      { title: 'API Logs', href: '/docs/api/logs' }
+      { title: 'API Logs', href: '/docs/api/logs' },
+      { title: 'Codepen', href: 'https://codepen.io/nicoorfi/pen/NWMYqKb' },
     ],
   },
   {
