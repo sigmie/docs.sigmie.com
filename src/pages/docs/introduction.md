@@ -21,7 +21,7 @@ Sigmie takes this pain away and provides a user interface to make managing your 
 
 We have an introduction where we show you how to set up a search in less than 4 minutes.
 
-You can watch it [here](https://youtube.com/sigmie/introduction).
+You can watch it [here](https://www.youtube.com/watch?v=oxL0KuM70YU).
 
 ## How Sigmie works?
 
