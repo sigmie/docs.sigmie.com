@@ -62,7 +62,7 @@ To ensure high availability, we are creating **3** servers for each Sigmie Appli
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"query":"peter pan","per_page":3,"page":1}' \
@@ -133,7 +133,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney"
@@ -159,7 +159,7 @@ curl -X POST \
 
 ```bash
 curl -X DELETE \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney"
@@ -185,7 +185,7 @@ curl -X DELETE \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/clear"
@@ -224,7 +224,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"name":"Mulan","category":["Musica","Family"],"release_year":"1998","duration_min":88}' \
@@ -255,7 +255,7 @@ curl -X POST \
 
 ```bash
 curl -X GET \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/document/fXE6OoIBtixTeHPNKXnG"
@@ -293,7 +293,7 @@ curl -X GET \
 
 ```bash
 curl -X PUT \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '{"duration_min":93}' \
@@ -324,7 +324,7 @@ curl -X PUT \
 
 ```bash
 curl -X DELETE \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      "https://${APPLICATION_ID}.sigmie.app/v1/index/disney/document/fXE6OoIBtixTeHPNKXnG"
@@ -366,7 +366,7 @@ curl -X DELETE \
 
 ```bash
 curl -X POST \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '[{"_id":"dHt8qIIBrbFU6hq5wjQx"},{"_id":"h3t8qIIBrbFU6hq5wjQx"},{"_id":"Mnt8qIIBrbFU6hq5wjQx"}]' \
@@ -514,7 +514,7 @@ curl -X POST \
 
 ```bash
 curl -X PUT \
-     -H "Content-Type: application/JSON" \
+     -H "Content-Type: application/json" \
      -H "X-Sigmie-API-Key: ${API_KEY}" \
      -H "X-Sigmie-Application: ${APPLICATION_ID}" \
      -d '[{"action":"delete","_id":"PkOoIBJq3of4094YiE"},{"action":"update","_id":"36VtPoIB1B0E8pmVb4","body":{"name":"The Jungle Book","release_year":"1967"}},{"action":"Create","body":{"name":"101 Dalmatians","category":["Comedy","Family"],"release_year":"1961","duration_min":79}}]' \
