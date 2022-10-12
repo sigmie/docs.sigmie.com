@@ -425,13 +425,43 @@ curl -X POST \
 ]
 ```
 
-### Upsert
+### Create
 
 #### Body
 
 ```json
 {
   "action": "create",
+  "body": {
+    "name": "101 Dalmatians",
+    "category": ["Comedy", "Family"],
+    "release_year": "1961",
+    "duration_min": 79
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "_id": "j8lmj4EBetGDRrvvlbNf",
+  "result": "created"
+}
+```
+
+#### Results
+
+- `created`
+
+### Upsert
+
+#### Body
+
+```json
+{
+  "action": "update",
+  "_id": "9q6Sy4MBs1uM0PSSE68v",
   "body": {
     "name": "101 Dalmatians",
     "category": ["Comedy", "Family"],
@@ -461,7 +491,7 @@ curl -X POST \
 
 ```json
 {
-  "action": "Update",
+  "action": "update",
   "_id": "36VtPoIB1B0E8pmVb4",
   "body": {
     "name": "The Jungle Book",
