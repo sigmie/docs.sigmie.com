@@ -202,6 +202,12 @@ export function Layout({ children, title, tableOfContents }) {
   return (
     <>
       <Header navigation={navigation} />
+      <script
+        src="https://cdn.usefathom.com/script.js"
+        data-spa="auto"
+        data-site="KPZONRUB"
+        defer
+      ></script>
 
       {/* {isHomePage && <Hero />} */}
 
