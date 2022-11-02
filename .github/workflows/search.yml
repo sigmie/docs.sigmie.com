@@ -30,4 +30,4 @@ jobs:
         run: composer install --prefer-dist --no-interaction
 
       - name: Index 
-        run: php index.php 'https://skiukk4yaxfg8vkoj.sigmie.app' 'skiukk4yaxfg8vkoj' ${{ secrets.SIGMIE_ADMIN_API_KEY }}
+        run: php index.php 'https://svvhug7c38lsrznsn.sigmie.app' 'svvhug7c38lsrznsn' ${{ secrets.SIGMIE_ADMIN_API_KEY }}

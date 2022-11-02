@@ -25,12 +25,12 @@ export default function SearchResults({ onClose, isOpen }) {
     let value = e.target.value
 
     const instance = axios.create({
-      baseURL: 'https://skiukk4yaxfg8vkoj.sigmie.app',
+      baseURL: 'https://svvhug7c38lsrznsn.sigmie.app',
       timeout: 1000,
       headers: {
         'Content-Type': 'application/json',
-        'X-Sigmie-API-Key': 'V0oECAz7T1osnXxCK5hDxxGclFWp1ohO9LfvOWUo',
-        'X-Sigmie-Application': 'skiukk4yaxfg8vkoj',
+        'X-Sigmie-API-Key': 'WbxWXrRacTLR6hSFUVaB3tIrraoPoF8maKnExTSZ',
+        'X-Sigmie-Application': 'svvhug7c38lsrznsn',
       },
     })
 
