@@ -72,7 +72,8 @@ foreach ($files as $file) {
             'h3' => $headings,
             'content' => $body,
             'li' => $lis,
-            'path' => $path
+            'path' => $path,
+            'source' => 'docs.sigmie.com'
         ],
     ];
 }
