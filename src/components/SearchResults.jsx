@@ -29,7 +29,7 @@ export default function SearchResults({ onClose, isOpen }) {
       timeout: 1000,
       headers: {
         'Content-Type': 'application/json',
-        'X-Sigmie-API-Key': 'WbxWXrRacTLR6hSFUVaB3tIrraoPoF8maKnExTSZ',
+        'X-Sigmie-API-Key': 'Iiz7amclpqVzuxt8zLtMfOdZZS8408qd3E66q65C',
         'X-Sigmie-Application': 'svvhug7c38lsrznsn',
       },
     })
@@ -37,6 +37,7 @@ export default function SearchResults({ onClose, isOpen }) {
     let res = await instance.post('/v1/search/docs', {
       query: value,
       per_page: 10,
+      filter: 'source:docs.sigmie.com'
     })
 
     setResults(Object.values(res.data.hits))
