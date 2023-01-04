@@ -29,7 +29,7 @@ export default function SearchResults({ onClose, isOpen }) {
       timeout: 1000,
       headers: {
         'Content-Type': 'application/json',
-        'X-Sigmie-API-Key': 'Iiz7amclpqVzuxt8zLtMfOdZZS8408qd3E66q65C',
+        'X-Sigmie-API-Key': 'rFxnb1WDKtbcHIxiKTEjs8q2PKtCAfFDy05zSlN4',
         'X-Sigmie-Application': 'svvhug7c38lsrznsn',
       },
     })
