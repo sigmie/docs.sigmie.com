@@ -1,11 +1,12 @@
 name: Index Search
 
-on: push
+on:
+  push:
   # pull_request:
   #   types: [closed]
   #   branches:
   #     - master
-  # workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   index:
