@@ -67,6 +67,13 @@ const navigation = [
     ],
   },
   {
+    title: 'Frontend',
+    links: [
+      { title: 'React JS', href: '/docs/frontend/react' },
+      { title: 'Vue JS', href: '/docs/frontend/vue' },
+    ],
+  },
+  {
     title: 'Settings',
     links: [
       { title: 'Account', href: '/docs/settings/account' },
