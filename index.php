@@ -5,10 +5,12 @@ use League\CommonMark\CommonMarkConverter;
 
 require_once 'vendor/autoload.php';
 
+// DcWiZBvp6PLEDWHwhf0L6MuJcPNtzmdTocW3jGmM
 $url = $argv[1];
 $application = $argv[2];
 $token = $argv[3];
-$index = 'docs';
+$index = 'sigmie-com-docs';
+
 $client = new Client([
     // Base URI is used with relative requests
     'base_uri' => $url,
@@ -80,7 +82,7 @@ foreach ($files as $file) {
 
 $res = $client->put("v1/index/{$index}/batch", ['json' => $json,]);
 
-// dd($res->getStatusCode(), json_decode($res->getBody()->getContents(), true));
+dd($res->getStatusCode(), json_decode($res->getBody()->getContents(), true));
 
 // $json = json_decode($res->getBody()->getContents(), true);
 

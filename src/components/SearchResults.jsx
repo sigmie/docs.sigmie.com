@@ -1,9 +1,10 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useRef } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { SigmieSearch } from '@sigmie/react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -11,43 +12,19 @@ function classNames(...classes) {
 
 export default function SearchResults({ onClose, isOpen }) {
   const [open, setOpen] = useState(true)
-  const [rawQuery, setRawQuery] = useState('')
-  const [results, setResults] = useState([])
+  const [query, setQuery] = useState('')
   const router = useRouter()
+  const searchInput = useRef()
 
-  function onSearchResult(path) {
-    router.push('/' + path)
-    onClose()
-  }
-
-  async function onSearch(e) {
-    e.preventDefault()
-    let value = e.target.value
-
-    const instance = axios.create({
-      baseURL: 'https://svvhug7c38lsrznsn.sigmie.app',
-      timeout: 1000,
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Sigmie-API-Key': 'rFxnb1WDKtbcHIxiKTEjs8q2PKtCAfFDy05zSlN4',
-        'X-Sigmie-Application': 'svvhug7c38lsrznsn',
-      },
-    })
-
-    let res = await instance.post('/v1/search/docs', {
-      query: value,
-      per_page: 10,
-      filter: 'source:docs.sigmie.com'
-    })
-
-    setResults(Object.values(res.data.hits))
+  let visit = (value) => {
+    console.log(value)
   }
 
   return (
     <Transition.Root
       show={isOpen}
       as={Fragment}
-      afterLeave={() => setRawQuery('')}
+      afterLeave={() => setQuery('')}
       appear
     >
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -74,188 +51,192 @@ export default function SearchResults({ onClose, isOpen }) {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all dark:divide-gray-600">
-              <Combobox onChange={(path) => onSearchResult(path)}>
-                <div className="relative">
-                  <SearchIcon
-                    className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
-                    aria-hidden="true"
-                  />
-                  <Combobox.Input
-                    className="h-12 w-full rounded-t-xl border-0 bg-transparent  pl-11 pr-4 text-gray-800 placeholder-gray-400 outline-0 focus:ring-0 dark:border-gray-500 dark:bg-black dark:text-gray-200 sm:text-sm"
-                    placeholder="Search..."
-                    onChange={(event) => onSearch(event)}
-                  />
-                </div>
-
-                {results.length > 0 && (
-                  <Combobox.Options
-                    static
-                    className="max-h-[800px] scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2 dark:bg-black "
-                  >
-                    {
-                      <li>
-                        <h2 className="text-xs font-semibold text-gray-900 dark:text-gray-200 ">
-                          Hits
-                        </h2>
-                        <ul className="-mx-4 mt-2 text-sm text-gray-700 dark:text-gray-300">
-                          {results.map((hit) => (
-                            <Combobox.Option
-                              key={hit._id}
-                              value={hit.path}
-                              className={({ active }) =>
-                                classNames(
-                                  'flex cursor-default select-none items-center px-4 py-2',
-                                  active && 'bg-gray-900 text-white'
-                                )
-                              }
+              <SigmieSearch
+                apiKey="Xuknxreas0tu5VMDRTiVUpkNgJY56YoYbbAdYG5I"
+                query={query}
+                perPage={5}
+                filter=""
+                search="sigmie-com-docs"
+                applicationId="svvhug7c38lsrznsn"
+                debounceMs={150}
+              >
+                {({ hits, total, loading }) => (
+                  <div>
+                    <main
+                      className={`mx-auto flex w-full max-w-xl flex-col space-y-4 shadow-xl`}
+                    >
+                      <Combobox value={query} onChange={visit}>
+                        {({ open }) => (
+                          <div className="relative">
+                            <div
+                              className={`relative w-full cursor-default rounded-t-md bg-white text-left shadow-md focus:outline-none focus-visible:ring-0 focus-visible:ring-red-500 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300  sm:text-sm ${
+                                open ? 'rounded-t-lg' : 'rounded-lg'
+                              }`}
                             >
-                              {({ active }) => (
-                                <>
-                                  <div className="flex flex-col space-y-2">
-                                    <div className="flex flex-row font-bold">
-                                      {hit.title}
-                                    </div>
-                                    <div className="flex flex-row">
-                                      <div>
-                                        {Object.entries(hit._highlight).map(
-                                          ([attribute, value], i) => (
-                                            <div key={attribute}>
-                                              <span>...</span>{' '}
-                                              <span
-                                                dangerouslySetInnerHTML={{
-                                                  __html: value,
-                                                }}
-                                              ></span>
-                                            </div>
-                                          )
-                                        )}
+                              <Combobox.Button as="div">
+                                <Combobox.Input
+                                  ref={searchInput}
+                                  className={`w-full bg-transparent py-3 pl-4  text-sm leading-5 text-gray-600 outline-none ring-0 focus:outline-none`}
+                                  onChange={(event) =>
+                                    setQuery(event.target.value)
+                                  }
+                                />
+                              </Combobox.Button>
+                              <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-4 text-sm text-gray-400">
+                                <div className="flex flex-row items-center space-x-2">
+                                  <div className="font-base rounded-md border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 shadow">
+                                    ESC
+                                  </div>
+                                </div>
+                              </Combobox.Button>
+                            </div>
+                            <Transition
+                              as={Fragment}
+                              leave=""
+                              leaveFrom="opacity-100"
+                              leaveTo="opacity-0"
+                              afterLeave={() => setQuery('')}
+                            >
+                              <div className="h-auto pb-12">
+                                <Combobox.Options className="relative max-h-[800px] w-full overflow-auto bg-white py-1 text-base text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                  {total === 0 && query !== '' ? (
+                                    <div className="relative flex h-40 cursor-default select-none flex-row items-center py-2 px-4 text-lg text-zinc-400">
+                                      <div className="mx-auto">
+                                        <svg
+                                          width="40"
+                                          height="40"
+                                          viewBox="0 0 20 20"
+                                          fill="none"
+                                          fillRule="evenodd"
+                                          stroke="currentColor"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        >
+                                          <path d="M15.5 4.8c2 3 1.7 7-1 9.7h0l4.3 4.3-4.3-4.3a7.8 7.8 0 01-9.8 1m-2.2-2.2A7.8 7.8 0 0113.2 2.4M2 18L18 2"></path>
+                                        </svg>
+                                      </div>
+
+                                      <div className="mx-auto">
+                                        <div className="w-56 text-center">
+                                          No results for "
+                                          <span className="font-medium text-slate-100">
+                                            {query}
+                                          </span>
+                                          "
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </>
-                              )}
-                            </Combobox.Option>
-                          ))}
-                        </ul>
-                      </li>
-                    }
-                  </Combobox.Options>
-                )}
+                                  ) : (
+                                    Object.values(hits).map((hit) => (
+                                      <Combobox.Option
+                                        key={hit._id}
+                                        className={({ active }) =>
+                                          `relative cursor-default select-none py-2  ${
+                                            active
+                                              ? ' text-white'
+                                              : 'text-slate-400'
+                                          }`
+                                        }
+                                        value={hit}
+                                      >
+                                        {({ selected, active }) => (
+                                          <div
+                                            className={`relative flex select-none flex-col cursor-pointer border-t border-zinc-200 px-4 pt-2 pb-4 ${
+                                              active
+                                                ? 'bg-zinc-50 text-slate-900'
+                                                : 'text-zinc-800'
+                                            }`}
+                                          >
+                                            <div className="max-w-lg overflow-hidden rounded-md border-slate-300">
+                                              <div className="flex flex-col">
+                                                <div className="text-lg font-bold">
+                                                  <span className="text-orange-500 font-normal">#</span> {hit.title}
+                                                </div>
+                                                <div
+                                                  className=""
+                                                  dangerouslySetInnerHTML={{
+                                                    __html:
+                                                      hit._highlight['content']
+                                                        .join('...')
+                                                        .substring(0, 256)
+                                                  }}
+                                                />
 
-                {results.length === 0 && (
-                  <div className="py-14 px-6 text-center text-sm dark:bg-black dark:text-gray-200 sm:px-14">
-                    <ExclamationIcon
-                      className="mx-auto h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                    <p className="mt-4 font-semibold text-gray-900 dark:text-gray-300">
-                      No Results
-                    </p>
-                    <p className="mt-2 text-gray-500">
-                      Enter a search term to find results in the documentation.
-                    </p>
+                                                {hit.subtitles?.map(
+                                                  (subtitle) => {
+                                                    {
+                                                      subtitle
+                                                    }
+                                                  }
+                                                )}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        )}
+                                      </Combobox.Option>
+                                    ))
+                                  )}
+                                </Combobox.Options>
+                                <div className="bg-zin-100 absolute bottom-0 flex h-12 w-full flex-row items-center justify-between rounded-b-lg border-t border-slate-100 bg-zinc-50 px-4 py-2 text-slate-500">
+                                  <div className="flex flex-row items-center space-x-2">
+                                    <div className="font-base rounded-md border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 shadow">
+                                      <svg width="15" height="15">
+                                        <g
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="1"
+                                        >
+                                          <path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path>
+                                        </g>
+                                      </svg>
+                                    </div>
+                                    <div className="font-base rounded-md border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 shadow">
+                                      <svg width="15" height="15">
+                                        <g
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="1"
+                                        >
+                                          <path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path>
+                                        </g>
+                                      </svg>
+                                    </div>
+                                    <div className="text-sm text-zinc-700">
+                                      to navigate
+                                    </div>
+                                  </div>
+
+                                  <div className="flex flex-row items-center space-x-2">
+                                    <div className="font-base rounded-md border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 shadow">
+                                      ESC
+                                    </div>
+                                    <div className="text-sm text-zinc-700">
+                                      to close
+                                    </div>
+                                  </div>
+
+                                  <div className="flex flex-row items-center space-x-2">
+                                    <div className="font-base rounded-md border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 shadow">
+                                      ENTER
+                                    </div>
+                                    <div className="text-sm text-zinc-700">
+                                      to visit
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </Transition>
+                          </div>
+                        )}
+                      </Combobox>
+                    </main>
                   </div>
                 )}
-
-                <div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700 dark:bg-black dark:text-gray-300">
-                  Type{' '}
-                  <kbd
-                    className={classNames(
-                      'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
-                      rawQuery.startsWith('#')
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-gray-400 text-gray-900'
-                    )}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      aria-label="Enter key"
-                      role="img"
-                    >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.2"
-                      >
-                        <path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path>
-                      </g>
-                    </svg>
-                  </kbd>{' '}
-                  to select
-                  <span className=""></span>
-                  <div className="mx-1 flex flex-row space-x-0.5">
-                    <kbd
-                      className={classNames(
-                        'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
-                        rawQuery.startsWith('>')
-                          ? 'border-indigo-600 text-indigo-600'
-                          : 'border-gray-400 text-gray-900'
-                      )}
-                    >
-                      <span>
-                        <svg
-                          width="15"
-                          height="15"
-                          aria-label="Arrow down"
-                          role="img"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.2"
-                          >
-                            <path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path>
-                          </g>
-                        </svg>
-                      </span>
-                    </kbd>{' '}
-                    <kbd
-                      className={classNames(
-                        'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
-                        rawQuery.startsWith('>')
-                          ? 'border-indigo-600 text-indigo-600'
-                          : 'border-gray-400 text-gray-900'
-                      )}
-                    >
-                      <span>
-                        <svg
-                          width="15"
-                          height="15"
-                          aria-label="Arrow up"
-                          role="img"
-                        >
-                          <g
-                            fill="none"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.2"
-                          >
-                            <path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path>
-                          </g>
-                        </svg>
-                      </span>
-                    </kbd>
-                  </div>{' '}
-                  to navigate{' '}
-                  <kbd
-                    className={classNames(
-                      'mx-1 flex h-5 w-8 items-center justify-center rounded border bg-white font-semibold dark:border-gray-500 dark:bg-gray-700 dark:text-white sm:mx-2',
-                      rawQuery === '?'
-                        ? 'border-gray-600 text-gray-600'
-                        : 'border-gray-400 text-gray-900'
-                    )}
-                  >
-                    esc
-                  </kbd>{' '}
-                  to close.
-                </div>
-              </Combobox>
+              </SigmieSearch>
             </Dialog.Panel>
           </Transition.Child>
         </div>
