@@ -16,8 +16,9 @@ export default function SearchResults({ onClose, isOpen }) {
   const router = useRouter()
   const searchInput = useRef()
 
-  let visit = (value) => {
-    console.log(value)
+  let visit = (hit) => {
+    router.push(hit.path)
+    onClose()
   }
 
   return (
@@ -100,7 +101,7 @@ export default function SearchResults({ onClose, isOpen }) {
                               <div className="h-auto pb-12">
                                 <Combobox.Options className="relative max-h-[800px] w-full overflow-auto bg-white py-1 text-base text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                                   {total === 0 && query !== '' ? (
-                                    <div className="relative flex h-40 cursor-default select-none flex-row items-center py-2 px-4 text-lg text-zinc-400">
+                                    <div className="relative flex h-40 cursor-default select-none flex-row items-center  px-4 text-lg text-zinc-400">
                                       <div className="mx-auto">
                                         <svg
                                           width="40"
@@ -131,7 +132,7 @@ export default function SearchResults({ onClose, isOpen }) {
                                       <Combobox.Option
                                         key={hit._id}
                                         className={({ active }) =>
-                                          `relative cursor-default select-none py-2  ${
+                                          `relative cursor-default select-none ${
                                             active
                                               ? ' text-white'
                                               : 'text-slate-400'
